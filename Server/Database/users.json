@@ -1,5 +1,7 @@
 [
     {
+      "Username": "jdoe",
+      "Password": "password1",
       "Name": "John Doe",
       "Upcoming_trips": [
         { "Listing_id": "1", "Payment": 500, "Time":"kkkkkkkk" },
@@ -24,6 +26,8 @@
       "Picture_url": "https://example.com/profile_pic.jpg"
     },
     {
+      "Username": "asmith",
+      "Password": "password2",
       "Name": "Alice Smith",
       "Upcoming_trips": [
         { "Listing_id": "789ghi", "Payment": 600, "Time":"kkkkkkkk" }
@@ -44,6 +48,8 @@
       "Picture_url": "https://example.com/alice_profile_pic.jpg"
     },
     {
+      "Username": "mjohnson",
+      "Password": "password3",
       "Name": "Michael Johnson",
       "Upcoming_trips": [
         { "Listing_id": "012jkl", "Payment": 800, "Time":"kkkkkkkk" }
@@ -64,6 +70,8 @@
       "Picture_url": "https://example.com/michael_profile_pic.jpg"
     },
     {
+      "Username": "edavis",
+      "Password": "password4",
       "Name": "Emily Davis",
       "Upcoming_trips": [
         { "Listing_id": "789ghi", "Payment": 600, "Time":"kkkkkkkk" }
@@ -84,6 +92,8 @@
       "Picture_url": "https://example.com/emily_profile_pic.jpg"
     },
     {
+      "Username": "dbrown",
+      "Password": "password5",
       "Name": "Daniel Brown",
       "Upcoming_trips": [
         { "Listing_id": "012jkl", "Payment": 800, "Time":"kkkkkkkk" }
@@ -104,6 +114,8 @@
       "Picture_url": "https://example.com/daniel_profile_pic.jpg"
     },
     {
+      "Username": "owilson",
+      "Password": "password6",
       "Name": "Olivia Wilson",
       "Upcoming_trips": [
         { "Listing_id": "789ghi", "Payment": 600, "Time":"kkkkkkkk" }
@@ -124,6 +136,8 @@
       "Picture_url": "https://example.com/olivia_profile_pic.jpg"
     },
     {
+      "Username": "wtaylor",
+      "Password": "password7",
       "Name": "William Taylor",
       "Upcoming_trips": [
         { "Listing_id": "012jkl", "Payment": 800, "Time":"kkkkkkkk" }
@@ -144,6 +158,8 @@
       "Picture_url": "https://example.com/william_profile_pic.jpg"
     },
     {
+      "Username": "smartinez",
+      "Password": "password8",
       "Name": "Sophia Martinez",
       "Upcoming_trips": [
         { "Listing_id": "789ghi", "Payment": 600, "Time":"kkkkkkkk" }
@@ -164,6 +180,8 @@
       "Picture_url": "https://example.com/sophia_profile_pic.jpg"
     },
     {
+      "Username": "janderson",
+      "Password": "password9",
       "Name": "James Anderson",
       "Upcoming_trips": [
         { "Listing_id": "012jkl", "Payment": 800, "Time":"kkkkkkkk" }
