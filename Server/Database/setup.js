@@ -14,6 +14,8 @@ const createUsersTable = async () => {
       DROP TABLE IF EXISTS users;
       CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,
+        Username VARCHAR(255) NOT NULL,
+        Password VARCHAR(255) NOT NULL,
         Name VARCHAR(255) NOT NULL,
         Upcoming_trips JSON[] NOT NULL,
         Past_trips JSON[] NOT NULL,
@@ -35,14 +37,16 @@ const createUsersTable = async () => {
 const insertUsers = async () => {
   try {
     const insertQuery = `
-      INSERT INTO users ( Name, Upcoming_trips, Past_trips, Wishlists, Address, Language, Intro, Ratings, Work, Picture_url)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+      INSERT INTO users ( Username, Password, Name, Upcoming_trips, Past_trips, Wishlists, Address, Language, Intro, Ratings, Work, Picture_url)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
     `;
 
     const users = JSON.parse(userdata);
 
     for (let user of users) {
       const values = [
+        user.Username,
+        user.Password,
         user.Name,
         user.Upcoming_trips,
         user.Past_trips,

@@ -22,15 +22,15 @@ const findOne = (constraint, value) => {
   return pool.query(query, [value])
 }
 
-const create = (Name, Upcoming_trips, Past_trips, Wishlists, Address, Language, Intro, Ratings, Work, Picture_url) => {
+const create = (Username, Password, Name, Upcoming_trips, Past_trips, Wishlists, Address, Language, Intro, Ratings, Work, Picture_url) => {
   
-    const query = 'INSERT INTO users ( Name, Upcoming_trips, Past_trips, Wishlists, Address, Language, Intro, Ratings, Work, Picture_url) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *'
-    return pool.query(query, [ Name, Upcoming_trips, Past_trips, Wishlists, Address, Language, Intro, Ratings, Work, Picture_url])
+    const query = 'INSERT INTO users ( Username, Password, Name, Upcoming_trips, Past_trips, Wishlists, Address, Language, Intro, Ratings, Work, Picture_url) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *'
+    return pool.query(query, [ Username, Password, Name, Upcoming_trips, Past_trips, Wishlists, Address, Language, Intro, Ratings, Work, Picture_url])
   }
   
-const update = (id, Name, Upcoming_trips, Past_trips, Wishlists, Address, Language, Intro, Ratings, Work, Picture_url) => {
-    const query = 'UPDATE users SET Name = $2, Upcoming_trips = $3, Past_trips = $4, Wishlists = $5, Address = $6, Language = $7, Intro=$8, Ratings=$9, Work=$10, Picture_url=$11  WHERE id = $1'
-    return pool.query(query, [id, Name, Upcoming_trips, Past_trips, Wishlists, Address, Language, Intro, Ratings, Work, Picture_url])
+const update = (id, Username, Password, Name, Upcoming_trips, Past_trips, Wishlists, Address, Language, Intro, Ratings, Work, Picture_url) => {
+    const query = 'UPDATE users SET Username = $2, Password=$3, Name = $4, Upcoming_trips = $5, Past_trips = $6, Wishlists = $7, Address = $8, Language = $9, Intro=$10, Ratings=$11, Work=$12, Picture_url=$13  WHERE id = $1'
+    return pool.query(query, [id, Username, Password, Name, Upcoming_trips, Past_trips, Wishlists, Address, Language, Intro, Ratings, Work, Picture_url])
   }
   
 const deleteUser = (constraint,value) => {

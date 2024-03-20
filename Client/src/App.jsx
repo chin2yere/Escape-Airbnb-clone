@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import { UserContext } from "./UserContext.js";
+import Home from "./Pages/Home/Home";
+import Login from "./Pages/Login/Login";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
+  const [userContext, setUserContext] = useState(() => {
+    try {
+      
+      const storedUser = localStorage.getItem("userContext");
+      return storedUser ? JSON.parse(storedUser) : null;
+    } catch (error) {
+      console.error("Error parsing stored user:", error);
+      return null;
+    }
+  });
+  useEffect(() => {
+    
+    // Save the user data to storage whenever the user state changes
+    if (userContext) {
+      localStorage.setItem("userContext", JSON.stringify(userContext));
+    } else {
+      localStorage.removeItem("userContext");
+    }
+    
+  }, [userContext]);
+  //console.log(userContext)
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="app">
+      <UserContext.Provider value={{ userContext, setUserContext }}>
+        
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={userContext ? <Home /> : <Login />} />
+                <Route path="/login" element={<Login />} />
+                
+                
+              </Routes>
+            </BrowserRouter>
+          
+      </UserContext.Provider>
+    </div>
+  );
 }
 
-export default App
+export default App;
