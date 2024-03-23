@@ -1,362 +1,465 @@
 [
-    {
-      "Name": "Cozy Apartment in Downtown",
-      "Location": "New York, NY",
-      "Price_per_night": 150,
-      "Type": "Apartment",
-      "Reviews": [
-        { "User_id": "2", "Rating": 4 },
-        { "User_id": "3", "Rating": 5 }
-      ],
-      "Host": "9",
-      "About": "This cozy apartment is located in the heart of downtown. Close to restaurants, shops, and attractions.",
-      "Bedrooms": 2,
-      "Amenities": ["WiFi", "Kitchen", "TV", "Washing machine"],
-      "Booked_days": ["2024-04-15", "2024-04-16", "2024-04-17"],
-      "Photo_gallery": ["https://example.com/photo1.jpg", "https://example.com/photo2.jpg"]
-    },
+  {
+    "Name": "Cozy Apartment in Downtown",
+    "Location": "New York, NY",
+    "Price_per_night": 150,
+    "Type": "Apartment",
+    "Reviews": [
+      { "User_id": "2", "Rating": 4 },
+      { "User_id": "3", "Rating": 5 }
+    ],
+    "Host": "9",
+    "About": "This cozy apartment is located in the heart of downtown. Close to restaurants, shops, and attractions.",
+    "Bedrooms": 2,
+    "Amenities": ["WiFi", "Kitchen", "TV", "Washing machine"],
+    "Booked_days": ["2024-04-15", "2024-04-16", "2024-04-17"],
+    "Photo_gallery": [
+      "https://example.com/photo1.jpg",
+      "https://example.com/photo2.jpg"
+    ]
+  },
 
-    {
-        "Name": "Luxury Villa with Ocean View",
-        "Location": "Los Angeles, CA",
-        "Price_per_night": 500,
-        "Type": "Villa",
-        "Reviews": [
-        { "User_id": "2", "Rating": 5 },
-        { "User_id": "4", "Rating": 4 }
-        ],
-        "Host": "9",
-        "About": "Experience luxury living with breathtaking ocean views in this stunning villa.",
-        "Bedrooms": 5,
-        "Amenities": ["WiFi", "Kitchen", "Swimming pool", "Hot tub", "Gym"],
-        "Booked_days": ["2024-05-20", "2024-05-21", "2024-05-22"],
-        "Photo_gallery": ["https://example.com/photo3.jpg", "https://example.com/photo4.jpg"]
-    },
-    {
-        "Name": "Downtown Loft with City Skyline View",
-        "Location": "Chicago, IL",
-        "Price_per_night": 200,
-        "Type": "Loft",
-        "Reviews": [
-        { "User_id": "3", "Rating": 4 },
-        { "User_id": "5", "Rating": 5 }
-        ],
-        "Host": "9",
-        "About": "Enjoy modern urban living with stunning views of the city skyline from this stylish loft.",
-        "Bedrooms": 1,
-        "Amenities": ["WiFi", "Kitchen", "Air conditioning", "Parking", "Gym"],
-        "Booked_days": ["2024-06-10", "2024-06-11", "2024-06-12"],
-        "Photo_gallery": ["https://example.com/photo5.jpg", "https://example.com/photo6.jpg"]
-    },
-    {
-        "Name": "Charming Cottage in the Countryside",
-        "Location": "Seattle, WA",
-        "Price_per_night": 120,
-        "Type": "Cottage",
-        "Reviews": [
-        { "User_id": "2", "Rating": 5 },
-        { "User_id": "6", "Rating": 4 }
-        ],
-        "Host": "9",
-        "About": "Escape to the tranquility of the countryside in this charming cottage surrounded by nature.",
-        "Bedrooms": 2,
-        "Amenities": ["WiFi", "Kitchen", "Heating", "Garden", "Fireplace"],
-        "Booked_days": ["2024-07-05", "2024-07-06", "2024-07-07"],
-        "Photo_gallery": ["https://example.com/photo7.jpg", "https://example.com/photo8.jpg"]
-    },
-    {
-        "Name": "Modern Condo near Beach",
-        "Location": "Miami, FL",
-        "Price_per_night": 300,
-        "Type": "Condo",
-        "Reviews": [
-        { "User_id": "5", "Rating": 4 },
-        { "User_id": "6", "Rating": 5 }
-        ],
-        "Host": "9",
-        "About": "Experience the ultimate beach lifestyle in this modern condo just steps away from the ocean.",
-        "Bedrooms": 3,
-        "Amenities": ["WiFi", "Kitchen", "Swimming pool", "Fitness center", "Balcony"],
-        "Booked_days": ["2024-08-15", "2024-08-16", "2024-08-17"],
-        "Photo_gallery": ["https://example.com/photo9.jpg", "https://example.com/photo10.jpg"]
-    },
-    {
-        "Name": "Rustic Cabin in the Mountains",
-        "Location": "Denver, CO",
-        "Price_per_night": 180,
-        "Type": "Cabin",
-        "Reviews": [
-        { "User_id": "2", "Rating": 5 },
-        { "User_id": "3", "Rating": 4 }
-        ],
-        "Host": "9",
-        "About": "Escape to the serenity of the mountains in this cozy rustic cabin surrounded by pine trees.",
-        "Bedrooms": 2,
-        "Amenities": ["WiFi", "Kitchen", "Fireplace", "Deck", "Hiking trails"],
-        "Booked_days": ["2024-09-20", "2024-09-21", "2024-09-22"],
-        "Photo_gallery": ["https://example.com/photo11.jpg", "https://example.com/photo12.jpg"]
-    },
-    
-    {
-        "Name": "Beachfront Villa with Private Pool",
-        "Location": "Maui, HI",
-        "Price_per_night": 600,
-        "Type": "Villa",
-        "Reviews": [
-        { "User_id": "2", "Rating": 5 },
-        { "User_id": "7", "Rating": 4 }
-        ],
-        "Host": "9",
-        "About": "Experience luxury living on the beach with your own private pool in this stunning villa.",
-        "Bedrooms": 4,
-        "Amenities": ["WiFi", "Kitchen", "Private pool", "Beach access", "Garden"],
-        "Booked_days": ["2024-10-05", "2024-10-06", "2024-10-07"],
-        "Photo_gallery": ["https://example.com/photo13.jpg", "https://example.com/photo14.jpg"]
-    },
-    {
-        "Name": "Downtown Penthouse with Skyline Views",
-        "Location": "San Francisco, CA",
-        "Price_per_night": 400,
-        "Type": "Penthouse",
-        "Reviews": [
-        { "User_id": "3", "Rating": 4 },
-        { "User_id": "5", "Rating": 5 }
-        ],
-        "Host": "9",
-        "About": "Live in luxury with panoramic skyline views from this stylish downtown penthouse.",
-        "Bedrooms": 3,
-        "Amenities": ["WiFi", "Kitchen", "Air conditioning", "Parking", "Gym"],
-        "Booked_days": ["2024-11-15", "2024-11-16", "2024-11-17"],
-        "Photo_gallery": ["https://example.com/photo15.jpg", "https://example.com/photo16.jpg"]
-    },
-    {
-        "Name": "Secluded Cottage in the Woods",
-        "Location": "Asheville, NC",
-        "Price_per_night": 250,
-        "Type": "Cottage",
-        "Reviews": [
-        { "User_id": "7", "Rating": 5 },
-        { "User_id": "2", "Rating": 4 }
-        ],
-        "Host": "9",
-        "About": "Escape to nature in this charming cottage nestled in the woods, perfect for a peaceful getaway.",
-        "Bedrooms": 2,
-        "Amenities": ["WiFi", "Kitchen", "Fireplace", "Deck", "Nature trails"],
-        "Booked_days": ["2024-12-10", "2024-12-11", "2024-12-12"],
-        "Photo_gallery": ["https://example.com/photo17.jpg", "https://example.com/photo18.jpg"]
-    },
-    {
-        "Name": "Luxury Apartment in Midtown",
-        "Location": "Atlanta, GA",
-        "Price_per_night": 300,
-        "Type": "Apartment",
-        "Reviews": [
-        { "User_id": "2", "Rating": 4 },
-        { "User_id": "6", "Rating": 5 }
-        ],
-        "Host": "9",
-        "About": "Live in style in this modern luxury apartment located in the vibrant heart of Midtown.",
-        "Bedrooms": 2,
-        "Amenities": ["WiFi", "Kitchen", "Swimming pool", "Fitness center", "Balcony"],
-        "Booked_days": ["2025-01-20", "2025-01-21", "2025-01-22"],
-        "Photo_gallery": ["https://example.com/photo19.jpg", "https://example.com/photo20.jpg"]
-    },
-    {
-        "Name": "Mountain Retreat with Spectacular Views",
-        "Location": "Aspen, CO",
-        "Price_per_night": 350,
-        "Type": "Mountain cabin",
-        "Reviews": [
-        { "User_id": "7", "Rating": 5 },
-        { "User_id":"8", "Rating": 4 }
-        ],
-        "Host": "9",
-        "About": "Experience tranquility and breathtaking views in this secluded mountain cabin retreat.",
-        "Bedrooms": 3,
-        "Amenities": ["WiFi", "Kitchen", "Hot tub", "Fireplace", "Hiking trails"],
-        "Booked_days": ["2025-02-05", "2025-02-06", "2025-02-07"],
-        "Photo_gallery": ["https://example.com/photo21.jpg", "https://example.com/photo22.jpg"]
-    },
-    {
-        "Name": "Riverside Cabin with Fishing Access",
-        "Location": "Bend, OR",
-        "Price_per_night": 200,
-        "Type": "Cabin",
-        "Reviews": [
-        { "User_id": "3", "Rating": 5 },
-        { "User_id": "4", "Rating": 4 }
-        ],
-        "Host": "9",
-        "About": "Relax by the river and enjoy fishing in this cozy cabin with direct access to the riverbank.",
-        "Bedrooms": 2,
-        "Amenities": ["WiFi", "Kitchen", "Riverside deck", "Fire pit", "Fishing gear"],
-        "Booked_days": ["2025-03-15", "2025-03-16", "2025-03-17"],
-        "Photo_gallery": ["https://example.com/photo23.jpg", "https://example.com/photo24.jpg"]
-    },
-    {
-        "Name": "Ski-in/Ski-out Chalet in the Mountains",
-        "Location": "Jackson Hole, WY",
-        "Price_per_night": 450,
-        "Type": "Chalet",
-        "Reviews": [
-        { "User_id": "2", "Rating": 4 },
-        { "User_id": "5", "Rating": 5 }
-        ],
-        "Host": "9",
-        "About": "Experience the ultimate ski vacation in this luxurious chalet with direct access to the slopes.",
-        "Bedrooms": 4,
-        "Amenities": ["WiFi", "Kitchen", "Hot tub", "Ski storage", "Fireplace"],
-        "Booked_days": ["2025-04-10", "2025-04-11", "2025-04-12"],
-        "Photo_gallery": ["https://example.com/photo25.jpg", "https://example.com/photo26.jpg"]
-    },
-    {
-        "Name": "Historic Townhouse in Old Town",
-        "Location": "Charleston, SC",
-        "Price_per_night": 280,
-        "Type": "Townhouse",
-        "Reviews": [
-        { "User_id": "6", "Rating": 5 },
-        { "User_id": "8", "Rating": 4 }
-        ],
-        "Host": "9",
-        "About": "Step back in time and stay in this beautifully restored historic townhouse in the heart of Old Town.",
-        "Bedrooms": 3,
-        "Amenities": ["WiFi", "Kitchen", "Garden", "Parking", "Walking distance to attractions"],
-        "Booked_days": ["2025-05-20", "2025-05-21", "2025-05-22"],
-        "Photo_gallery": ["https://example.com/photo27.jpg", "https://example.com/photo28.jpg"]
-    },
+  {
+    "Name": "Luxury Villa with Ocean View",
+    "Location": "Los Angeles, CA",
+    "Price_per_night": 500,
+    "Type": "Villa",
+    "Reviews": [
+      { "User_id": "2", "Rating": 5 },
+      { "User_id": "4", "Rating": 4 }
+    ],
+    "Host": "9",
+    "About": "Experience luxury living with breathtaking ocean views in this stunning villa.",
+    "Bedrooms": 5,
+    "Amenities": ["WiFi", "Kitchen", "Swimming pool", "Hot tub", "Gym"],
+    "Booked_days": ["2024-05-20", "2024-05-21", "2024-05-22"],
+    "Photo_gallery": [
+      "https://example.com/photo3.jpg",
+      "https://example.com/photo4.jpg"
+    ]
+  },
+  {
+    "Name": "Downtown Loft with City Skyline View",
+    "Location": "Chicago, IL",
+    "Price_per_night": 200,
+    "Type": "Loft",
+    "Reviews": [
+      { "User_id": "3", "Rating": 4 },
+      { "User_id": "5", "Rating": 5 }
+    ],
+    "Host": "9",
+    "About": "Enjoy modern urban living with stunning views of the city skyline from this stylish loft.",
+    "Bedrooms": 1,
+    "Amenities": ["WiFi", "Kitchen", "Air conditioning", "Parking", "Gym"],
+    "Booked_days": ["2024-06-10", "2024-06-11", "2024-06-12"],
+    "Photo_gallery": [
+      "https://example.com/photo5.jpg",
+      "https://example.com/photo6.jpg"
+    ]
+  },
+  {
+    "Name": "Charming Cottage in the Countryside",
+    "Location": "Seattle, WA",
+    "Price_per_night": 120,
+    "Type": "Cottage",
+    "Reviews": [
+      { "User_id": "2", "Rating": 5 },
+      { "User_id": "6", "Rating": 4 }
+    ],
+    "Host": "9",
+    "About": "Escape to the tranquility of the countryside in this charming cottage surrounded by nature.",
+    "Bedrooms": 2,
+    "Amenities": ["WiFi", "Kitchen", "Heating", "Garden", "Fireplace"],
+    "Booked_days": ["2024-07-05", "2024-07-06", "2024-07-07"],
+    "Photo_gallery": [
+      "https://example.com/photo7.jpg",
+      "https://example.com/photo8.jpg"
+    ]
+  },
+  {
+    "Name": "Modern Condo near Beach",
+    "Location": "Miami, FL",
+    "Price_per_night": 300,
+    "Type": "Condo",
+    "Reviews": [
+      { "User_id": "5", "Rating": 4 },
+      { "User_id": "6", "Rating": 5 }
+    ],
+    "Host": "9",
+    "About": "Experience the ultimate beach lifestyle in this modern condo just steps away from the ocean.",
+    "Bedrooms": 3,
+    "Amenities": [
+      "WiFi",
+      "Kitchen",
+      "Swimming pool",
+      "Fitness center",
+      "Balcony"
+    ],
+    "Booked_days": ["2024-08-15", "2024-08-16", "2024-08-17"],
+    "Photo_gallery": [
+      "https://example.com/photo9.jpg",
+      "https://example.com/photo10.jpg"
+    ]
+  },
+  {
+    "Name": "Rustic Cabin in the Mountains",
+    "Location": "Denver, CO",
+    "Price_per_night": 180,
+    "Type": "Cabin",
+    "Reviews": [
+      { "User_id": "2", "Rating": 5 },
+      { "User_id": "3", "Rating": 4 }
+    ],
+    "Host": "9",
+    "About": "Escape to the serenity of the mountains in this cozy rustic cabin surrounded by pine trees.",
+    "Bedrooms": 2,
+    "Amenities": ["WiFi", "Kitchen", "Fireplace", "Deck", "Hiking trails"],
+    "Booked_days": ["2024-09-20", "2024-09-21", "2024-09-22"],
+    "Photo_gallery": [
+      "https://example.com/photo11.jpg",
+      "https://example.com/photo12.jpg"
+    ]
+  },
 
-    {
-        "Name": "Beachfront Villa with Private Pool",
-        "Location": "Maui, HI",
-        "Price_per_night": 600,
-        "Type": "Villa",
-        "Reviews": [
-        { "User_id": "3", "Rating": 5 },
-        { "User_id": "2", "Rating": 4 }
-        ],
-        "Host": "9",
-        "About": "Experience luxury living on the beach with your own private pool in this stunning villa.",
-        "Bedrooms": 4,
-        "Amenities": ["WiFi", "Kitchen", "Private pool", "Beach access", "Garden"],
-        "Booked_days": ["2024-10-05", "2024-10-06", "2024-10-07"],
-        "Photo_gallery": ["https://example.com/photo13.jpg", "https://example.com/photo14.jpg"]
-    },
-    {
-        "Name": "Downtown Penthouse with Skyline Views",
-        "Location": "San Francisco, CA",
-        "Price_per_night": 400,
-        "Type": "Penthouse",
-        "Reviews": [
-        { "User_id": "2", "Rating": 4 },
-        { "User_id": "3", "Rating": 5 }
-        ],
-        "Host": "9",
-        "About": "Live in luxury with panoramic skyline views from this stylish downtown penthouse.",
-        "Bedrooms": 3,
-        "Amenities": ["WiFi", "Kitchen", "Air conditioning", "Parking", "Gym"],
-        "Booked_days": ["2024-11-15", "2024-11-16", "2024-11-17"],
-        "Photo_gallery": ["https://example.com/photo15.jpg", "https://example.com/photo16.jpg"]
-    },
-    {
-        "Name": "Secluded Cottage in the Woods",
-        "Location": "Asheville, NC",
-        "Price_per_night": 250,
-        "Type": "Cottage",
-        "Reviews": [
-        { "User_id": "7", "Rating": 5 },
-        { "User_id": "5", "Rating": 4 }
-        ],
-        "Host": "9",
-        "About": "Escape to nature in this charming cottage nestled in the woods, perfect for a peaceful getaway.",
-        "Bedrooms": 2,
-        "Amenities": ["WiFi", "Kitchen", "Fireplace", "Deck", "Nature trails"],
-        "Booked_days": ["2024-12-10", "2024-12-11", "2024-12-12"],
-        "Photo_gallery": ["https://example.com/photo17.jpg", "https://example.com/photo18.jpg"]
-    },
-    {
-        "Name": "Luxury Apartment in Midtown",
-        "Location": "Atlanta, GA",
-        "Price_per_night": 300,
-        "Type": "Apartment",
-        "Reviews": [
-        { "User_id": "5", "Rating": 4 },
-        { "User_id": "7", "Rating": 5 }
-        ],
-        "Host": "9",
-        "About": "Live in style in this modern luxury apartment located in the vibrant heart of Midtown.",
-        "Bedrooms": 2,
-        "Amenities": ["WiFi", "Kitchen", "Swimming pool", "Fitness center", "Balcony"],
-        "Booked_days": ["2025-01-20", "2025-01-21", "2025-01-22"],
-        "Photo_gallery": ["https://example.com/photo19.jpg", "https://example.com/photo20.jpg"]
-    },
-    {
-        "Name": "Mountain Retreat with Spectacular Views",
-        "Location": "Aspen, CO",
-        "Price_per_night": 350,
-        "Type": "Mountain cabin",
-        "Reviews": [
-        { "User_id": "8", "Rating": 5 },
-        { "User_id": "2", "Rating": 4 }
-        ],
-        "Host": "9",
-        "About": "Experience tranquility and breathtaking views in this secluded mountain cabin retreat.",
-        "Bedrooms": 3,
-        "Amenities": ["WiFi", "Kitchen", "Hot tub", "Fireplace", "Hiking trails"],
-        "Booked_days": ["2025-02-05", "2025-02-06", "2025-02-07"],
-        "Photo_gallery": ["https://example.com/photo21.jpg", "https://example.com/photo22.jpg"]
-    },
-    {
-        "Name": "Riverside Cabin with Fishing Access",
-        "Location": "Bend, OR",
-        "Price_per_night": 200,
-        "Type": "Cabin",
-        "Reviews": [
-        { "User_id": "4", "Rating": 5 },
-        { "User_id": "2", "Rating": 4 }
-        ],
-        "Host": "9",
-        "About": "Relax by the river and enjoy fishing in this cozy cabin with direct access to the riverbank.",
-        "Bedrooms": 2,
-        "Amenities": ["WiFi", "Kitchen", "Riverside deck", "Fire pit", "Fishing gear"],
-        "Booked_days": ["2025-03-15", "2025-03-16", "2025-03-17"],
-        "Photo_gallery": ["https://example.com/photo23.jpg", "https://example.com/photo24.jpg"]
-    },
-    {
-        "Name": "Ski-in/Ski-out Chalet in the Mountains",
-        "Location": "Jackson Hole, WY",
-        "Price_per_night": 450,
-        "Type": "Chalet",
-        "Reviews": [
-        { "User_id": "4", "Rating": 4 },
-        { "User_id": "5", "Rating": 5 }
-        ],
-        "Host": "9",
-        "About": "Experience the ultimate ski vacation in this luxurious chalet with direct access to the slopes.",
-        "Bedrooms": 4,
-        "Amenities": ["WiFi", "Kitchen", "Hot tub", "Ski storage", "Fireplace"],
-        "Booked_days": ["2025-04-10", "2025-04-11", "2025-04-12"],
-        "Photo_gallery": ["https://example.com/photo25.jpg", "https://example.com/photo26.jpg"]
-    },
-    {
-        "Name": "Historic Townhouse in Old Town",
-        "Location": "Charleston, SC",
-        "Price_per_night": 280,
-        "Type": "Townhouse",
-        "Reviews": [
-        { "User_id": "2", "Rating": 5 },
-        { "User_id": "3", "Rating": 4 }
-        ],
-        "Host": "9",
-        "About": "Step back in time and stay in this beautifully restored historic townhouse in the heart of Old Town.",
-        "Bedrooms": 3,
-        "Amenities": ["WiFi", "Kitchen", "Garden", "Parking", "Walking distance to attractions"],
-        "Booked_days": ["2025-05-20", "2025-05-21", "2025-05-22"],
-        "Photo_gallery": ["https://example.com/photo27.jpg", "https://example.com/photo28.jpg"]
-    }
-      
-      
-    
-    
-    
+  {
+    "Name": "Beachfront Villa with Private Pool",
+    "Location": "Maui, HI",
+    "Price_per_night": 600,
+    "Type": "Villa",
+    "Reviews": [
+      { "User_id": "2", "Rating": 5 },
+      { "User_id": "7", "Rating": 4 }
+    ],
+    "Host": "9",
+    "About": "Experience luxury living on the beach with your own private pool in this stunning villa.",
+    "Bedrooms": 4,
+    "Amenities": ["WiFi", "Kitchen", "Private pool", "Beach access", "Garden"],
+    "Booked_days": ["2024-10-05", "2024-10-06", "2024-10-07"],
+    "Photo_gallery": [
+      "https://example.com/photo13.jpg",
+      "https://example.com/photo14.jpg"
+    ]
+  },
+  {
+    "Name": "Downtown Penthouse with Skyline Views",
+    "Location": "San Francisco, CA",
+    "Price_per_night": 400,
+    "Type": "Condo",
+    "Reviews": [
+      { "User_id": "3", "Rating": 4 },
+      { "User_id": "5", "Rating": 5 }
+    ],
+    "Host": "9",
+    "About": "Live in luxury with panoramic skyline views from this stylish downtown penthouse.",
+    "Bedrooms": 3,
+    "Amenities": ["WiFi", "Kitchen", "Air conditioning", "Parking", "Gym"],
+    "Booked_days": ["2024-11-15", "2024-11-16", "2024-11-17"],
+    "Photo_gallery": [
+      "https://example.com/photo15.jpg",
+      "https://example.com/photo16.jpg"
+    ]
+  },
+  {
+    "Name": "Secluded Cottage in the Woods",
+    "Location": "Asheville, NC",
+    "Price_per_night": 250,
+    "Type": "Cottage",
+    "Reviews": [
+      { "User_id": "7", "Rating": 5 },
+      { "User_id": "2", "Rating": 4 }
+    ],
+    "Host": "9",
+    "About": "Escape to nature in this charming cottage nestled in the woods, perfect for a peaceful getaway.",
+    "Bedrooms": 2,
+    "Amenities": ["WiFi", "Kitchen", "Fireplace", "Deck", "Nature trails"],
+    "Booked_days": ["2024-12-10", "2024-12-11", "2024-12-12"],
+    "Photo_gallery": [
+      "https://example.com/photo17.jpg",
+      "https://example.com/photo18.jpg"
+    ]
+  },
+  {
+    "Name": "Luxury Apartment in Midtown",
+    "Location": "Atlanta, GA",
+    "Price_per_night": 300,
+    "Type": "Apartment",
+    "Reviews": [
+      { "User_id": "2", "Rating": 4 },
+      { "User_id": "6", "Rating": 5 }
+    ],
+    "Host": "9",
+    "About": "Live in style in this modern luxury apartment located in the vibrant heart of Midtown.",
+    "Bedrooms": 2,
+    "Amenities": [
+      "WiFi",
+      "Kitchen",
+      "Swimming pool",
+      "Fitness center",
+      "Balcony"
+    ],
+    "Booked_days": ["2025-01-20", "2025-01-21", "2025-01-22"],
+    "Photo_gallery": [
+      "https://example.com/photo19.jpg",
+      "https://example.com/photo20.jpg"
+    ]
+  },
+  {
+    "Name": "Mountain Retreat with Spectacular Views",
+    "Location": "Aspen, CO",
+    "Price_per_night": 350,
+    "Type": "Cabin",
+    "Reviews": [
+      { "User_id": "7", "Rating": 5 },
+      { "User_id": "8", "Rating": 4 }
+    ],
+    "Host": "9",
+    "About": "Experience tranquility and breathtaking views in this secluded mountain cabin retreat.",
+    "Bedrooms": 3,
+    "Amenities": ["WiFi", "Kitchen", "Hot tub", "Fireplace", "Hiking trails"],
+    "Booked_days": ["2025-02-05", "2025-02-06", "2025-02-07"],
+    "Photo_gallery": [
+      "https://example.com/photo21.jpg",
+      "https://example.com/photo22.jpg"
+    ]
+  },
+  {
+    "Name": "Riverside Cabin with Fishing Access",
+    "Location": "Bend, OR",
+    "Price_per_night": 200,
+    "Type": "Cabin",
+    "Reviews": [
+      { "User_id": "3", "Rating": 5 },
+      { "User_id": "4", "Rating": 4 }
+    ],
+    "Host": "9",
+    "About": "Relax by the river and enjoy fishing in this cozy cabin with direct access to the riverbank.",
+    "Bedrooms": 2,
+    "Amenities": [
+      "WiFi",
+      "Kitchen",
+      "Riverside deck",
+      "Fire pit",
+      "Fishing gear"
+    ],
+    "Booked_days": ["2025-03-15", "2025-03-16", "2025-03-17"],
+    "Photo_gallery": [
+      "https://example.com/photo23.jpg",
+      "https://example.com/photo24.jpg"
+    ]
+  },
+  {
+    "Name": "Ski-in/Ski-out Chalet in the Mountains",
+    "Location": "Jackson Hole, WY",
+    "Price_per_night": 450,
+    "Type": "Apartment",
+    "Reviews": [
+      { "User_id": "2", "Rating": 4 },
+      { "User_id": "5", "Rating": 5 }
+    ],
+    "Host": "9",
+    "About": "Experience the ultimate ski vacation in this luxurious chalet with direct access to the slopes.",
+    "Bedrooms": 4,
+    "Amenities": ["WiFi", "Kitchen", "Hot tub", "Ski storage", "Fireplace"],
+    "Booked_days": ["2025-04-10", "2025-04-11", "2025-04-12"],
+    "Photo_gallery": [
+      "https://example.com/photo25.jpg",
+      "https://example.com/photo26.jpg"
+    ]
+  },
+  {
+    "Name": "Historic Townhouse in Old Town",
+    "Location": "Charleston, SC",
+    "Price_per_night": 280,
+    "Type": "Villa",
+    "Reviews": [
+      { "User_id": "6", "Rating": 5 },
+      { "User_id": "8", "Rating": 4 }
+    ],
+    "Host": "9",
+    "About": "Step back in time and stay in this beautifully restored historic townhouse in the heart of Old Town.",
+    "Bedrooms": 3,
+    "Amenities": [
+      "WiFi",
+      "Kitchen",
+      "Garden",
+      "Parking",
+      "Walking distance to attractions"
+    ],
+    "Booked_days": ["2025-05-20", "2025-05-21", "2025-05-22"],
+    "Photo_gallery": [
+      "https://example.com/photo27.jpg",
+      "https://example.com/photo28.jpg"
+    ]
+  },
+
+  {
+    "Name": "Beachfront Villa with Private Pool",
+    "Location": "Maui, HI",
+    "Price_per_night": 600,
+    "Type": "Villa",
+    "Reviews": [
+      { "User_id": "3", "Rating": 5 },
+      { "User_id": "2", "Rating": 4 }
+    ],
+    "Host": "9",
+    "About": "Experience luxury living on the beach with your own private pool in this stunning villa.",
+    "Bedrooms": 4,
+    "Amenities": ["WiFi", "Kitchen", "Private pool", "Beach access", "Garden"],
+    "Booked_days": ["2024-10-05", "2024-10-06", "2024-10-07"],
+    "Photo_gallery": [
+      "https://example.com/photo13.jpg",
+      "https://example.com/photo14.jpg"
+    ]
+  },
+  {
+    "Name": "Downtown Penthouse with Skyline Views",
+    "Location": "San Francisco, CA",
+    "Price_per_night": 400,
+    "Type": "Loft",
+    "Reviews": [
+      { "User_id": "2", "Rating": 4 },
+      { "User_id": "3", "Rating": 5 }
+    ],
+    "Host": "9",
+    "About": "Live in luxury with panoramic skyline views from this stylish downtown penthouse.",
+    "Bedrooms": 3,
+    "Amenities": ["WiFi", "Kitchen", "Air conditioning", "Parking", "Gym"],
+    "Booked_days": ["2024-11-15", "2024-11-16", "2024-11-17"],
+    "Photo_gallery": [
+      "https://example.com/photo15.jpg",
+      "https://example.com/photo16.jpg"
+    ]
+  },
+  {
+    "Name": "Secluded Cottage in the Woods",
+    "Location": "Asheville, NC",
+    "Price_per_night": 250,
+    "Type": "Cottage",
+    "Reviews": [
+      { "User_id": "7", "Rating": 5 },
+      { "User_id": "5", "Rating": 4 }
+    ],
+    "Host": "9",
+    "About": "Escape to nature in this charming cottage nestled in the woods, perfect for a peaceful getaway.",
+    "Bedrooms": 2,
+    "Amenities": ["WiFi", "Kitchen", "Fireplace", "Deck", "Nature trails"],
+    "Booked_days": ["2024-12-10", "2024-12-11", "2024-12-12"],
+    "Photo_gallery": [
+      "https://example.com/photo17.jpg",
+      "https://example.com/photo18.jpg"
+    ]
+  },
+  {
+    "Name": "Luxury Apartment in Midtown",
+    "Location": "Atlanta, GA",
+    "Price_per_night": 300,
+    "Type": "Apartment",
+    "Reviews": [
+      { "User_id": "5", "Rating": 4 },
+      { "User_id": "7", "Rating": 5 }
+    ],
+    "Host": "9",
+    "About": "Live in style in this modern luxury apartment located in the vibrant heart of Midtown.",
+    "Bedrooms": 2,
+    "Amenities": [
+      "WiFi",
+      "Kitchen",
+      "Swimming pool",
+      "Fitness center",
+      "Balcony"
+    ],
+    "Booked_days": ["2025-01-20", "2025-01-21", "2025-01-22"],
+    "Photo_gallery": [
+      "https://example.com/photo19.jpg",
+      "https://example.com/photo20.jpg"
+    ]
+  },
+  {
+    "Name": "Mountain Retreat with Spectacular Views",
+    "Location": "Aspen, CO",
+    "Price_per_night": 350,
+    "Type": "Cabin",
+    "Reviews": [
+      { "User_id": "8", "Rating": 5 },
+      { "User_id": "2", "Rating": 4 }
+    ],
+    "Host": "9",
+    "About": "Experience tranquility and breathtaking views in this secluded mountain cabin retreat.",
+    "Bedrooms": 3,
+    "Amenities": ["WiFi", "Kitchen", "Hot tub", "Fireplace", "Hiking trails"],
+    "Booked_days": ["2025-02-05", "2025-02-06", "2025-02-07"],
+    "Photo_gallery": [
+      "https://example.com/photo21.jpg",
+      "https://example.com/photo22.jpg"
+    ]
+  },
+  {
+    "Name": "Riverside Cabin with Fishing Access",
+    "Location": "Bend, OR",
+    "Price_per_night": 200,
+    "Type": "Cabin",
+    "Reviews": [
+      { "User_id": "4", "Rating": 5 },
+      { "User_id": "2", "Rating": 4 }
+    ],
+    "Host": "9",
+    "About": "Relax by the river and enjoy fishing in this cozy cabin with direct access to the riverbank.",
+    "Bedrooms": 2,
+    "Amenities": [
+      "WiFi",
+      "Kitchen",
+      "Riverside deck",
+      "Fire pit",
+      "Fishing gear"
+    ],
+    "Booked_days": ["2025-03-15", "2025-03-16", "2025-03-17"],
+    "Photo_gallery": [
+      "https://example.com/photo23.jpg",
+      "https://example.com/photo24.jpg"
+    ]
+  },
+  {
+    "Name": "Wonderful Cottage in the Mountains",
+    "Location": "Pennsylvania, PA",
+    "Price_per_night": 450,
+    "Type": "Cottage",
+    "Reviews": [
+      { "User_id": "4", "Rating": 4 },
+      { "User_id": "5", "Rating": 5 }
+    ],
+    "Host": "9",
+    "About": "Experience the ultimate ski vacation in this luxurious chalet with direct access to the slopes.",
+    "Bedrooms": 4,
+    "Amenities": ["WiFi", "Kitchen", "Hot tub", "Ski storage", "Fireplace"],
+    "Booked_days": ["2025-04-10", "2025-04-11", "2025-04-12"],
+    "Photo_gallery": [
+      "https://example.com/photo25.jpg",
+      "https://example.com/photo26.jpg"
+    ]
+  },
+  {
+    "Name": "Historic Townhouse in Old Town",
+    "Location": "Charleston, SC",
+    "Price_per_night": 280,
+    "Type": "Apartment",
+    "Reviews": [
+      { "User_id": "2", "Rating": 5 },
+      { "User_id": "3", "Rating": 4 }
+    ],
+    "Host": "9",
+    "About": "Step back in time and stay in this beautifully restored historic townhouse in the heart of Old Town.",
+    "Bedrooms": 3,
+    "Amenities": [
+      "WiFi",
+      "Kitchen",
+      "Garden",
+      "Parking",
+      "Walking distance to attractions"
+    ],
+    "Booked_days": ["2025-05-20", "2025-05-21", "2025-05-22"],
+    "Photo_gallery": [
+      "https://example.com/photo27.jpg",
+      "https://example.com/photo28.jpg"
+    ]
+  }
 ]
