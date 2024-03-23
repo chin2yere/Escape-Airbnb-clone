@@ -1,0 +1,11 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  justify-content: center;
+  max-width: 100%;
+}
+.content {
+  margin-left: 100px;
+  margin-right: 80px;
+}

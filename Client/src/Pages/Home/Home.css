@@ -1,0 +1,13 @@
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff; /* Example background color */
+  z-index: 1000;
+  padding: 10px 20px; /* Example padding */
+  /* Add any other styles as needed */
+}
+.grid {
+  margin-top: 100px;
+}
