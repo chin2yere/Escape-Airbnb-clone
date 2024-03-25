@@ -17,18 +17,22 @@ import { MdCabin } from "react-icons/md";
 import { GiFamilyHouse } from "react-icons/gi";
 
 function MyVerticallyCenteredModal(props) {
-  const [value, setValue] = useState(50); // Initial value of the range input
-  const maxValue = 1000;
+  //const [value, setValue] = useState(50); // Initial value of the range input
+  //const maxValue = 1000;
   const { categoryContext, setCategoryContext } = useContext(CategoryContext);
   const { budgetContext, setBudgetContext } = useContext(BudgetContext);
   const { typeContext, setTypeContext } = useContext(TypeContext);
-  console.log(budgetContext);
-  console.log(typeContext);
-  //let active = false;
+  //console.log(budgetContext);
 
+  //let active = false;
+  function handleSelectCategory(key) {
+    const temp = { ...categoryContext };
+    temp[key] = !temp[key];
+    setCategoryContext({ ...temp });
+  }
   // Function to handle changes to the range input
   const handleRangeChange = (event) => {
-    setValue(event.target.value); // Update the state with the new value
+    setBudgetContext(event.target.value); // Update the state with the new value
   };
   return (
     <Modal
@@ -46,15 +50,75 @@ function MyVerticallyCenteredModal(props) {
           <h4>Type of place</h4>
           <p>Search rooms, entire homes, or any type of place</p>
           <div style={{ padding: "20px" }}>
-            <Nav variant="pills" defaultActiveKey="link-1" justify>
+            <Nav variant="pills" justify>
               <Nav.Item>
-                <Nav.Link eventKey="link-1">All Types</Nav.Link>
+                {typeContext == "All" && (
+                  <Nav.Link
+                    eventKey="link-1"
+                    active
+                    onClick={() => {
+                      setTypeContext("All");
+                    }}
+                  >
+                    All Types
+                  </Nav.Link>
+                )}
+                {typeContext != "All" && (
+                  <Nav.Link
+                    eventKey="link-1"
+                    onClick={() => {
+                      setTypeContext("All");
+                    }}
+                  >
+                    All Types
+                  </Nav.Link>
+                )}
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey="link-2">Room</Nav.Link>
+                {typeContext == "Room" && (
+                  <Nav.Link
+                    eventKey="link-2"
+                    active
+                    onClick={() => {
+                      setTypeContext("Room");
+                    }}
+                  >
+                    Room
+                  </Nav.Link>
+                )}
+                {typeContext != "Room" && (
+                  <Nav.Link
+                    eventKey="link-2"
+                    onClick={() => {
+                      setTypeContext("Room");
+                    }}
+                  >
+                    Room
+                  </Nav.Link>
+                )}
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey="link-3">Entire home</Nav.Link>
+                {typeContext == "Home" && (
+                  <Nav.Link
+                    eventKey="link-3"
+                    active
+                    onClick={() => {
+                      setTypeContext("Home");
+                    }}
+                  >
+                    Entire home
+                  </Nav.Link>
+                )}
+                {typeContext != "Home" && (
+                  <Nav.Link
+                    eventKey="link-3"
+                    onClick={() => {
+                      setTypeContext("Home");
+                    }}
+                  >
+                    Entire home
+                  </Nav.Link>
+                )}
               </Nav.Item>
             </Nav>
           </div>
@@ -66,16 +130,16 @@ function MyVerticallyCenteredModal(props) {
           <div>
             <Form.Label>Range</Form.Label>
             <Form.Range
-              value={value}
+              value={budgetContext}
               onChange={handleRangeChange}
-              max={maxValue}
+              max={1000}
             />
             {/* Display the current value of the range */}
             <Form.Label>Max Value</Form.Label>
             <Form.Control
               type="number"
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
+              value={budgetContext}
+              onChange={(e) => setBudgetContext(e.target.value)}
             />
           </div>
         </Row>
@@ -213,7 +277,9 @@ function MyVerticallyCenteredModal(props) {
           <div style={{ padding: "20px" }}>
             <Button
               variant="outline-secondary"
+              active={categoryContext["Apartment"]}
               style={{ width: "150px", height: "100px" }}
+              onClick={() => handleSelectCategory("Apartment")}
             >
               <MdApartment style={{ fontSize: "34px" }} />
               <br />
@@ -221,7 +287,9 @@ function MyVerticallyCenteredModal(props) {
             </Button>
             <Button
               variant="outline-secondary"
+              active={categoryContext["Villa"]}
               style={{ width: "150px", height: "100px" }}
+              onClick={() => handleSelectCategory("Villa")}
             >
               <MdVilla style={{ fontSize: "34px" }} />
               <br />
@@ -229,7 +297,9 @@ function MyVerticallyCenteredModal(props) {
             </Button>
             <Button
               variant="outline-secondary"
+              active={categoryContext["Loft"]}
               style={{ width: "150px", height: "100px" }}
+              onClick={() => handleSelectCategory("Loft")}
             >
               <GiWoodCabin style={{ fontSize: "34px" }} />
               <br />
@@ -237,7 +307,9 @@ function MyVerticallyCenteredModal(props) {
             </Button>
             <Button
               variant="outline-secondary"
+              active={categoryContext["Cottage"]}
               style={{ width: "150px", height: "100px" }}
+              onClick={() => handleSelectCategory("Cottage")}
             >
               <MdCottage style={{ fontSize: "34px" }} />
               <br />
@@ -245,7 +317,9 @@ function MyVerticallyCenteredModal(props) {
             </Button>
             <Button
               variant="outline-secondary"
+              active={categoryContext["Condo"]}
               style={{ width: "150px", height: "100px" }}
+              onClick={() => handleSelectCategory("Condo")}
             >
               <GiFamilyHouse style={{ fontSize: "34px" }} />
               <br />
@@ -253,7 +327,9 @@ function MyVerticallyCenteredModal(props) {
             </Button>
             <Button
               variant="outline-secondary"
+              active={categoryContext["Cabin"]}
               style={{ width: "150px", height: "100px" }}
+              onClick={() => handleSelectCategory("Cabin")}
             >
               <MdCabin style={{ fontSize: "34px" }} />
               <br />
