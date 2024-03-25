@@ -62,10 +62,10 @@ function App() {
   const [budgetContext, setBudgetContext] = useState(() => {
     try {
       const storedBudget = localStorage.getItem("budgetContext");
-      return storedBudget ? parseInt(storedBudget) : 500;
+      return storedBudget ? parseInt(storedBudget) : 650;
     } catch (error) {
       console.error("Error parsing stored budget:", error);
-      return 500;
+      return 650;
     }
   });
   useEffect(() => {
