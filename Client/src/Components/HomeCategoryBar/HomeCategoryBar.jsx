@@ -1,5 +1,7 @@
 import React from "react";
 import Nav from "react-bootstrap/Nav";
+import { useContext } from "react";
+import { CategoryContext } from "../../UserContext";
 import "./HomeCategoryBar.css";
 import { MdApartment } from "react-icons/md";
 import { MdVilla } from "react-icons/md";
@@ -11,7 +13,8 @@ import { BsCheckAll } from "react-icons/bs";
 import HomeFilterModal from "../HomeFilterModal/HomeFilterModal";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
-export default function HomeCategoryBar({ category, setCategory }) {
+export default function HomeCategoryBar() {
+  const { setCategoryContext } = useContext(CategoryContext);
   function setAll() {
     const temp = {
       Apartment: true,
@@ -21,7 +24,7 @@ export default function HomeCategoryBar({ category, setCategory }) {
       Cottage: true,
       Cabin: true,
     };
-    setCategory({ ...temp });
+    setCategoryContext({ ...temp });
   }
   function setApartment() {
     const temp = {
@@ -32,7 +35,7 @@ export default function HomeCategoryBar({ category, setCategory }) {
       Cottage: false,
       Cabin: false,
     };
-    setCategory({ ...temp });
+    setCategoryContext({ ...temp });
   }
   function setVilla() {
     const temp = {
@@ -43,7 +46,7 @@ export default function HomeCategoryBar({ category, setCategory }) {
       Cottage: false,
       Cabin: false,
     };
-    setCategory({ ...temp });
+    setCategoryContext({ ...temp });
   }
   function setLoft() {
     const temp = {
@@ -54,7 +57,7 @@ export default function HomeCategoryBar({ category, setCategory }) {
       Cottage: false,
       Cabin: false,
     };
-    setCategory({ ...temp });
+    setCategoryContext({ ...temp });
   }
   function setCondo() {
     const temp = {
@@ -65,7 +68,7 @@ export default function HomeCategoryBar({ category, setCategory }) {
       Cottage: false,
       Cabin: false,
     };
-    setCategory({ ...temp });
+    setCategoryContext({ ...temp });
   }
   function setCottage() {
     const temp = {
@@ -76,7 +79,7 @@ export default function HomeCategoryBar({ category, setCategory }) {
       Cottage: true,
       Cabin: false,
     };
-    setCategory({ ...temp });
+    setCategoryContext({ ...temp });
   }
   function setCabin() {
     const temp = {
@@ -87,9 +90,9 @@ export default function HomeCategoryBar({ category, setCategory }) {
       Cottage: false,
       Cabin: true,
     };
-    setCategory({ ...temp });
+    setCategoryContext({ ...temp });
   }
-  console.log(category);
+  //console.log(categoryContext);
   return (
     <div className="home-category-bar">
       <Row>
