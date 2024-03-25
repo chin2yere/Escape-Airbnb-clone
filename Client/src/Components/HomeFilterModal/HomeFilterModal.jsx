@@ -5,7 +5,8 @@ import { TbFilters } from "react-icons/tb";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import Nav from "react-bootstrap/Nav";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CategoryContext, BudgetContext, TypeContext } from "../../UserContext";
 import Form from "react-bootstrap/Form";
 import { GiFlamedLeaf } from "react-icons/gi";
 import { MdApartment } from "react-icons/md";
@@ -18,6 +19,11 @@ import { GiFamilyHouse } from "react-icons/gi";
 function MyVerticallyCenteredModal(props) {
   const [value, setValue] = useState(50); // Initial value of the range input
   const maxValue = 1000;
+  const { categoryContext, setCategoryContext } = useContext(CategoryContext);
+  const { budgetContext, setBudgetContext } = useContext(BudgetContext);
+  const { typeContext, setTypeContext } = useContext(TypeContext);
+  console.log(budgetContext);
+  console.log(typeContext);
   //let active = false;
 
   // Function to handle changes to the range input
@@ -285,6 +291,7 @@ function MyVerticallyCenteredModal(props) {
 }
 export default function HomeFilterModal() {
   const [modalShow, setModalShow] = React.useState(false);
+  //console.log(typeof setcategory);
   return (
     <div>
       <Button variant="outline-secondary" onClick={() => setModalShow(true)}>
