@@ -68,6 +68,7 @@ export default function Grid() {
         WhatToParse().map((listing) => (
           <ListingCard
             key={listing.id}
+            id={listing.id}
             location={listing.location}
             name={listing.name}
             price={listing.price_per_night}
