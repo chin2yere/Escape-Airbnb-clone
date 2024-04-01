@@ -10,6 +10,7 @@ import {
 } from "./UserContext.js";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
+import ListingDetails from "./Pages/ListingDetails/ListingDetails.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -121,6 +122,7 @@ function App() {
                       element={userContext ? <Home /> : <Login />}
                     />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/listing/:id" element={<ListingDetails />} />
                   </Routes>
                 </BrowserRouter>
               </BudgetContext.Provider>

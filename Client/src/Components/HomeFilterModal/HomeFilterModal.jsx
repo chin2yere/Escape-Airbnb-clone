@@ -278,7 +278,12 @@ function MyVerticallyCenteredModal(props) {
             <Button
               variant="outline-secondary"
               active={categoryContext["Apartment"]}
-              style={{ width: "150px", height: "100px" }}
+              style={{
+                width: "150px",
+                height: "100px",
+                marginRight: "8px",
+                marginBottom: "8px",
+              }}
               onClick={() => handleSelectCategory("Apartment")}
             >
               <MdApartment style={{ fontSize: "34px" }} />
@@ -288,7 +293,12 @@ function MyVerticallyCenteredModal(props) {
             <Button
               variant="outline-secondary"
               active={categoryContext["Villa"]}
-              style={{ width: "150px", height: "100px" }}
+              style={{
+                width: "150px",
+                height: "100px",
+                marginRight: "8px",
+                marginBottom: "8px",
+              }}
               onClick={() => handleSelectCategory("Villa")}
             >
               <MdVilla style={{ fontSize: "34px" }} />
@@ -298,7 +308,12 @@ function MyVerticallyCenteredModal(props) {
             <Button
               variant="outline-secondary"
               active={categoryContext["Loft"]}
-              style={{ width: "150px", height: "100px" }}
+              style={{
+                width: "150px",
+                height: "100px",
+                marginRight: "8px",
+                marginBottom: "8px",
+              }}
               onClick={() => handleSelectCategory("Loft")}
             >
               <GiWoodCabin style={{ fontSize: "34px" }} />
@@ -308,7 +323,12 @@ function MyVerticallyCenteredModal(props) {
             <Button
               variant="outline-secondary"
               active={categoryContext["Cottage"]}
-              style={{ width: "150px", height: "100px" }}
+              style={{
+                width: "150px",
+                height: "100px",
+                marginRight: "8px",
+                marginBottom: "8px",
+              }}
               onClick={() => handleSelectCategory("Cottage")}
             >
               <MdCottage style={{ fontSize: "34px" }} />
@@ -318,7 +338,12 @@ function MyVerticallyCenteredModal(props) {
             <Button
               variant="outline-secondary"
               active={categoryContext["Condo"]}
-              style={{ width: "150px", height: "100px" }}
+              style={{
+                width: "150px",
+                height: "100px",
+                marginRight: "8px",
+                marginBottom: "8px",
+              }}
               onClick={() => handleSelectCategory("Condo")}
             >
               <GiFamilyHouse style={{ fontSize: "34px" }} />
@@ -328,7 +353,12 @@ function MyVerticallyCenteredModal(props) {
             <Button
               variant="outline-secondary"
               active={categoryContext["Cabin"]}
-              style={{ width: "150px", height: "100px" }}
+              style={{
+                width: "150px",
+                height: "100px",
+                marginRight: "8px",
+                marginBottom: "8px",
+              }}
               onClick={() => handleSelectCategory("Cabin")}
             >
               <MdCabin style={{ fontSize: "34px" }} />
