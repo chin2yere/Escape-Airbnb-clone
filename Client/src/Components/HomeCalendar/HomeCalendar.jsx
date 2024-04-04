@@ -1,13 +1,15 @@
 import React from "react";
 import { useState, useContext } from "react";
+import { StartDateContext, EndDateContext } from "../../UserContext";
 import Nav from "react-bootstrap/Nav";
 import DatePicker from "react-datepicker";
 //import Button from "react-bootstrap/Button";
 
 import "react-datepicker/dist/react-datepicker.css";
 export default function HomeCalendar() {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(null);
+  const { startDateContext, setStartDateContext } =
+    useContext(StartDateContext);
+  const { endDateContext, setEndDateContext } = useContext(EndDateContext);
 
   return (
     <div>
@@ -27,20 +29,23 @@ export default function HomeCalendar() {
         </Nav.Item>
         <Nav.Item>
           <DatePicker
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
+            selected={startDateContext}
+            onChange={(date) => {
+              setStartDateContext(date);
+              setEndDateContext(null);
+            }}
             selectsStart
-            startDate={startDate}
-            endDate={endDate}
+            startDate={startDateContext}
+            endDate={endDateContext}
             monthsShown={2}
           />
           <DatePicker
-            selected={endDate}
-            onChange={(date) => setEndDate(date)}
+            selected={endDateContext}
+            onChange={(date) => setEndDateContext(date)}
             selectsEnd
-            startDate={startDate}
-            endDate={endDate}
-            minDate={startDate}
+            startDate={startDateContext}
+            endDate={endDateContext}
+            minDate={startDateContext}
             monthsShown={2}
           />
         </Nav.Item>

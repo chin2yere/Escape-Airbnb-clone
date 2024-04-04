@@ -6,7 +6,10 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const userdata = fs.readFileSync(path.resolve(__dirname, "users.json"), "utf8");
-const listingsdata = fs.readFileSync(path.resolve(__dirname, "listings.json"), "utf8");
+const listingsdata = fs.readFileSync(
+  path.resolve(__dirname, "listings.json"),
+  "utf8"
+);
 
 const createUsersTable = async () => {
   try {
@@ -57,7 +60,6 @@ const insertUsers = async () => {
         user.Ratings,
         user.Work,
         user.Picture_url,
-
       ];
 
       await pool.query(insertQuery, values);
@@ -83,7 +85,7 @@ const createListingsTable = async () => {
         About VARCHAR(255) NOT NULL,
         Bedrooms INT NOT NULL,
         Amenities VARCHAR(255)[] NOT NULL,
-        Booked_days VARCHAR(255)[] NOT NULL,
+        Booked_days JSON NOT NULL,
         Photo_gallery VARCHAR(255)[] NOT NULL
       )
     `;
@@ -114,8 +116,7 @@ const insertListings = async () => {
         listing.Bedrooms,
         listing.Amenities,
         listing.Booked_days,
-        listing.Photo_gallery
-        
+        listing.Photo_gallery,
       ];
 
       await pool.query(insertQuery, values);
@@ -126,12 +127,10 @@ const insertListings = async () => {
   }
 };
 const setup = async () => {
-  
   await createUsersTable();
   await insertUsers();
   await createListingsTable();
   await insertListings();
-  
 };
 
 export default setup;

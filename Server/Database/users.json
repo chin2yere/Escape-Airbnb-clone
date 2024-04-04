@@ -1,205 +1,226 @@
 [
-    {
-      "Username": "jdoe",
-      "Password": "password1",
-      "Name": "John Doe",
-      "Upcoming_trips": [
-        { "Listing_id": "1", "Payment": 500, "Time":"kkkkkkkk" },
-        { "Listing_id": "2", "Payment": 700, "Time":"kkkkkkkk" }
-      ],
-      "Past_trips": [
-        { "Listing_id": "789ghi", "Payment": 600, "Time":"kkkkkkkk" },
-        { "Listing_id": "012jkl", "Payment": 800, "Time":"kkkkkkkk" }
-      ],
-      "Wishlists": [
-        { "Name": "Safari in Africa", "list": { "xyz123": "Summer", "xyz456": "Fall", "xyz789": "Winter" } },
-        { "Name": "Road trip across Europe", "list": { "abc123": "Spring", "abc456": "Summer", "abc789": "Fall" } }
-      ],
-      "Address": "New York, NY",
-      "Language": "English",
-      "Intro": "Hi, I'm John! I love traveling and exploring new places.",
-      "Ratings": [
-        { "Listing_id": "123abc", "Rating": 5 },
-        { "Listing_id": "456def", "Rating": 4 }
-      ],
-      "Work": "Software Engineer",
-      "Picture_url": "https://example.com/profile_pic.jpg"
-    },
-    {
-      "Username": "asmith",
-      "Password": "password2",
-      "Name": "Alice Smith",
-      "Upcoming_trips": [
-        { "Listing_id": "789ghi", "Payment": 600, "Time":"kkkkkkkk" }
-      ],
-      "Past_trips": [
-        { "Listing_id": "123abc", "Payment": 500, "Time":"kkkkkkkk" }
-      ],
-      "Wishlists": [
-        { "Name": "Beach vacation in the Caribbean", "list": { "def123": "Winter", "def456": "Spring", "def789": "Summer" } }
-      ],
-      "Address": "Los Angeles, CA",
-      "Language": "English",
-      "Intro": "Hello, I'm Alice. I enjoy traveling and meeting new people.",
-      "Ratings": [
-        { "Listing_id": "789ghi", "Rating": 4 }
-      ],
-      "Work": "Marketing Manager",
-      "Picture_url": "https://example.com/alice_profile_pic.jpg"
-    },
-    {
-      "Username": "mjohnson",
-      "Password": "password3",
-      "Name": "Michael Johnson",
-      "Upcoming_trips": [
-        { "Listing_id": "012jkl", "Payment": 800, "Time":"kkkkkkkk" }
-      ],
-      "Past_trips": [
-        { "Listing_id": "456def", "Payment": 700, "Time":"kkkkkkkk" }
-      ],
-      "Wishlists": [
-        { "Name": "Mountain retreat in the Alps", "list": { "ghi123": "Spring", "ghi456": "Summer", "ghi789": "Fall" } }
-      ],
-      "Address": "Chicago, IL",
-      "Language": "English",
-      "Intro": "Hi, I'm Michael! I love exploring nature and hiking in the mountains.",
-      "Ratings": [
-        { "Listing_id": "456def", "Rating": 5 }
-      ],
-      "Work": "Accountant",
-      "Picture_url": "https://example.com/michael_profile_pic.jpg"
-    },
-    {
-      "Username": "edavis",
-      "Password": "password4",
-      "Name": "Emily Davis",
-      "Upcoming_trips": [
-        { "Listing_id": "789ghi", "Payment": 600, "Time":"kkkkkkkk" }
-      ],
-      "Past_trips": [
-        { "Listing_id": "123abc", "Payment": 500, "Time":"kkkkkkkk" }
-      ],
-      "Wishlists": [
-        { "Name": "City tour in Asia", "list": { "jkl123": "Summer", "jkl456": "Fall", "jkl789": "Winter" } }
-      ],
-      "Address": "Houston, TX",
-      "Language": "English",
-      "Intro": "Hi there! I'm Emily. I'm passionate about exploring new cultures and cuisines.",
-      "Ratings": [
-        { "Listing_id": "789ghi", "Rating": 4 }
-      ],
-      "Work": "Graphic Designer",
-      "Picture_url": "https://example.com/emily_profile_pic.jpg"
-    },
-    {
-      "Username": "dbrown",
-      "Password": "password5",
-      "Name": "Daniel Brown",
-      "Upcoming_trips": [
-        { "Listing_id": "012jkl", "Payment": 800, "Time":"kkkkkkkk" }
-      ],
-      "Past_trips": [
-        { "Listing_id": "456def", "Payment": 700, "Time":"kkkkkkkk" }
-      ],
-      "Wishlists": [
-        { "Name": "Road trip across Europe", "list": { "abc123": "Spring", "abc456": "Summer", "abc789": "Fall" } }
-      ],
-      "Address": "Seattle, WA",
-      "Language": "English",
-      "Intro": "Hey, I'm Daniel. I enjoy exploring new cities and trying local foods.",
-      "Ratings": [
-        { "Listing_id": "456def", "Rating": 5 }
-      ],
-      "Work": "Product Manager",
-      "Picture_url": "https://example.com/daniel_profile_pic.jpg"
-    },
-    {
-      "Username": "owilson",
-      "Password": "password6",
-      "Name": "Olivia Wilson",
-      "Upcoming_trips": [
-        { "Listing_id": "789ghi", "Payment": 600, "Time":"kkkkkkkk" }
-      ],
-      "Past_trips": [
-        { "Listing_id": "123abc", "Payment": 500, "Time":"kkkkkkkk" }
-      ],
-      "Wishlists": [
-        { "Name": "Beach vacation in the Caribbean", "list": { "def123": "Winter", "def456": "Spring", "def789": "Summer" } }
-      ],
-      "Address": "Miami, FL",
-      "Language": "English",
-      "Intro": "Hello, I'm Olivia. I love spending time on the beach and exploring coastal towns.",
-      "Ratings": [
-        { "Listing_id": "789ghi", "Rating": 4 }
-      ],
-      "Work": "Teacher",
-      "Picture_url": "https://example.com/olivia_profile_pic.jpg"
-    },
-    {
-      "Username": "wtaylor",
-      "Password": "password7",
-      "Name": "William Taylor",
-      "Upcoming_trips": [
-        { "Listing_id": "012jkl", "Payment": 800, "Time":"kkkkkkkk" }
-      ],
-      "Past_trips": [
-        { "Listing_id": "456def", "Payment": 700, "Time":"kkkkkkkk" }
-      ],
-      "Wishlists": [
-        { "Name": "Safari in Africa", "list": { "xyz123": "Summer", "xyz456": "Fall", "xyz789": "Winter" } }
-      ],
-      "Address": "Denver, CO",
-      "Language": "English",
-      "Intro": "Hi, I'm William! I enjoy outdoor adventures and wildlife photography.",
-      "Ratings": [
-        { "Listing_id": "456def", "Rating": 5 }
-      ],
-      "Work": "Freelance Photographer",
-      "Picture_url": "https://example.com/william_profile_pic.jpg"
-    },
-    {
-      "Username": "smartinez",
-      "Password": "password8",
-      "Name": "Sophia Martinez",
-      "Upcoming_trips": [
-        { "Listing_id": "789ghi", "Payment": 600, "Time":"kkkkkkkk" }
-      ],
-      "Past_trips": [
-        { "Listing_id": "123abc", "Payment": 500, "Time":"kkkkkkkk" }
-      ],
-      "Wishlists": [
-        { "Name": "Mountain retreat in the Alps", "list": { "ghi123": "Spring", "ghi456": "Summer", "ghi789": "Fall" } }
-      ],
-      "Address": "San Francisco, CA",
-      "Language": "English",
-      "Intro": "Hi, I'm Sophia. I'm passionate about hiking and exploring the great outdoors.",
-      "Ratings": [
-        { "Listing_id": "789ghi", "Rating": 4 }
-      ],
-      "Work": "Software Developer",
-      "Picture_url": "https://example.com/sophia_profile_pic.jpg"
-    },
-    {
-      "Username": "janderson",
-      "Password": "password9",
-      "Name": "James Anderson",
-      "Upcoming_trips": [
-        { "Listing_id": "012jkl", "Payment": 800, "Time":"kkkkkkkk" }
-      ],
-      "Past_trips": [
-        { "Listing_id": "456def", "Payment": 700, "Time":"kkkkkkkk" }
-      ],
-      "Wishlists": [
-        { "Name": "Road trip across Europe", "list": { "abc123": "Spring", "abc456": "Summer", "abc789": "Fall" } }
-      ],
-      "Address": "Boston, MA",
-      "Language": "English",
-      "Intro": "Hey there, I'm James. I enjoy exploring new cities and trying different cuisines.",
-      "Ratings": [
-        { "Listing_id": "456def", "Rating": 5 }
-      ],
-      "Work": "Data Analyst",
-      "Picture_url": "https://example.com/james_profile_pic.jpg"
-    }
-  ]
-  
+  {
+    "Username": "jdoe",
+    "Password": "password1",
+    "Name": "John Doe",
+    "Upcoming_trips": [
+      {
+        "Listing_id": "1",
+        "Payment": 500,
+        "From": "2024-05-01",
+        "To": "2024-06-01"
+      },
+      {
+        "Listing_id": "2",
+        "Payment": 700,
+        "From": "2024-07-01",
+        "To": "2024-08-01"
+      }
+    ],
+    "Past_trips": [
+      {
+        "Listing_id": "3",
+        "Payment": 600,
+        "From": "2024-01-01",
+        "To": "2024-01-03"
+      },
+      {
+        "Listing_id": "4",
+        "Payment": 800,
+        "From": "2024-01-05",
+        "To": "2024-01-07"
+      }
+    ],
+    "Wishlists": [
+      {
+        "Name": "Safari in Africa",
+        "list": { "xyz123": "Summer", "xyz456": "Fall", "xyz789": "Winter" }
+      },
+      {
+        "Name": "Road trip across Europe",
+        "list": { "abc123": "Spring", "abc456": "Summer", "abc789": "Fall" }
+      }
+    ],
+    "Address": "New York, NY",
+    "Language": "English",
+    "Intro": "Hi, I'm John! I love traveling and exploring new places.",
+    "Ratings": [
+      { "Listing_id": "123abc", "Rating": 5 },
+      { "Listing_id": "456def", "Rating": 4 }
+    ],
+    "Work": "Software Engineer",
+    "Picture_url": "https://example.com/profile_pic.jpg"
+  },
+  {
+    "Username": "asmith",
+    "Password": "password2",
+    "Name": "Alice Smith",
+    "Upcoming_trips": [
+      {
+        "Listing_id": "5",
+        "Payment": 600,
+        "From": "2024-07-01",
+        "To": "2024-07-03"
+      }
+    ],
+    "Past_trips": [
+      {
+        "Listing_id": "5",
+        "Payment": 600,
+        "From": "2024-01-01",
+        "To": "2024-01-03"
+      },
+      {
+        "Listing_id": "6",
+        "Payment": 360,
+        "From": "2024-01-05",
+        "To": "2024-01-07"
+      }
+    ],
+    "Wishlists": [
+      {
+        "Name": "Beach vacation in the Caribbean",
+        "list": { "def123": "Winter", "def456": "Spring", "def789": "Summer" }
+      }
+    ],
+    "Address": "Los Angeles, CA",
+    "Language": "English",
+    "Intro": "Hello, I'm Alice. I enjoy traveling and meeting new people.",
+    "Ratings": [{ "Listing_id": "789ghi", "Rating": 4 }],
+    "Work": "Marketing Manager",
+    "Picture_url": "https://example.com/alice_profile_pic.jpg"
+  },
+  {
+    "Username": "mjohnson",
+    "Password": "password3",
+    "Name": "Michael Johnson",
+    "Upcoming_trips": [],
+    "Past_trips": [],
+    "Wishlists": [
+      {
+        "Name": "Mountain retreat in the Alps",
+        "list": { "ghi123": "Spring", "ghi456": "Summer", "ghi789": "Fall" }
+      }
+    ],
+    "Address": "Chicago, IL",
+    "Language": "English",
+    "Intro": "Hi, I'm Michael! I love exploring nature and hiking in the mountains.",
+    "Ratings": [{ "Listing_id": "456def", "Rating": 5 }],
+    "Work": "Accountant",
+    "Picture_url": "https://example.com/michael_profile_pic.jpg"
+  },
+  {
+    "Username": "edavis",
+    "Password": "password4",
+    "Name": "Emily Davis",
+    "Upcoming_trips": [],
+    "Past_trips": [],
+    "Wishlists": [
+      {
+        "Name": "City tour in Asia",
+        "list": { "jkl123": "Summer", "jkl456": "Fall", "jkl789": "Winter" }
+      }
+    ],
+    "Address": "Houston, TX",
+    "Language": "English",
+    "Intro": "Hi there! I'm Emily. I'm passionate about exploring new cultures and cuisines.",
+    "Ratings": [{ "Listing_id": "789ghi", "Rating": 4 }],
+    "Work": "Graphic Designer",
+    "Picture_url": "https://example.com/emily_profile_pic.jpg"
+  },
+  {
+    "Username": "dbrown",
+    "Password": "password5",
+    "Name": "Daniel Brown",
+    "Upcoming_trips": [],
+    "Past_trips": [],
+    "Wishlists": [
+      {
+        "Name": "Road trip across Europe",
+        "list": { "abc123": "Spring", "abc456": "Summer", "abc789": "Fall" }
+      }
+    ],
+    "Address": "Seattle, WA",
+    "Language": "English",
+    "Intro": "Hey, I'm Daniel. I enjoy exploring new cities and trying local foods.",
+    "Ratings": [{ "Listing_id": "456def", "Rating": 5 }],
+    "Work": "Product Manager",
+    "Picture_url": "https://example.com/daniel_profile_pic.jpg"
+  },
+  {
+    "Username": "owilson",
+    "Password": "password6",
+    "Name": "Olivia Wilson",
+    "Upcoming_trips": [],
+    "Past_trips": [],
+    "Wishlists": [
+      {
+        "Name": "Beach vacation in the Caribbean",
+        "list": { "def123": "Winter", "def456": "Spring", "def789": "Summer" }
+      }
+    ],
+    "Address": "Miami, FL",
+    "Language": "English",
+    "Intro": "Hello, I'm Olivia. I love spending time on the beach and exploring coastal towns.",
+    "Ratings": [{ "Listing_id": "789ghi", "Rating": 4 }],
+    "Work": "Teacher",
+    "Picture_url": "https://example.com/olivia_profile_pic.jpg"
+  },
+  {
+    "Username": "wtaylor",
+    "Password": "password7",
+    "Name": "William Taylor",
+    "Upcoming_trips": [],
+    "Past_trips": [],
+    "Wishlists": [
+      {
+        "Name": "Safari in Africa",
+        "list": { "xyz123": "Summer", "xyz456": "Fall", "xyz789": "Winter" }
+      }
+    ],
+    "Address": "Denver, CO",
+    "Language": "English",
+    "Intro": "Hi, I'm William! I enjoy outdoor adventures and wildlife photography.",
+    "Ratings": [{ "Listing_id": "456def", "Rating": 5 }],
+    "Work": "Freelance Photographer",
+    "Picture_url": "https://example.com/william_profile_pic.jpg"
+  },
+  {
+    "Username": "smartinez",
+    "Password": "password8",
+    "Name": "Sophia Martinez",
+    "Upcoming_trips": [],
+    "Past_trips": [],
+    "Wishlists": [
+      {
+        "Name": "Mountain retreat in the Alps",
+        "list": { "ghi123": "Spring", "ghi456": "Summer", "ghi789": "Fall" }
+      }
+    ],
+    "Address": "San Francisco, CA",
+    "Language": "English",
+    "Intro": "Hi, I'm Sophia. I'm passionate about hiking and exploring the great outdoors.",
+    "Ratings": [{ "Listing_id": "789ghi", "Rating": 4 }],
+    "Work": "Software Developer",
+    "Picture_url": "https://example.com/sophia_profile_pic.jpg"
+  },
+  {
+    "Username": "janderson",
+    "Password": "password9",
+    "Name": "James Anderson",
+    "Upcoming_trips": [],
+    "Past_trips": [],
+    "Wishlists": [
+      {
+        "Name": "Road trip across Europe",
+        "list": { "abc123": "Spring", "abc456": "Summer", "abc789": "Fall" }
+      }
+    ],
+    "Address": "Boston, MA",
+    "Language": "English",
+    "Intro": "Hey there, I'm James. I enjoy exploring new cities and trying different cuisines.",
+    "Ratings": [{ "Listing_id": "456def", "Rating": 5 }],
+    "Work": "Data Analyst",
+    "Picture_url": "https://example.com/james_profile_pic.jpg"
+  }
+]
