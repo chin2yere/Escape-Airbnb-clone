@@ -55,7 +55,10 @@ export default function ListingDetails() {
             />
           </Col>
           <Col style={{ width: "40%" }}>
-            <ListingDetailsCheckout price={listing.price_per_night} />
+            <ListingDetailsCheckout
+              price={listing.price_per_night}
+              bookedDays={listing.booked_days}
+            />
           </Col>
         </Row>
       </Container>

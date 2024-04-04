@@ -10,11 +10,24 @@ import Button from "react-bootstrap/esm/Button";
 import Stack from "react-bootstrap/Stack";
 import Form from "react-bootstrap/Form";
 
-export default function ListingDetailsCheckout({ price }) {
+export default function ListingDetailsCheckout({ price, bookedDays }) {
   const { startDateContext, setStartDateContext } =
     useContext(StartDateContext);
   const { endDateContext, setEndDateContext } = useContext(EndDateContext);
-  //console.log(startDateContext.split("T")[0]);
+  //console.log(bookedDays);
+  const isValidDate = (date) => {
+    var validity = true;
+
+    Object.entries(bookedDays).map(([key, value]) => {
+      const start = new Date(key);
+      const end = new Date(value);
+      const today = new Date();
+      if (date >= start && date <= end) {
+        validity = false;
+      }
+    });
+    return validity;
+  };
   return (
     <Card
       style={{
@@ -50,7 +63,9 @@ export default function ListingDetailsCheckout({ price }) {
               selectsStart
               startDate={startDateContext}
               endDate={endDateContext}
+              minDate={new Date()}
               monthsShown={2}
+              filterDate={isValidDate}
               style={{ width: "150px" }}
               className="form-control"
             />
@@ -69,6 +84,7 @@ export default function ListingDetailsCheckout({ price }) {
               endDate={endDateContext}
               minDate={startDateContext}
               monthsShown={2}
+              filterDate={isValidDate}
               className="form-control"
             />
           </Col>
