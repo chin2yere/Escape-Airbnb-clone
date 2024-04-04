@@ -104,22 +104,25 @@ export default function Grid() {
       }
     }
     var available = true;
-    Object.entries(bookedDays).map(([key, value]) => {
-      const start = new Date(key);
-      const end = new Date(value);
-      const startContext = new Date(startDateContext);
-      const endContext = new Date(endDateContext);
+    startDateContext != null &&
+      endDateContext != null &&
+      Object.entries(bookedDays).map(([key, value]) => {
+        const start = new Date(key);
+        const end = new Date(value);
+        const startContext = new Date(startDateContext);
+        const endContext = new Date(endDateContext);
 
-      //console.log(start < startContext);
-      if (
-        lapLeft(start, end, startContext, endContext) ||
-        lapRight(start, end, startContext, endContext) ||
-        lapIn(start, end, startContext, endContext) ||
-        lapOut(start, end, startContext, endContext)
-      ) {
-        available = false;
-      }
-    });
+        //console.log(start < startContext);
+
+        if (
+          lapLeft(start, end, startContext, endContext) ||
+          lapRight(start, end, startContext, endContext) ||
+          lapIn(start, end, startContext, endContext) ||
+          lapOut(start, end, startContext, endContext)
+        ) {
+          available = false;
+        }
+      });
     return available;
   }
   //listingsContext && WhatToParse();
