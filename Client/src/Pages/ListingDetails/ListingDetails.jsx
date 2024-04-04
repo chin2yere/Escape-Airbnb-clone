@@ -8,6 +8,7 @@ import ListingDetailsRatings from "../../Components/ListingDetailsRatings/Listin
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import Stack from "react-bootstrap/esm/Stack";
+import Container from "react-bootstrap/esm/Container";
 export default function ListingDetails() {
   const [listing, setListing] = useState({});
   const location = useLocation();
@@ -39,23 +40,25 @@ export default function ListingDetails() {
         <div className="p-2">Save</div>
       </Stack>
       <ListingDetailsImage />
-      <Row>
-        <Col>
-          <ListingDetailsInfo
-            name={listing.name}
-            bedrooms={listing.bedrooms}
-            reviews={listing.reviews}
-            host_id={listing.host}
-            about={listing.about}
-            amenities={listing.amenities}
-            location={listing.location}
-            type={listing.type}
-          />
-        </Col>
-        <Col>
-          <ListingDetailsCheckout />
-        </Col>
-      </Row>
+      <Container>
+        <Row>
+          <Col style={{ width: "60%" }}>
+            <ListingDetailsInfo
+              name={listing.name}
+              bedrooms={listing.bedrooms}
+              reviews={listing.reviews}
+              host_id={listing.host}
+              about={listing.about}
+              amenities={listing.amenities}
+              location={listing.location}
+              type={listing.type}
+            />
+          </Col>
+          <Col style={{ width: "40%" }}>
+            <ListingDetailsCheckout price={listing.price_per_night} />
+          </Col>
+        </Row>
+      </Container>
       <hr />
       <ListingDetailsRatings />
     </div>

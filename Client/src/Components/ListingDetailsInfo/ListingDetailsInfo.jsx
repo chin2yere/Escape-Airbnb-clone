@@ -38,7 +38,7 @@ export default function ListingDetailsInfo({
     };
     host_id && fetchHost();
   }, [name]);
-  console.log(host);
+  //console.log(host);
 
   function getRating() {
     let rating = 0;
@@ -51,7 +51,7 @@ export default function ListingDetailsInfo({
   }
 
   return (
-    <div style={{ textAlign: "left", marginRight: "75px", marginTop: "35px" }}>
+    <div style={{ textAlign: "left", marginTop: "35px" }}>
       <h4>
         {type} in {location}
       </h4>

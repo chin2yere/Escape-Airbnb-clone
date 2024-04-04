@@ -7,6 +7,8 @@ import {
   CategoryContext,
   TypeContext,
   BudgetContext,
+  StartDateContext,
+  EndDateContext,
 } from "./UserContext.js";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
@@ -56,7 +58,25 @@ function App() {
       return storedType ? JSON.parse(storedType) : "All";
     } catch (error) {
       console.error("Error parsing stored type:", error);
-      return All;
+      return "All";
+    }
+  });
+  const [startDateContext, setStartDateContext] = useState(() => {
+    try {
+      const storedDate = localStorage.getItem("startDateContext");
+      return storedDate ? JSON.parse(storedDate) : null;
+    } catch (error) {
+      console.error("Error parsing stored startDate:", error);
+      return null;
+    }
+  });
+  const [endDateContext, setEndDateContext] = useState(() => {
+    try {
+      const storedDate = localStorage.getItem("endDateContext");
+      return storedDate ? JSON.parse(storedDate) : null;
+    } catch (error) {
+      console.error("Error parsing stored Date:", error);
+      return null;
     }
   });
 
@@ -100,7 +120,29 @@ function App() {
     } else {
       localStorage.removeItem("budgetContext");
     }
-  }, [userContext, listingsContext, typeContext, budgetContext]);
+
+    if (startDateContext) {
+      localStorage.setItem(
+        "startDateContext",
+        JSON.stringify(startDateContext)
+      );
+    } else {
+      localStorage.removeItem("startDateContext");
+    }
+
+    if (endDateContext) {
+      localStorage.setItem("endDateContext", JSON.stringify(endDateContext));
+    } else {
+      localStorage.removeItem("endDateContext");
+    }
+  }, [
+    userContext,
+    listingsContext,
+    typeContext,
+    budgetContext,
+    startDateContext,
+    endDateContext,
+  ]);
   //console.log(userContext)
   return (
     <div className="app">
@@ -115,16 +157,27 @@ function App() {
               <BudgetContext.Provider
                 value={{ budgetContext, setBudgetContext }}
               >
-                <BrowserRouter>
-                  <Routes>
-                    <Route
-                      path="/"
-                      element={userContext ? <Home /> : <Login />}
-                    />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/listing/:id" element={<ListingDetails />} />
-                  </Routes>
-                </BrowserRouter>
+                <StartDateContext.Provider
+                  value={{ startDateContext, setStartDateContext }}
+                >
+                  <EndDateContext.Provider
+                    value={{ endDateContext, setEndDateContext }}
+                  >
+                    <BrowserRouter>
+                      <Routes>
+                        <Route
+                          path="/"
+                          element={userContext ? <Home /> : <Login />}
+                        />
+                        <Route path="/login" element={<Login />} />
+                        <Route
+                          path="/listing/:id"
+                          element={<ListingDetails />}
+                        />
+                      </Routes>
+                    </BrowserRouter>
+                  </EndDateContext.Provider>
+                </StartDateContext.Provider>
               </BudgetContext.Provider>
             </TypeContext.Provider>
           </CategoryContext.Provider>
