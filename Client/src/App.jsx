@@ -13,6 +13,7 @@ import {
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import ListingDetails from "./Pages/ListingDetails/ListingDetails.jsx";
+import Chat from "./Pages/Chat/Chat.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -174,6 +175,7 @@ function App() {
                           path="/listing/:id"
                           element={<ListingDetails />}
                         />
+                        <Route path="/chat" element={<Chat />} />
                       </Routes>
                     </BrowserRouter>
                   </EndDateContext.Provider>
