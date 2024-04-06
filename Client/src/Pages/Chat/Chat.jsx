@@ -5,7 +5,7 @@ import Button from "react-bootstrap/esm/Button";
 import Stack from "react-bootstrap/Stack";
 import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../../UserContext";
-import { db } from "../../Components/firebase-config";
+import { db } from "../../Components/firebase";
 import {
   collection,
   addDoc,
