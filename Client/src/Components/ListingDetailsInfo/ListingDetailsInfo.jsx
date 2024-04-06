@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import { useState, useEffect } from "react";
@@ -10,6 +11,7 @@ import { BsDoorOpen } from "react-icons/bs";
 import { GoSponsorTiers } from "react-icons/go";
 import { BsCalendar2Check } from "react-icons/bs";
 import ListGroup from "react-bootstrap/ListGroup";
+import Button from "react-bootstrap/esm/Button";
 
 export default function ListingDetailsInfo({
   name,
@@ -102,6 +104,9 @@ export default function ListingDetailsInfo({
         <div className="p-2">
           <h6>Hosted by {host.name}</h6>
           <p>{host.intro}</p>
+          <Link to="/chat" state={{ ownerName: host.name }}>
+            <Button>Chat with host</Button>
+          </Link>
         </div>
       </Stack>
       <hr />

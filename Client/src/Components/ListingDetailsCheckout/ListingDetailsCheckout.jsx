@@ -14,6 +14,13 @@ export default function ListingDetailsCheckout({ price, bookedDays }) {
   const { startDateContext, setStartDateContext } =
     useContext(StartDateContext);
   const { endDateContext, setEndDateContext } = useContext(EndDateContext);
+  function calculateDays() {
+    const start = new Date(startDateContext);
+    const end = new Date(endDateContext);
+    const seconds = end - start;
+    const days = seconds / (1000 * 60 * 60 * 24);
+    return days;
+  }
   //console.log(bookedDays);
   const isValidDate = (date) => {
     var validity = true;
@@ -125,9 +132,13 @@ export default function ListingDetailsCheckout({ price, bookedDays }) {
       <p>You won't be charged yet</p>
       <Stack direction="horizontal" gap={3}>
         <div className="p-2">
-          <u>{price} * enter nights</u>
+          <u>
+            {price} * {calculateDays()} days
+          </u>
         </div>
-        <div className="p-2 ms-auto">Enter Amount</div>
+        <div className="p-2 ms-auto">
+          {(price * calculateDays()).toFixed(2)}
+        </div>
       </Stack>
       <Stack direction="horizontal" gap={3}>
         <div className="p-2">
@@ -146,7 +157,9 @@ export default function ListingDetailsCheckout({ price, bookedDays }) {
         <div className="p-2">
           <u>Total before taxes</u>
         </div>
-        <div className="p-2 ms-auto">enter</div>
+        <div className="p-2 ms-auto">
+          {(price * calculateDays()).toFixed(2) + 75.0 + 190.0}
+        </div>
       </Stack>
     </Card>
   );
