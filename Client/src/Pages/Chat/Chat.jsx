@@ -21,18 +21,31 @@ export default function () {
   const name_data = location.state; // Access the passed props
   const name = name_data.ownerName;
   const messagesRef = collection(db, "messages");
+  const [oldMessages, setOldMessages] = useState([]);
   const [message, setMessage] = useState("");
   const { userContext } = useContext(UserContext);
   //const room = userContext.name + "-" + name;
   //const possible_room = name + "-" + userContext.name;
   const room = "John Doe-James Anderson";
   useEffect(() => {
-    const queryMessages = query(messagesRef, where("room", "==", room));
-    onSnapshot(queryMessages, (snapshot) => {
-      console.log("new message");
-    });
-  }, []);
+    const queryMessages = query(
+      messagesRef,
+      where("room", "==", room),
+      orderBy("createdAt")
+    );
+    const unsuscribe = onSnapshot(queryMessages, (snapshot) => {
+      let messages = [];
+      snapshot.forEach((doc) => {
+        messages.push({ ...doc.data(), id: doc.id });
+      });
 
+      setOldMessages(messages);
+      console.log(messages);
+    });
+
+    return () => unsuscribe();
+  }, []);
+  console.log(oldMessages);
   const handleSubmit = async (event) => {
     //event.preventDefault();
 
@@ -47,38 +60,45 @@ export default function () {
     setMessage("");
   };
   return (
-    <div
-      style={{
-        position: "fixed",
-        bottom: "0",
-        left: "0",
-        width: "100%",
-        backgroundColor: "#333",
-        padding: "10px",
-        textAlign: "center",
-      }}
-    >
-      <Stack direction="horizontal" gap={2}>
-        <div className="p-1" style={{ width: "100%" }}>
-          <Form.Control
-            id="message-input"
-            as="textarea"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            style={{
-              resize: "none",
-              width: "100%",
-              minHeight: "50px",
-              fontSize: "16px",
-              padding: "10px",
-              border: "2px solid #ccc",
-            }}
-          />
+    <div>
+      {oldMessages.map((message) => (
+        <div key={message.id} className="message">
+          <span className="user">{message.user}:</span> {message.text}
         </div>
-        <div className="p-2 ms-auto">
-          <Button onClick={() => handleSubmit()}>Send</Button>
-        </div>
-      </Stack>
+      ))}
+      <div
+        style={{
+          position: "fixed",
+          bottom: "0",
+          left: "0",
+          width: "100%",
+          backgroundColor: "#333",
+          padding: "10px",
+          textAlign: "center",
+        }}
+      >
+        <Stack direction="horizontal" gap={2}>
+          <div className="p-1" style={{ width: "100%" }}>
+            <Form.Control
+              id="message-input"
+              as="textarea"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              style={{
+                resize: "none",
+                width: "100%",
+                minHeight: "50px",
+                fontSize: "16px",
+                padding: "10px",
+                border: "2px solid #ccc",
+              }}
+            />
+          </div>
+          <div className="p-2 ms-auto">
+            <Button onClick={() => handleSubmit()}>Send</Button>
+          </div>
+        </Stack>
+      </div>
     </div>
   );
 }
