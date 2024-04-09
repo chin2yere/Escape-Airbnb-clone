@@ -30,6 +30,7 @@ export default function ListingDetails() {
     fetchListing();
   }, []);
   console.log(listing);
+
   return (
     <div>
       <Stack direction="horizontal" gap={3}>
@@ -63,7 +64,7 @@ export default function ListingDetails() {
         </Row>
       </Container>
       <hr />
-      <ListingDetailsRatings />
+      <ListingDetailsRatings reviews={listing.reviews} />
     </div>
   );
 }

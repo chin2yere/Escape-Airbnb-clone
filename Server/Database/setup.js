@@ -26,7 +26,7 @@ const createUsersTable = async () => {
         Address VARCHAR(255) NOT NULL,
         Language VARCHAR(255) NOT NULL,
         Intro VARCHAR(255) NOT NULL,
-        Ratings JSON[] NOT NULL,
+        Chats VARCHAR(255)[] NOT NULL,
         Work VARCHAR(255) NOT NULL,
         Picture_url VARCHAR(255) NOT NULL
       )
@@ -40,7 +40,7 @@ const createUsersTable = async () => {
 const insertUsers = async () => {
   try {
     const insertQuery = `
-      INSERT INTO users ( Username, Password, Name, Upcoming_trips, Past_trips, Wishlists, Address, Language, Intro, Ratings, Work, Picture_url)
+      INSERT INTO users ( Username, Password, Name, Upcoming_trips, Past_trips, Wishlists, Address, Language, Intro, Chats, Work, Picture_url)
       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
     `;
 
@@ -57,7 +57,7 @@ const insertUsers = async () => {
         user.Address,
         user.Language,
         user.Intro,
-        user.Ratings,
+        user.Chats,
         user.Work,
         user.Picture_url,
       ];

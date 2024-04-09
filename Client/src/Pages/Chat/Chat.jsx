@@ -1,11 +1,12 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+//import { useLocation } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/esm/Button";
 import Stack from "react-bootstrap/Stack";
 import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../../UserContext";
 import { db } from "../../Components/firebase";
+import "./Chat.css";
 import {
   collection,
   addDoc,
@@ -16,21 +17,19 @@ import {
   orderBy,
 } from "firebase/firestore";
 
-export default function () {
-  const location = useLocation();
-  const name_data = location.state; // Access the passed props
-  const name = name_data.ownerName;
+export default function ({ activeTab }) {
   const messagesRef = collection(db, "messages");
   const [oldMessages, setOldMessages] = useState([]);
   const [message, setMessage] = useState("");
   const { userContext } = useContext(UserContext);
-  //const room = userContext.name + "-" + name;
-  //const possible_room = name + "-" + userContext.name;
-  const room = "John Doe-James Anderson";
+  const room = userContext.name + "-" + activeTab;
+  const possible_room = activeTab + "-" + userContext.name;
+  console.log(possible_room);
+  //const room = "John Doe-James Anderson";
   useEffect(() => {
     const queryMessages = query(
       messagesRef,
-      where("room", "==", room),
+      where("room", "in", [room, possible_room]),
       orderBy("createdAt")
     );
     const unsuscribe = onSnapshot(queryMessages, (snapshot) => {
@@ -40,12 +39,12 @@ export default function () {
       });
 
       setOldMessages(messages);
-      console.log(messages);
+      //console.log(messages);
     });
 
     return () => unsuscribe();
-  }, []);
-  console.log(oldMessages);
+  }, [activeTab]);
+  //console.log(oldMessages);
   const handleSubmit = async (event) => {
     //event.preventDefault();
 
@@ -59,22 +58,45 @@ export default function () {
 
     setMessage("");
   };
+  function getCss(user) {
+    if (user === userContext.name) {
+      return "messageUser";
+    } else {
+      return "message";
+    }
+  }
   return (
     <div>
-      {oldMessages.map((message) => (
-        <div key={message.id} className="message">
-          <span className="user">{message.user}:</span> {message.text}
-        </div>
-      ))}
+      <div
+        style={{
+          position: "fixed",
+          height: "100%", // Set height to make it scrollable
+          overflowY: "auto",
+          top: "0",
+          left: "0",
+          width: "70%",
+          maxHeight: "550px",
+
+          textAlign: "center",
+          marginLeft: " 460px",
+        }}
+      >
+        {oldMessages.map((message) => (
+          <div key={message.id} className={getCss(message.user)}>
+            <span className="user">{message.user}:</span> {message.text}
+          </div>
+        ))}
+      </div>
       <div
         style={{
           position: "fixed",
           bottom: "0",
           left: "0",
-          width: "100%",
+          width: "70%",
           backgroundColor: "#333",
           padding: "10px",
           textAlign: "center",
+          marginLeft: " 460px",
         }}
       >
         <Stack direction="horizontal" gap={2}>

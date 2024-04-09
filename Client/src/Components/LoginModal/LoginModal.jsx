@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useState, useContext } from "react";
 import Form from "react-bootstrap/Form";
-import { UserContext } from "../../UserContext";
+import { UserContext, ChatsContext } from "../../UserContext";
 
 import "./LoginModal.css";
 
@@ -14,6 +14,7 @@ function MyVerticallyCenteredModal(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { userContext, setUserContext } = useContext(UserContext);
+  const { setChatsContext } = useContext(ChatsContext);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -37,6 +38,7 @@ function MyVerticallyCenteredModal(props) {
 
         // Update the user context
         setUserContext(data);
+        setChatsContext(data.chats);
 
         // Navigate to the home page after successful login
         navigate("/");

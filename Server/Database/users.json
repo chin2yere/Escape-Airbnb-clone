@@ -44,10 +44,7 @@
     "Address": "New York, NY",
     "Language": "English",
     "Intro": "Hi, I'm John! I love traveling and exploring new places.",
-    "Ratings": [
-      { "Listing_id": "123abc", "Rating": 5 },
-      { "Listing_id": "456def", "Rating": 4 }
-    ],
+    "Chats": ["James Anderson"],
     "Work": "Software Engineer",
     "Picture_url": "https://example.com/profile_pic.jpg"
   },
@@ -86,7 +83,7 @@
     "Address": "Los Angeles, CA",
     "Language": "English",
     "Intro": "Hello, I'm Alice. I enjoy traveling and meeting new people.",
-    "Ratings": [{ "Listing_id": "789ghi", "Rating": 4 }],
+    "Chats": [],
     "Work": "Marketing Manager",
     "Picture_url": "https://example.com/alice_profile_pic.jpg"
   },
@@ -105,7 +102,7 @@
     "Address": "Chicago, IL",
     "Language": "English",
     "Intro": "Hi, I'm Michael! I love exploring nature and hiking in the mountains.",
-    "Ratings": [{ "Listing_id": "456def", "Rating": 5 }],
+    "Chats": [],
     "Work": "Accountant",
     "Picture_url": "https://example.com/michael_profile_pic.jpg"
   },
@@ -124,7 +121,7 @@
     "Address": "Houston, TX",
     "Language": "English",
     "Intro": "Hi there! I'm Emily. I'm passionate about exploring new cultures and cuisines.",
-    "Ratings": [{ "Listing_id": "789ghi", "Rating": 4 }],
+    "Chats": [],
     "Work": "Graphic Designer",
     "Picture_url": "https://example.com/emily_profile_pic.jpg"
   },
@@ -143,7 +140,7 @@
     "Address": "Seattle, WA",
     "Language": "English",
     "Intro": "Hey, I'm Daniel. I enjoy exploring new cities and trying local foods.",
-    "Ratings": [{ "Listing_id": "456def", "Rating": 5 }],
+    "Chats": [],
     "Work": "Product Manager",
     "Picture_url": "https://example.com/daniel_profile_pic.jpg"
   },
@@ -162,7 +159,7 @@
     "Address": "Miami, FL",
     "Language": "English",
     "Intro": "Hello, I'm Olivia. I love spending time on the beach and exploring coastal towns.",
-    "Ratings": [{ "Listing_id": "789ghi", "Rating": 4 }],
+    "Chats": [],
     "Work": "Teacher",
     "Picture_url": "https://example.com/olivia_profile_pic.jpg"
   },
@@ -181,7 +178,7 @@
     "Address": "Denver, CO",
     "Language": "English",
     "Intro": "Hi, I'm William! I enjoy outdoor adventures and wildlife photography.",
-    "Ratings": [{ "Listing_id": "456def", "Rating": 5 }],
+    "Chats": [],
     "Work": "Freelance Photographer",
     "Picture_url": "https://example.com/william_profile_pic.jpg"
   },
@@ -200,7 +197,7 @@
     "Address": "San Francisco, CA",
     "Language": "English",
     "Intro": "Hi, I'm Sophia. I'm passionate about hiking and exploring the great outdoors.",
-    "Ratings": [{ "Listing_id": "789ghi", "Rating": 4 }],
+    "Chats": [],
     "Work": "Software Developer",
     "Picture_url": "https://example.com/sophia_profile_pic.jpg"
   },
@@ -219,7 +216,7 @@
     "Address": "Boston, MA",
     "Language": "English",
     "Intro": "Hey there, I'm James. I enjoy exploring new cities and trying different cuisines.",
-    "Ratings": [{ "Listing_id": "456def", "Rating": 5 }],
+    "Chats": ["John Doe"],
     "Work": "Data Analyst",
     "Picture_url": "https://example.com/james_profile_pic.jpg"
   }

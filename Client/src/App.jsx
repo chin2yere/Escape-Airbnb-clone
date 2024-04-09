@@ -9,11 +9,12 @@ import {
   BudgetContext,
   StartDateContext,
   EndDateContext,
+  ChatsContext,
 } from "./UserContext.js";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import ListingDetails from "./Pages/ListingDetails/ListingDetails.jsx";
-import Chat from "./Pages/Chat/Chat.jsx";
+import ChatHome from "./Pages/ChatHome/ChatHome.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -90,6 +91,16 @@ function App() {
       return 650;
     }
   });
+
+  const [chatsContext, setChatsContext] = useState(() => {
+    try {
+      const storedChat = localStorage.getItem("chatsContext");
+      return storedChat ? JSON.parse(storedChat) : null;
+    } catch (error) {
+      console.error("Error parsing stored chats:", error);
+      return null;
+    }
+  });
   useEffect(() => {
     // Save the user data to storage whenever the user state changes
     if (userContext) {
@@ -136,6 +147,12 @@ function App() {
     } else {
       localStorage.removeItem("endDateContext");
     }
+
+    if (chatsContext) {
+      localStorage.setItem("chatsContext", JSON.stringify(chatsContext));
+    } else {
+      localStorage.removeItem("chatsContext");
+    }
   }, [
     userContext,
     listingsContext,
@@ -143,6 +160,7 @@ function App() {
     budgetContext,
     startDateContext,
     endDateContext,
+    chatsContext,
   ]);
   //console.log(userContext)
   return (
@@ -164,20 +182,24 @@ function App() {
                   <EndDateContext.Provider
                     value={{ endDateContext, setEndDateContext }}
                   >
-                    <BrowserRouter>
-                      <Routes>
-                        <Route
-                          path="/"
-                          element={userContext ? <Home /> : <Login />}
-                        />
-                        <Route path="/login" element={<Login />} />
-                        <Route
-                          path="/listing/:id"
-                          element={<ListingDetails />}
-                        />
-                        <Route path="/chat" element={<Chat />} />
-                      </Routes>
-                    </BrowserRouter>
+                    <ChatsContext.Provider
+                      value={{ chatsContext, setChatsContext }}
+                    >
+                      <BrowserRouter>
+                        <Routes>
+                          <Route
+                            path="/"
+                            element={userContext ? <Home /> : <Login />}
+                          />
+                          <Route path="/login" element={<Login />} />
+                          <Route
+                            path="/listing/:id"
+                            element={<ListingDetails />}
+                          />
+                          <Route path="/chat" element={<ChatHome />} />
+                        </Routes>
+                      </BrowserRouter>
+                    </ChatsContext.Provider>
                   </EndDateContext.Provider>
                 </StartDateContext.Provider>
               </BudgetContext.Provider>

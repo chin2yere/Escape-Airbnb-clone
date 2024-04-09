@@ -52,10 +52,10 @@ const getUserByConstraint = async (req, res) => {
     const value = req.params.value;
     //console.log(constraint, value);
     const results = await users_sequelize.findOne(constraint, parseInt(value));
-    console.log(results.rows);
-    res.status(200).json(results.rows[0]);
+    //console.log(results.rows);
+    return res.status(200).json(results.rows[0]);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    return res.status(400).json({ error: error.message });
   }
 };
 
@@ -72,7 +72,7 @@ const createUser = async (req, res) => {
       Address,
       Language,
       Intro,
-      Ratings,
+      Chats,
       Work,
       Picture_url,
     } = req.body;
@@ -86,7 +86,7 @@ const createUser = async (req, res) => {
       Address,
       Language,
       Intro,
-      Ratings,
+      Chats,
       Work,
       Picture_url
     );
@@ -110,7 +110,7 @@ const updateUser = async (req, res) => {
       Address,
       Language,
       Intro,
-      Ratings,
+      Chats,
       Work,
       Picture_url,
     } = req.body;
@@ -125,12 +125,12 @@ const updateUser = async (req, res) => {
       Address,
       Language,
       Intro,
-      Ratings,
+      Chats,
       Work,
       Picture_url
     );
-    //console.log(results);
-    res.status(201).json(results.rows);
+    console.log(results.rows[0]);
+    res.status(201).json(results.rows[0]);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -180,7 +180,7 @@ const getListingByConstraint = async (req, res) => {
       constraint,
       parseInt(value)
     );
-    console.log(results.rows);
+    //console.log(results.rows);
     res.status(200).json(results.rows[0]);
   } catch (error) {
     res.status(400).json({ error: error.message });

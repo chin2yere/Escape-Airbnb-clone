@@ -1,0 +1,18 @@
+.message {
+  background-color: rgba(19, 19, 18, 0.132);
+  padding: 10px;
+  margin: 20px;
+  width: 50%;
+  text-align: left;
+  border-radius: 15px;
+}
+.messageUser {
+  background-color: rgba(227, 80, 124, 0.655);
+  padding: 10px;
+  margin: 20px;
+
+  text-align: right;
+  border-radius: 15px;
+
+  margin-left: 48%;
+}

@@ -7,6 +7,7 @@ const TypeContext = createContext();
 const BudgetContext = createContext();
 const StartDateContext = createContext();
 const EndDateContext = createContext();
+const ChatsContext = createContext();
 export {
   UserContext,
   ListingsContext,
@@ -15,4 +16,5 @@ export {
   BudgetContext,
   StartDateContext,
   EndDateContext,
+  ChatsContext,
 };

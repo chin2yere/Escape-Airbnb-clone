@@ -10,13 +10,14 @@ import { TfiWorld } from "react-icons/tfi";
 import { TfiMenu } from "react-icons/tfi";
 import { CgProfile } from "react-icons/cg";
 import HomeCalendar from "../HomeCalendar/HomeCalendar";
-import { UserContext } from "../../UserContext";
+import { UserContext, ChatsContext } from "../../UserContext";
 import { useState, useContext } from "react";
 
 //import "./Home.css";
 
 export default function HomeTopBar() {
   const { setUserContext } = useContext(UserContext);
+  const { setChatsContext } = useContext(ChatsContext);
   return (
     <>
       <div>
@@ -63,6 +64,7 @@ export default function HomeTopBar() {
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <Button
                   onClick={() => {
+                    setChatsContext(null);
                     setUserContext(null);
                   }}
                   variant="outline-secondary"
