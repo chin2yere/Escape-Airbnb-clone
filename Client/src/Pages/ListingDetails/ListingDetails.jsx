@@ -40,7 +40,7 @@ export default function ListingDetails() {
         <div className="p-2 ms-auto">Share</div>
         <div className="p-2">Save</div>
       </Stack>
-      <ListingDetailsImage />
+      <ListingDetailsImage pictures={listing.photo_gallery} />
       <Container>
         <Row>
           <Col style={{ width: "60%" }}>

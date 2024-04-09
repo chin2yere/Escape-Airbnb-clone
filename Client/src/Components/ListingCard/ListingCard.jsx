@@ -16,9 +16,10 @@ export default function ListingCard({
   name,
   type,
   reviews,
+  picture,
 }) {
   const [index, setIndex] = useState(0);
-
+  //console.log(picture);
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
@@ -31,28 +32,19 @@ export default function ListingCard({
     <Card
       style={{
         width: "20rem",
-        height: "420px",
+        height: "430px",
         borderColor: "rgba(227, 80, 124)",
       }}
     >
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
-          <Image
-            src="https://venturebeat.com/wp-content/uploads/2014/07/airbnb-logo-red.jpg?fit=2560%2C1440&strip=all"
-            fluid
-          />
+          <Image src={picture[0]} fluid style={{ maxHeight: "160px" }} />
         </Carousel.Item>
         <Carousel.Item>
-          <Image
-            src="https://venturebeat.com/wp-content/uploads/2014/07/airbnb-logo-red.jpg?fit=2560%2C1440&strip=all"
-            fluid
-          />
+          <Image src={picture[1]} fluid style={{ maxHeight: "160px" }} />
         </Carousel.Item>
         <Carousel.Item>
-          <Image
-            src="https://venturebeat.com/wp-content/uploads/2014/07/airbnb-logo-red.jpg?fit=2560%2C1440&strip=all"
-            fluid
-          />
+          <Image src={picture[2]} fluid style={{ maxHeight: "160px" }} />
         </Carousel.Item>
       </Carousel>
       <Card.Body>

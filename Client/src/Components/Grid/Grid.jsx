@@ -141,6 +141,7 @@ export default function Grid() {
                 price={listing.price_per_night}
                 type={listing.type}
                 reviews={listing.reviews}
+                picture={listing.photo_gallery}
               />
             )
         )}
