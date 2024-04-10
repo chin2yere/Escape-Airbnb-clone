@@ -16,6 +16,11 @@ import Login from "./Pages/Login/Login";
 import ListingDetails from "./Pages/ListingDetails/ListingDetails.jsx";
 import ChatHome from "./Pages/ChatHome/ChatHome.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
+import UserMenu from "./Pages/UserMenu/UserMenu.jsx";
+import Profile from "./Pages/Profile/Profile.jsx";
+import PastTrips from "./Pages/PastTrips/PastTrips.jsx";
+import FutureTrips from "./Pages/FutureTrips/FutureTrips.jsx";
+import Wishlist from "./Pages/Wishlist/Wishlist.jsx";
 
 function App() {
   const [userContext, setUserContext] = useState(() => {
@@ -197,6 +202,14 @@ function App() {
                             element={<ListingDetails />}
                           />
                           <Route path="/chat" element={<ChatHome />} />
+                          <Route path="/usermenu" element={<UserMenu />} />
+                          <Route path="/profile" element={<Profile />} />
+                          <Route path="/past/trips" element={<PastTrips />} />
+                          <Route
+                            path="/future/trips"
+                            element={<FutureTrips />}
+                          />
+                          <Route path="/wishlists" element={<Wishlist />} />
                         </Routes>
                       </BrowserRouter>
                     </ChatsContext.Provider>

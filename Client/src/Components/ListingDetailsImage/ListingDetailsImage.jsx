@@ -3,9 +3,10 @@ import React from "react";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import Image from "react-bootstrap/esm/Image";
+import ListingDetailsModal from "../ListingDetailsModal/ListingDetailsModal";
 
 export default function ListingDetailsImage({ pictures }) {
-  console.log(pictures);
+  //console.log(pictures);
   if (pictures) {
     return (
       <Row
@@ -51,6 +52,8 @@ export default function ListingDetailsImage({ pictures }) {
                 fluid
                 style={{ height: "200px", width: "300px" }}
               />
+
+              <ListingDetailsModal pictures={pictures} />
             </Col>
           </Row>
         </Col>

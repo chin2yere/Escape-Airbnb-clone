@@ -22,6 +22,7 @@ export default function ListingDetailsCheckout({ price, bookedDays }) {
     return days;
   }
   //console.log(bookedDays);
+  const subtotal = price * calculateDays();
   const isValidDate = (date) => {
     var validity = true;
 
@@ -158,7 +159,7 @@ export default function ListingDetailsCheckout({ price, bookedDays }) {
           <u>Total before taxes</u>
         </div>
         <div className="p-2 ms-auto">
-          {(price * calculateDays()).toFixed(2) + 75.0 + 190.0}
+          {(subtotal + 75.0 + 190.0).toFixed(2)}
         </div>
       </Stack>
     </Card>

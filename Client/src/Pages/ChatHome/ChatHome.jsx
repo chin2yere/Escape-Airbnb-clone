@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useContext, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,6 +9,7 @@ import "./ChatHome.css";
 import { UserContext } from "../../UserContext";
 import { BsChatDots } from "react-icons/bs";
 import Chat from "../Chat/Chat";
+import Button from "react-bootstrap/esm/Button";
 export default function ChatHome() {
   const location = useLocation();
   const name_data = location.state; // Access the passed props
@@ -29,7 +30,7 @@ export default function ChatHome() {
     return isIt;
   }
   useEffect(() => {
-    if (chats && includes(chats) == false) {
+    if (name != "" && chats && includes(chats) == false) {
       let newChat = chats;
       newChat.push(name);
 
@@ -85,38 +86,48 @@ export default function ChatHome() {
       chats && handleUpdate();
     }
   }, []);
-
-  return (
-    <Container>
-      <Row>
-        <Col className="sidebarChat" style={{ width: "30%" }}>
-          <h4>
-            <em>Messages</em>
-          </h4>
-          <hr />
-          <br />
-          <br />
-          <Nav fill variant="tabs" className="flex-column">
-            {chats &&
-              chats.map((chat) => {
-                return (
-                  <Nav.Item key={chat}>
-                    <Nav.Link
-                      onClick={() => setActiveTab(chat)}
-                      style={{ color: "white" }}
-                    >
-                      <BsChatDots /> &nbsp;&nbsp;
-                      {chat}
-                    </Nav.Link>
-                  </Nav.Item>
-                );
-              })}
-          </Nav>
-        </Col>
-        <Col style={{ width: "70%" }}>
-          <Chat activeTab={activeTab} />
-        </Col>
-      </Row>
-    </Container>
-  );
+  if (name != "") {
+    return (
+      <Container>
+        <Row>
+          <Col className="sidebarChat" style={{ width: "30%" }}>
+            <h4>
+              <em>Messages</em>
+            </h4>
+            <hr />
+            <br />
+            <br />
+            <Nav fill variant="tabs" className="flex-column">
+              {chats &&
+                chats.map((chat) => {
+                  return (
+                    <Nav.Item key={chat}>
+                      <Nav.Link
+                        onClick={() => setActiveTab(chat)}
+                        style={{ color: "white" }}
+                      >
+                        <BsChatDots /> &nbsp;&nbsp;
+                        {chat}
+                      </Nav.Link>
+                    </Nav.Item>
+                  );
+                })}
+            </Nav>
+          </Col>
+          <Col style={{ width: "70%" }}>
+            <Chat activeTab={activeTab} />
+          </Col>
+        </Row>
+      </Container>
+    );
+  } else {
+    return (
+      <div>
+        <h5>Your chat is empty</h5>
+        <Link to="/usermenu">
+          <Button>Click here to go back</Button>
+        </Link>
+      </div>
+    );
+  }
 }

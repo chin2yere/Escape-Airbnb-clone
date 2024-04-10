@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import { TfiWorld } from "react-icons/tfi";
 import { TfiMenu } from "react-icons/tfi";
@@ -16,6 +17,7 @@ import { useState, useContext } from "react";
 //import "./Home.css";
 
 export default function HomeTopBar() {
+  const navigate = useNavigate();
   const { setUserContext } = useContext(UserContext);
   const { setChatsContext } = useContext(ChatsContext);
   return (
@@ -64,8 +66,7 @@ export default function HomeTopBar() {
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <Button
                   onClick={() => {
-                    setChatsContext(null);
-                    setUserContext(null);
+                    navigate("/usermenu");
                   }}
                   variant="outline-secondary"
                 >
