@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import { useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import DatePicker from "react-datepicker";
 import { StartDateContext, EndDateContext } from "../../UserContext";
@@ -14,6 +15,7 @@ export default function ListingDetailsCheckout({ price, bookedDays }) {
   const { startDateContext, setStartDateContext } =
     useContext(StartDateContext);
   const { endDateContext, setEndDateContext } = useContext(EndDateContext);
+  const navigate = useNavigate();
   function calculateDays() {
     const start = new Date(startDateContext);
     const end = new Date(endDateContext);
@@ -126,6 +128,7 @@ export default function ListingDetailsCheckout({ price, bookedDays }) {
             backgroundColor: "rgba(227, 80, 124)",
             color: "white",
           }}
+          onClick={() => navigate("/payment")}
         >
           Reserve
         </Button>

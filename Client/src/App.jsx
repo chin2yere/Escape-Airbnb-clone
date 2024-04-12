@@ -24,6 +24,7 @@ import Wishlist from "./Pages/Wishlist/Wishlist.jsx";
 import Map from "./Pages/Map/Map.jsx";
 import Wishlisting from "./Pages/WishListing/WishListing.jsx";
 import CancelListingSuccess from "./Pages/CancelListingSuccess/CancelListingSuccess.jsx";
+import Payment from "./Pages/Payment/Payment.jsx";
 
 function App() {
   const [userContext, setUserContext] = useState(() => {
@@ -219,6 +220,7 @@ function App() {
                             path="/cancel/success"
                             element={<CancelListingSuccess />}
                           />
+                          <Route path="/payment" element={<Payment />} />
                         </Routes>
                       </BrowserRouter>
                     </ChatsContext.Provider>
