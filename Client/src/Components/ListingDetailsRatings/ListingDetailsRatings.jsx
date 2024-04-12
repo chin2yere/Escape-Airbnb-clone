@@ -72,7 +72,7 @@ export default function ListingDetailsRatings({ reviews }) {
   }
 
   return (
-    <div>
+    <div key={new Date()}>
       <h2>Reviews</h2>
       {reviews && getRating()}
       <h5>Total rating: {totalRating}</h5>

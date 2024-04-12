@@ -9,6 +9,9 @@ import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import Stack from "react-bootstrap/esm/Stack";
 import Container from "react-bootstrap/esm/Container";
+//import { UserContext } from "../../UserContext";
+import AddToWishlistModal from "../../Components/AddToWishlistModal/AddToWishlistModal";
+
 export default function ListingDetails() {
   const [listing, setListing] = useState({});
   const location = useLocation();
@@ -29,7 +32,7 @@ export default function ListingDetails() {
     };
     fetchListing();
   }, []);
-  console.log(listing);
+  //console.log(listing);
 
   return (
     <div>
@@ -38,7 +41,9 @@ export default function ListingDetails() {
           <h3>{listing.name}</h3>
         </div>
         <div className="p-2 ms-auto">Share</div>
-        <div className="p-2">Save</div>
+        <div className="p-2">
+          <AddToWishlistModal Id={Id} />
+        </div>
       </Stack>
       <ListingDetailsImage pictures={listing.photo_gallery} />
       <Container>

@@ -34,6 +34,7 @@ export default function PastTrips() {
               from={entry.From}
               to={entry.To}
               key={entry.Listing_id}
+              type={"past"}
             />
           );
         })}

@@ -34,11 +34,19 @@
     "Wishlists": [
       {
         "Name": "Safari in Africa",
-        "list": { "xyz123": "Summer", "xyz456": "Fall", "xyz789": "Winter" }
+        "list": {
+          "1": ["2024-06-01", "2024-06-10"],
+          "2": ["2024-06-11", "2024-06-20"],
+          "3": ["2024-06-09", "2024-06-10"]
+        }
       },
       {
         "Name": "Road trip across Europe",
-        "list": { "abc123": "Spring", "abc456": "Summer", "abc789": "Fall" }
+        "list": {
+          "1": ["2024-06-01", "2024-06-10"],
+          "7": ["2024-06-11", "2024-06-20"],
+          "9": ["2024-06-09", "2024-06-10"]
+        }
       }
     ],
     "Address": "New York, NY",
@@ -77,7 +85,11 @@
     "Wishlists": [
       {
         "Name": "Beach vacation in the Caribbean",
-        "list": { "def123": "Winter", "def456": "Spring", "def789": "Summer" }
+        "list": {
+          "1": ["2024-06-01", "2024-06-10"],
+          "7": ["2024-06-11", "2024-06-20"],
+          "9": ["2024-06-09", "2024-06-10"]
+        }
       }
     ],
     "Address": "Los Angeles, CA",
@@ -96,7 +108,11 @@
     "Wishlists": [
       {
         "Name": "Mountain retreat in the Alps",
-        "list": { "ghi123": "Spring", "ghi456": "Summer", "ghi789": "Fall" }
+        "list": {
+          "1": ["2024-06-01", "2024-06-10"],
+          "7": ["2024-06-11", "2024-06-20"],
+          "9": ["2024-06-09", "2024-06-10"]
+        }
       }
     ],
     "Address": "Chicago, IL",
@@ -115,7 +131,11 @@
     "Wishlists": [
       {
         "Name": "City tour in Asia",
-        "list": { "jkl123": "Summer", "jkl456": "Fall", "jkl789": "Winter" }
+        "list": {
+          "1": ["2024-06-01", "2024-06-10"],
+          "7": ["2024-06-11", "2024-06-20"],
+          "9": ["2024-06-09", "2024-06-10"]
+        }
       }
     ],
     "Address": "Houston, TX",
@@ -134,7 +154,11 @@
     "Wishlists": [
       {
         "Name": "Road trip across Europe",
-        "list": { "abc123": "Spring", "abc456": "Summer", "abc789": "Fall" }
+        "list": {
+          "1": ["2024-06-01", "2024-06-10"],
+          "7": ["2024-06-11", "2024-06-20"],
+          "9": ["2024-06-09", "2024-06-10"]
+        }
       }
     ],
     "Address": "Seattle, WA",
@@ -153,7 +177,11 @@
     "Wishlists": [
       {
         "Name": "Beach vacation in the Caribbean",
-        "list": { "def123": "Winter", "def456": "Spring", "def789": "Summer" }
+        "list": {
+          "1": ["2024-06-01", "2024-06-10"],
+          "7": ["2024-06-11", "2024-06-20"],
+          "9": ["2024-06-09", "2024-06-10"]
+        }
       }
     ],
     "Address": "Miami, FL",
@@ -172,7 +200,11 @@
     "Wishlists": [
       {
         "Name": "Safari in Africa",
-        "list": { "xyz123": "Summer", "xyz456": "Fall", "xyz789": "Winter" }
+        "list": {
+          "1": ["2024-06-01", "2024-06-10"],
+          "7": ["2024-06-11", "2024-06-20"],
+          "9": ["2024-06-09", "2024-06-10"]
+        }
       }
     ],
     "Address": "Denver, CO",
@@ -191,7 +223,11 @@
     "Wishlists": [
       {
         "Name": "Mountain retreat in the Alps",
-        "list": { "ghi123": "Spring", "ghi456": "Summer", "ghi789": "Fall" }
+        "list": {
+          "1": ["2024-06-01", "2024-06-10"],
+          "7": ["2024-06-11", "2024-06-20"],
+          "9": ["2024-06-09", "2024-06-10"]
+        }
       }
     ],
     "Address": "San Francisco, CA",
@@ -210,7 +246,11 @@
     "Wishlists": [
       {
         "Name": "Road trip across Europe",
-        "list": { "abc123": "Spring", "abc456": "Summer", "abc789": "Fall" }
+        "list": {
+          "1": ["2024-06-01", "2024-06-10"],
+          "7": ["2024-06-11", "2024-06-20"],
+          "9": ["2024-06-09", "2024-06-10"]
+        }
       }
     ],
     "Address": "Boston, MA",

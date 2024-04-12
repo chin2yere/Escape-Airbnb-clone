@@ -35,18 +35,22 @@ export default function FutureTrips() {
         <h4 style={{ color: "rgba(227, 80, 124)" }}>Where you're going</h4>
         <br />
         <br />
-        {upcoming.map((entry) => {
-          return (
-            <div key={entry.Listing_id}>
-              <h3> In {getDays(entry.From)} days</h3>
-              <TripsCard
-                id={entry.Listing_id}
-                payment={entry.Payment}
-                from={entry.From}
-                to={entry.To}
-              />
-            </div>
-          );
+        {upcoming.map((entry, index) => {
+          if (Object.keys(entry).length != 0) {
+            return (
+              <div key={entry.Listing_id}>
+                <h3> In {getDays(entry.From)} days</h3>
+                <TripsCard
+                  id={entry.Listing_id}
+                  payment={entry.Payment}
+                  from={entry.From}
+                  to={entry.To}
+                  type={"future"}
+                  index={index}
+                />
+              </div>
+            );
+          }
         })}
       </div>
     );

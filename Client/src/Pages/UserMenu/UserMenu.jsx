@@ -5,6 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../UserContext";
 import Col from "react-bootstrap/Col";
+
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/esm/Button";
 import { CgProfile } from "react-icons/cg";
@@ -34,6 +36,16 @@ export default function UserMenu() {
   if (userContext) {
     return (
       <div>
+        <Link to="/">
+          <Button
+            style={{
+              backgroundColor: "rgba(227, 80, 124)",
+              marginBottom: "20px",
+            }}
+          >
+            <AiOutlineArrowLeft />
+          </Button>
+        </Link>
         <Row>
           <Col>
             <Link to="/profile">

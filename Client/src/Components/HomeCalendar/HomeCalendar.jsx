@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import { StartDateContext, EndDateContext } from "../../UserContext";
 import Nav from "react-bootstrap/Nav";
 import DatePicker from "react-datepicker";
+import { Link } from "react-router-dom";
 //import Button from "react-bootstrap/Button";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -23,9 +24,11 @@ export default function HomeCalendar() {
         }}
       >
         <Nav.Item>
-          <button style={{ width: "200px", borderRadius: "25px" }}>
-            Where <br /> Search destinations
-          </button>
+          <Link to="/map">
+            <button style={{ width: "200px", borderRadius: "25px" }}>
+              Where <br /> Search destinations
+            </button>
+          </Link>
         </Nav.Item>
         <Nav.Item>
           <DatePicker

@@ -254,7 +254,8 @@ const updateListing = async (req, res) => {
       Photo_gallery
     );
     //console.log(results);
-    res.status(201).json(results.rows);
+    res.status(201).json(results.rows[0]);
+    //res.status(201).json(results.rows);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

@@ -21,6 +21,9 @@ import Profile from "./Pages/Profile/Profile.jsx";
 import PastTrips from "./Pages/PastTrips/PastTrips.jsx";
 import FutureTrips from "./Pages/FutureTrips/FutureTrips.jsx";
 import Wishlist from "./Pages/Wishlist/Wishlist.jsx";
+import Map from "./Pages/Map/Map.jsx";
+import Wishlisting from "./Pages/WishListing/WishListing.jsx";
+import CancelListingSuccess from "./Pages/CancelListingSuccess/CancelListingSuccess.jsx";
 
 function App() {
   const [userContext, setUserContext] = useState(() => {
@@ -210,6 +213,12 @@ function App() {
                             element={<FutureTrips />}
                           />
                           <Route path="/wishlists" element={<Wishlist />} />
+                          <Route path="/map" element={<Map />} />
+                          <Route path="/wish/list" element={<Wishlisting />} />
+                          <Route
+                            path="/cancel/success"
+                            element={<CancelListingSuccess />}
+                          />
                         </Routes>
                       </BrowserRouter>
                     </ChatsContext.Provider>
