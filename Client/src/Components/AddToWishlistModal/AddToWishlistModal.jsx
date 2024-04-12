@@ -25,9 +25,24 @@ function MyVerticallyCenteredModal({ id, wishlist, ...rest }) {
     const temp = [...wishlist];
     //e.preventDefault();
     function calculateNewWishlist(wishlistName, id) {
+      //const startDate = startDateContext.slice(0, 10);
+      //const endDate = endDateContext.slice(0, 10);
       //console.log(id);
-      const startDate = startDateContext.slice(0, 10);
-      const endDate = endDateContext.slice(0, 10);
+      const startDatePre = new Date(startDateContext);
+
+      const year = startDatePre.getFullYear();
+      const month = String(startDatePre.getMonth() + 1).padStart(2, "0"); // Extract and format month
+      const day = String(startDatePre.getDate()).padStart(2, "0");
+
+      const startDate = `${year}-${month}-${day}`;
+      //end date
+      const endDatePre = new Date(endDateContext);
+
+      const year1 = endDatePre.getFullYear();
+      const month1 = String(endDatePre.getMonth() + 1).padStart(2, "0"); // Extract and format month
+      const day1 = String(endDatePre.getDate()).padStart(2, "0");
+
+      const endDate = `${year1}-${month1}-${day1}`;
 
       let found = false;
       for (let i = 0; i < temp.length; i++) {

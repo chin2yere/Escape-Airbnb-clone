@@ -1,14 +1,174 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import Stack from "react-bootstrap/Stack";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/esm/Button";
-import { useNavigate } from "react-router-dom";
+import {
+  UserContext,
+  StartDateContext,
+  EndDateContext,
+} from "../../UserContext";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Payment() {
+  const location = useLocation();
+  const payment_data = location.state; // Access the passed props
+  const cost = payment_data.cost;
+  const id = payment_data.id;
+  const bookedDays = payment_data.bookedDays;
+  const { userContext, setUserContext } = useContext(UserContext);
+  const { startDateContext } = useContext(StartDateContext);
+  const { endDateContext } = useContext(EndDateContext);
   const [paid, setPaid] = useState(false);
+  const [listing, setListing] = useState({});
   const navigate = useNavigate();
+  useEffect(() => {
+    const fetchListing = async () => {
+      try {
+        const url = `http://localhost:3000/listing/${"id"}/${id}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        setListing(data);
+      } catch (error) {
+        // Handle any network or API request errors
+        alert("Fetch Listing failed: " + error);
+      }
+    };
+    fetchListing();
+  }, []);
+  //Add from booked days
+  const handleAdd = async (start, end, listing) => {
+    //e.preventDefault();
+
+    const currentUserBookedDays = { ...listing.booked_days };
+    //console.log(currentUserBookedDays);
+    currentUserBookedDays[start] = end;
+
+    //console.log(currentUserBookedDays);
+
+    try {
+      // Make the create product API request
+      const response = await fetch(
+        `http://localhost:3000/listing/${listing.id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            Name: listing.name,
+            Location: listing.location,
+            Price_per_night: listing.price_per_night,
+            Type: listing.type,
+            Reviews: listing.reviews,
+            Host: listing.host,
+            About: listing.about,
+            Bedrooms: listing.bedrooms,
+            Amenities: listing.amenities,
+            Booked_days: currentUserBookedDays,
+            Photo_gallery: listing.photo_gallery,
+          }),
+          credentials: "include",
+        }
+      );
+      //console.log(response)
+      if (response.ok) {
+        // Navigate to the business page after successful login
+        const data = await response.json();
+
+        console.log(data);
+        setPaid(true);
+        //const fine = data[0];
+        //console.log(data);
+        //setUserContext(data);
+      } else {
+        // Handle the create failure case
+        alert("creation failed");
+      }
+    } catch (error) {
+      // Handle any network or API request errors
+      alert("creation failed: " + error);
+    }
+  };
+  //add to upcoming trips
+  const handleBookTrip = async (e) => {
+    //e.preventDefault();
+    const startDatePre = new Date(startDateContext);
+
+    const year = startDatePre.getFullYear();
+    const month = String(startDatePre.getMonth() + 1).padStart(2, "0"); // Extract and format month
+    const day = String(startDatePre.getDate()).padStart(2, "0");
+
+    const tempStart = `${year}-${month}-${day}`;
+    //end date
+    const endDatePre = new Date(endDateContext);
+
+    const year1 = endDatePre.getFullYear();
+    const month1 = String(endDatePre.getMonth() + 1).padStart(2, "0"); // Extract and format month
+    const day1 = String(endDatePre.getDate()).padStart(2, "0");
+
+    const tempEnd = `${year1}-${month1}-${day1}`;
+    let entryToAdd = {};
+    entryToAdd["Listing_id"] = id.toString();
+    entryToAdd["Payment"] = parseInt(cost);
+    entryToAdd["From"] = tempStart;
+    entryToAdd["To"] = tempEnd;
+
+    const currentUserUpcomingTrips = [
+      ...userContext.upcoming_trips,
+      entryToAdd,
+    ];
+    console.log(currentUserUpcomingTrips);
+
+    //console.log(currentUserUpcomingTrips);
+
+    try {
+      // Make the create product API request
+
+      const response = await fetch(
+        `http://localhost:3000/user/${userContext.id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            Username: userContext.username,
+            Password: userContext.password,
+            Name: userContext.name,
+            Upcoming_trips: currentUserUpcomingTrips,
+            Past_trips: userContext.past_trips,
+            Wishlists: userContext.wishlists,
+            Address: userContext.address,
+            Language: userContext.language,
+            Intro: userContext.intro,
+            Chats: userContext.chats,
+            Work: userContext.work,
+            Picture_url: userContext.picture_url,
+          }),
+          credentials: "include",
+        }
+      );
+      //console.log(response)
+
+      if (response.ok) {
+        // Navigate to the business page after successful login
+        const data = await response.json();
+        //console.log(data);
+        //const fine = data[0];
+        console.log(data);
+        setUserContext(data);
+        handleAdd(tempStart, tempEnd, listing);
+      } else {
+        // Handle the create failure case
+        alert("creation failed");
+      }
+    } catch (error) {
+      // Handle any network or API request errors
+      alert("creation failed: " + error);
+    }
+  };
   if (!paid) {
     return (
       <div
@@ -43,6 +203,7 @@ export default function Payment() {
           an unforgettable experience!
         </p>
         <div>
+          <h6>Cost: {cost}</h6>
           <h5>Enter Payment information</h5>
           <br />
           <Form>
@@ -88,7 +249,7 @@ export default function Payment() {
             </Stack>
           </Form>
         </div>
-        <Button onClick={() => setPaid(true)}>Proceed to book</Button>
+        <Button onClick={() => handleBookTrip()}>Proceed to book</Button>
       </div>
     );
   } else {

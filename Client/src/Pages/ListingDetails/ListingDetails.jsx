@@ -64,6 +64,7 @@ export default function ListingDetails() {
             <ListingDetailsCheckout
               price={listing.price_per_night}
               bookedDays={listing.booked_days}
+              id={listing.id}
             />
           </Col>
         </Row>

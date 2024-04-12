@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import DatePicker from "react-datepicker";
 import { StartDateContext, EndDateContext } from "../../UserContext";
@@ -11,11 +11,11 @@ import Button from "react-bootstrap/esm/Button";
 import Stack from "react-bootstrap/Stack";
 import Form from "react-bootstrap/Form";
 
-export default function ListingDetailsCheckout({ price, bookedDays }) {
+export default function ListingDetailsCheckout({ price, bookedDays, id }) {
   const { startDateContext, setStartDateContext } =
     useContext(StartDateContext);
   const { endDateContext, setEndDateContext } = useContext(EndDateContext);
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   function calculateDays() {
     const start = new Date(startDateContext);
     const end = new Date(endDateContext);
@@ -120,19 +120,23 @@ export default function ListingDetailsCheckout({ price, bookedDays }) {
           </Form.Select>
         </Row>
       </Container>
-      <Row style={{ padding: "20px" }}>
-        <Button
-          variant="outline-info"
-          style={{
-            height: "60px",
-            backgroundColor: "rgba(227, 80, 124)",
-            color: "white",
-          }}
-          onClick={() => navigate("/payment")}
-        >
-          Reserve
-        </Button>
-      </Row>
+      <Link
+        to="/payment"
+        state={{ cost: (subtotal + 75.0 + 190.0).toFixed(2), id, bookedDays }}
+      >
+        <Row style={{ padding: "20px" }}>
+          <Button
+            variant="outline-info"
+            style={{
+              height: "60px",
+              backgroundColor: "rgba(227, 80, 124)",
+              color: "white",
+            }}
+          >
+            Reserve
+          </Button>
+        </Row>
+      </Link>
       <p>You won't be charged yet</p>
       <Stack direction="horizontal" gap={3}>
         <div className="p-2">
