@@ -104,7 +104,7 @@ export default function ListingDetailsInfo({
         <div className="p-2">
           <h6>Hosted by {host.name}</h6>
           <p>{host.intro}</p>
-          <Link to="/chat" state={{ ownerName: host.name }}>
+          <Link to="/chat" state={{ ownerName: host.name, ownerId: host }}>
             <Button>Chat with host</Button>
           </Link>
         </div>

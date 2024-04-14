@@ -61,7 +61,7 @@ export default function ListingDetailsRatings({ reviews }) {
             </h5>
             <p>{user.intro}</p>
           </div>
-          <Link to="/chat" state={{ ownerName: user.name }}>
+          <Link to="/chat" state={{ ownerName: user.name, ownerId: user }}>
             <Button>Chat with {user.name}</Button>
           </Link>
         </Stack>

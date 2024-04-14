@@ -37,7 +37,7 @@ export default function RoomateCard({ ComeDate, LeaveDate, roomateId }) {
       <h4>Name : {roomate.name}</h4>
       <h5>Arrival : {ComeDate}</h5>
       <h5>Depature : {LeaveDate}</h5> <br />
-      <Link to="/chat" state={{ ownerName: roomate.name }}>
+      <Link to="/chat" state={{ ownerName: roomate.name, ownerId: roomate }}>
         <Button>Chat with {roomate.name}</Button>
       </Link>
     </Card>

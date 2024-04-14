@@ -14,10 +14,13 @@ export default function ChatHome() {
   const location = useLocation();
   const name_data = location.state; // Access the passed props
   const name = name_data.ownerName;
+  const ownerId = name_data.ownerId;
+  //console.log(ownerId);
   const [activeTab, setActiveTab] = useState(name);
   const { userContext, setUserContext } = useContext(UserContext);
-  console.log(userContext);
+  //console.log(userContext);
   let chats = [...userContext.chats];
+
   //console.log(chats);
 
   function includes(chats) {
@@ -34,6 +37,56 @@ export default function ChatHome() {
       let newChat = chats;
       newChat.push(name);
 
+      //
+      let ownerChat = [...ownerId.chats];
+      ownerChat.push(userContext.name);
+      const handleUpdateOwner = async (ownerChat) => {
+        //e.preventDefault();
+
+        try {
+          // Make the create product API request
+
+          const response = await fetch(
+            `http://localhost:3000/user/${ownerId.id}`,
+            {
+              method: "PATCH",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                Username: ownerId.username,
+                Password: ownerId.password,
+                Name: ownerId.name,
+                Upcoming_trips: ownerId.upcoming_trips,
+                Past_trips: ownerId.past_trips,
+                Wishlists: ownerId.wishlists,
+                Address: ownerId.address,
+                Language: ownerId.language,
+                Intro: ownerId.intro,
+                Chats: ownerChat,
+                Work: ownerId.work,
+                Picture_url: ownerId.picture_url,
+              }),
+              credentials: "include",
+            }
+          );
+          //console.log(response)
+
+          if (response.ok) {
+            // Navigate to the business page after successful login
+            const data = await response.json();
+            console.log(data);
+            //const fine = data[0];
+            //console.log(data);
+          } else {
+            // Handle the create failure case
+            alert("creation failed");
+          }
+        } catch (error) {
+          // Handle any network or API request errors
+          alert("creation failed: " + error);
+        }
+      };
       const handleUpdate = async (e) => {
         //e.preventDefault();
 
@@ -74,6 +127,7 @@ export default function ChatHome() {
             console.log(data);
             setUserContext(data);
             chats = data.chats;
+            ownerChat && handleUpdateOwner(ownerChat);
           } else {
             // Handle the create failure case
             alert("creation failed");
