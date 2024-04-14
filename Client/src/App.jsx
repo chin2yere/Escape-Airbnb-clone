@@ -25,6 +25,7 @@ import Map from "./Pages/Map/Map.jsx";
 import Wishlisting from "./Pages/WishListing/WishListing.jsx";
 import CancelListingSuccess from "./Pages/CancelListingSuccess/CancelListingSuccess.jsx";
 import Payment from "./Pages/Payment/Payment.jsx";
+import Roomates from "./Pages/Roomates/Roomates.jsx";
 
 function App() {
   const [userContext, setUserContext] = useState(() => {
@@ -119,7 +120,7 @@ function App() {
     }
 
     if (listingsContext) {
-      localStorage.setItem("listingContext", JSON.stringify(listingsContext));
+      localStorage.setItem("listingsContext", JSON.stringify(listingsContext));
     } else {
       localStorage.removeItem("listingsContext");
     }
@@ -221,6 +222,7 @@ function App() {
                             element={<CancelListingSuccess />}
                           />
                           <Route path="/payment" element={<Payment />} />
+                          <Route path="/roomates" element={<Roomates />} />
                         </Routes>
                       </BrowserRouter>
                     </ChatsContext.Provider>

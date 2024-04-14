@@ -1,57 +1,84 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useEffect, useRef } from "react";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { key } from "./api-key";
-import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
-import { Container } from "react-bootstrap";
+import { ListingsContext } from "../../UserContext";
+import Button from "react-bootstrap/esm/Button";
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
 
-export default function Map() {
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: key, // Replace with your Google Maps API key
-  });
+mapboxgl.accessToken = key; // Mapbox access token
+
+function MapboxMap() {
+  const mapContainerRef = useRef(null);
+  const { listingsContext } = useContext(ListingsContext);
 
   const markers = [
-    { id: 1, position: { lat: 39.807182, lng: -75.9248 } },
-    { id: 2, position: { lat: 39.807, lng: -75.935 } },
-    { id: 3, position: { lat: 39.808, lng: -75.936 } },
+    {
+      lng: -75.9248,
+      lat: 39.807182,
+      popupHtml: "<h3>Marker 1</h3><p>Marker 1 description</p>",
+    },
+    {
+      lng: -75.9348,
+      lat: 39.817182,
+      popupHtml: "<h3>Marker 2</h3><p>Marker 2 description</p>",
+    },
+    {
+      lng: -75.9448,
+      lat: 39.827182,
+      popupHtml: "<h3>Marker 3</h3><p>Marker 3 description</p>",
+    },
+    // Add more markers as needed
   ];
 
-  const mapContainerStyle = {
-    height: "550px",
-    width: "1000px",
-  };
+  useEffect(() => {
+    // Initialize the map
+    const map = new mapboxgl.Map({
+      container: mapContainerRef.current,
+      style: "mapbox://styles/mapbox/streets-v11",
+      center: [-75.9248, 39.807182], // adjust to be more central to all the markers
+      zoom: 5,
+    });
 
-  const center = {
-    lat: 39.80733536798874,
-    lng: -75.9284954609197,
-  };
+    // Add markers to the map
+    listingsContext &&
+      listingsContext.forEach((listing) => {
+        const pin = { ...listing.pin };
+        new mapboxgl.Marker()
+          .setLngLat([pin.lng, pin.lat])
+          .setPopup(
+            new mapboxgl.Popup({ offset: 25 }) // Add a popup
+              .setHTML(pin.popupHtml)
+          )
+          .addTo(map);
+      });
 
-  if (loadError) {
-    console.error("Error loading maps", loadError);
-    return <div>Error loading maps</div>;
-  }
-
-  if (!isLoaded) {
-    return <div>Loading Maps</div>;
-  }
+    // Clean up on unmount
+    return () => map.remove();
+  }, []); // Empty dependency array ensures this effect only runs once
 
   return (
-    <Container className="my-5">
-      <h3>Explore our location</h3>
-      <div style={mapContainerStyle}>
-        <GoogleMap
-          mapContainerStyle={mapContainerStyle}
-          zoom={10}
-          center={center}
-          options={{
-            streetViewControl: false,
-            mapTypeControl: false,
+    <div>
+      <Link to="/">
+        <Button
+          style={{
+            backgroundColor: "rgba(227, 80, 124)",
+            marginBottom: "20px",
           }}
         >
-          {markers.map((marker) => {
-            return <Marker key={marker.id} position={marker.position} />;
-          })}
-        </GoogleMap>
-      </div>
-    </Container>
+          <AiOutlineArrowLeft />
+        </Button>
+      </Link>
+      <h3>Explore our locations</h3>
+      <div
+        ref={mapContainerRef}
+        className="map-container"
+        style={{ height: "600px", width: "1000px" }}
+      />
+    </div>
   );
 }
+
+export default MapboxMap;

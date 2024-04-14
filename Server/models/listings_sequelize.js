@@ -21,6 +21,7 @@ const findOne = (constraint, value) => {
 const create = (
   Name,
   Location,
+  Pin,
   Price_per_night,
   Type,
   Reviews,
@@ -32,10 +33,11 @@ const create = (
   Photo_gallery
 ) => {
   const query =
-    "INSERT INTO listings ( Name, Location, Price_per_night, Type, Reviews, Host, About, Bedrooms, Amenities, Booked_days, Photo_gallery) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *";
+    "INSERT INTO listings ( Name, Location, Pin, Price_per_night, Type, Reviews, Host, About, Bedrooms, Amenities, Booked_days, Photo_gallery) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING *";
   return pool.query(query, [
     Name,
     Location,
+    Pin,
     Price_per_night,
     Type,
     Reviews,
@@ -52,6 +54,7 @@ const update = (
   id,
   Name,
   Location,
+  Pin,
   Price_per_night,
   Type,
   Reviews,
@@ -63,11 +66,12 @@ const update = (
   Photo_gallery
 ) => {
   const query =
-    "UPDATE listings SET Name = $2, Location = $3, Price_per_night = $4, Type = $5, Reviews = $6, Host = $7, About=$8, Bedrooms=$9, Amenities=$10, Booked_days=$11, Photo_gallery=$12  WHERE id = $1 RETURNING *";
+    "UPDATE listings SET Name = $2, Location = $3, Pin = $4, Price_per_night = $5, Type = $6, Reviews = $7, Host = $8, About=$9, Bedrooms=$10, Amenities=$11, Booked_days=$12, Photo_gallery=$13  WHERE id = $1 RETURNING *";
   return pool.query(query, [
     id,
     Name,
     Location,
+    Pin,
     Price_per_night,
     Type,
     Reviews,

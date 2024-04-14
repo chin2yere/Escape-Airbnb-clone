@@ -40,6 +40,17 @@ export default function FutureTrips() {
             return (
               <div key={entry.Listing_id}>
                 <h3> In {getDays(entry.From)} days</h3>
+                <Link
+                  to="/roomates"
+                  state={{
+                    listingId: entry.Listing_id,
+                    startDate: entry.From,
+                    endDate: entry.To,
+                  }}
+                >
+                  <Button>View roomates</Button>
+                </Link>
+
                 <TripsCard
                   id={entry.Listing_id}
                   payment={entry.Payment}

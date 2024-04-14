@@ -108,7 +108,7 @@ export default function Grid() {
       endDateContext != null &&
       Object.entries(bookedDays).map(([key, value]) => {
         const start = new Date(key);
-        const end = new Date(value);
+        const end = new Date(value[0]);
         const startContext = new Date(startDateContext);
         const endContext = new Date(endDateContext);
 

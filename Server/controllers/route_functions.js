@@ -1,6 +1,137 @@
 import users_sequelize from "../models/users_sequelize.js";
 import listings_sequelize from "../models/listings_sequelize.js";
+import nodemailer from "nodemailer";
 
+const sendEmailBook = async (req, res) => {
+  try {
+    var transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "chinyereofforcode@gmail.com",
+        pass: process.env.EMAILTOKEN,
+      },
+    });
+
+    var mailOptions = {
+      from: "chinyereofforcode@gmail.com",
+      to: "obiagelichinyere566@gmail.com",
+      subject: "Your upcoming trip with escape",
+      html: `
+    <html>
+      <head>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+          }
+          .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          }
+          h1 {
+            color: #333333;
+          }
+          p {
+            color: #666666;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h1>Thank You for Booking!</h1>
+          <p>We are thrilled to have you as our guest. Your booking has been confirmed.</p>
+          <p>You have made an initial payment of $250. you will meet in person on the day of your travel to sign your lease and complete your payment.</p>
+          <p>If you have any questions or need further assistance, feel free to contact us.</p>
+          <p>We look forward to welcoming you!</p>
+        </div>
+      </body>
+    </html>
+  `,
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email sent: " + info.response);
+      }
+    });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+//
+const sendEmailCancel = async (req, res) => {
+  try {
+    var transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "chinyereofforcode@gmail.com",
+        pass: process.env.EMAILTOKEN,
+      },
+    });
+
+    var mailOptions = {
+      from: "chinyereofforcode@gmail.com",
+      to: "obiagelichinyere566@gmail.com",
+      subject: "Your trip has been cancelled",
+      html: `
+    <html>
+      <head>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+          }
+          .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          }
+          h1 {
+            color: #333333;
+          }
+          p {
+            color: #666666;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+        <h1>You canceled!</h1>
+        <p>Your reservation has been successfully cancelled.</p>
+        <p>We hope to welcome you back soon for another great experience!</p>
+        <p>If you have any questions or need further assistance, feel free to contact our support team.</p>
+        <p>Thank you for choosing us!</p>
+        </div>
+      </body>
+    </html>
+  `,
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email sent: " + info.response);
+      }
+    });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+//
 const LoginUser = async (req, res) => {
   try {
     const username = req.params.username;
@@ -90,7 +221,7 @@ const createUser = async (req, res) => {
       Work,
       Picture_url
     );
-    res.status(201).json(results.rows);
+    res.status(201).json(results.rows[0]);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -160,6 +291,7 @@ const getListingsByConstraint = async (req, res) => {
   try {
     const constraint = req.params.constraint;
     const value = req.params.value;
+    //console.log(value);
     const results = await listings_sequelize.findAllByConstraint(
       constraint,
       parseInt(value)
@@ -193,6 +325,7 @@ const createListing = async (req, res) => {
     const {
       Name,
       Location,
+      Pin,
       Price_per_night,
       Type,
       Reviews,
@@ -206,6 +339,7 @@ const createListing = async (req, res) => {
     const results = await listings_sequelize.create(
       Name,
       Location,
+      Pin,
       Price_per_night,
       Type,
       Reviews,
@@ -229,6 +363,7 @@ const updateListing = async (req, res) => {
     const {
       Name,
       Location,
+      Pin,
       Price_per_night,
       Type,
       Reviews,
@@ -243,6 +378,7 @@ const updateListing = async (req, res) => {
       req.params.id,
       Name,
       Location,
+      Pin,
       Price_per_night,
       Type,
       Reviews,
@@ -285,4 +421,6 @@ export default {
   createListing,
   updateListing,
   deleteListing,
+  sendEmailBook,
+  sendEmailCancel,
 };

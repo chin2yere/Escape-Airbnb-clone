@@ -2,6 +2,11 @@
   {
     "Name": "Cozy Apartment in Downtown",
     "Location": "New York, NY",
+    "Pin": {
+      "lng": -122.4194,
+      "lat": 37.7749,
+      "popupHtml": "<h3>San Francisco</h3><p>Golden Gate Bridge</p>"
+    },
     "Price_per_night": 150,
     "Type": "Apartment",
     "Reviews": [
@@ -12,7 +17,7 @@
     "About": "This cozy apartment is located in the heart of downtown. Close to restaurants, shops, and attractions.",
     "Bedrooms": 2,
     "Amenities": ["WiFi", "Kitchen", "TV", "Washing machine"],
-    "Booked_days": { "2024-05-01": "2024-06-01" },
+    "Booked_days": { "2024-05-01": ["2024-06-01", "1"] },
     "Photo_gallery": [
       "https://media.gettyimages.com/id/1293762741/photo/modern-living-room-interior-3d-render.jpg?s=612x612&w=gi&k=20&c=6cE9Zg6kGSXOs9WrwCNG-3zXMyLkr1Y1_DH7qg_z-iY=",
       "https://www.decorilla.com/online-decorating/wp-content/uploads/2020/07/Eclectic-house-interior-design-ideas.jpg",
@@ -27,6 +32,11 @@
   {
     "Name": "Luxury Villa with Ocean View",
     "Location": "Los Angeles, CA",
+    "Pin": {
+      "lng": -122.4194,
+      "lat": 37.7749,
+      "popupHtml": "<h3>San Francisco</h3><p>Golden Gate Bridge</p>"
+    },
     "Price_per_night": 500,
     "Type": "Villa",
     "Reviews": [
@@ -37,7 +47,10 @@
     "About": "Experience luxury living with breathtaking ocean views in this stunning villa.",
     "Bedrooms": 5,
     "Amenities": ["WiFi", "Kitchen", "Swimming pool", "Hot tub", "Gym"],
-    "Booked_days": { "2024-07-01": "2024-08-01" },
+    "Booked_days": {
+      "2024-07-01": ["2024-08-01", "1"],
+      "2024-05-20": ["2024-06-30", "2"]
+    },
     "Photo_gallery": [
       "https://media.gettyimages.com/id/1293762741/photo/modern-living-room-interior-3d-render.jpg?s=612x612&w=gi&k=20&c=6cE9Zg6kGSXOs9WrwCNG-3zXMyLkr1Y1_DH7qg_z-iY=",
       "https://www.decorilla.com/online-decorating/wp-content/uploads/2020/07/Eclectic-house-interior-design-ideas.jpg",
@@ -51,6 +64,11 @@
   {
     "Name": "Downtown Loft with City Skyline View",
     "Location": "Chicago, IL",
+    "Pin": {
+      "lng": -87.6298,
+      "lat": 41.8781,
+      "popupHtml": "<h3>Chicago</h3><p>Cloud Gate (The Bean)</p>"
+    },
     "Price_per_night": 200,
     "Type": "Loft",
     "Reviews": [
@@ -61,7 +79,7 @@
     "About": "Enjoy modern urban living with stunning views of the city skyline from this stylish loft.",
     "Bedrooms": 1,
     "Amenities": ["WiFi", "Kitchen", "Air conditioning", "Parking", "Gym"],
-    "Booked_days": { "2024-01-01": "2024-01-03" },
+    "Booked_days": { "2024-01-01": ["2024-01-03", "1"] },
     "Photo_gallery": [
       "https://media.gettyimages.com/id/1293762741/photo/modern-living-room-interior-3d-render.jpg?s=612x612&w=gi&k=20&c=6cE9Zg6kGSXOs9WrwCNG-3zXMyLkr1Y1_DH7qg_z-iY=",
       "https://www.decorilla.com/online-decorating/wp-content/uploads/2020/07/Eclectic-house-interior-design-ideas.jpg",
@@ -75,6 +93,11 @@
   {
     "Name": "Charming Cottage in the Countryside",
     "Location": "Seattle, WA",
+    "Pin": {
+      "lng": -95.3698,
+      "lat": 29.7604,
+      "popupHtml": "<h3>Houston</h3><p>Space Center Houston</p>"
+    },
     "Price_per_night": 120,
     "Type": "Cottage",
     "Reviews": [
@@ -85,7 +108,7 @@
     "About": "Escape to the tranquility of the countryside in this charming cottage surrounded by nature.",
     "Bedrooms": 2,
     "Amenities": ["WiFi", "Kitchen", "Heating", "Garden", "Fireplace"],
-    "Booked_days": { "2024-01-05": "2024-01-07" },
+    "Booked_days": { "2024-01-05": ["2024-01-07", "1"] },
     "Photo_gallery": [
       "https://media.gettyimages.com/id/1293762741/photo/modern-living-room-interior-3d-render.jpg?s=612x612&w=gi&k=20&c=6cE9Zg6kGSXOs9WrwCNG-3zXMyLkr1Y1_DH7qg_z-iY=",
       "https://www.decorilla.com/online-decorating/wp-content/uploads/2020/07/Eclectic-house-interior-design-ideas.jpg",
@@ -99,6 +122,11 @@
   {
     "Name": "Modern Condo near Beach",
     "Location": "Miami, FL",
+    "Pin": {
+      "lng": -95.7129,
+      "lat": 37.0902,
+      "popupHtml": "<h3>Kansas City</h3><p>Nelson-Atkins Museum of Art</p>"
+    },
     "Price_per_night": 300,
     "Type": "Condo",
     "Reviews": [
@@ -116,9 +144,9 @@
       "Balcony"
     ],
     "Booked_days": {
-      "2024-01-01": "2024-01-03",
-      "2024-01-05": "2024-01-07",
-      "2024-07-01": "2024-07-03"
+      "2024-01-01": ["2024-01-03", "2"],
+      "2024-01-05": ["2024-01-07", "2"],
+      "2024-07-01": ["2024-07-03", "2"]
     },
     "Photo_gallery": [
       "https://media.gettyimages.com/id/1293762741/photo/modern-living-room-interior-3d-render.jpg?s=612x612&w=gi&k=20&c=6cE9Zg6kGSXOs9WrwCNG-3zXMyLkr1Y1_DH7qg_z-iY=",
@@ -133,6 +161,11 @@
   {
     "Name": "Rustic Cabin in the Mountains",
     "Location": "Denver, CO",
+    "Pin": {
+      "lng": -80.1917,
+      "lat": 25.7617,
+      "popupHtml": "<h3>Miami</h3><p>South Beach</p>"
+    },
     "Price_per_night": 180,
     "Type": "Cabin",
     "Reviews": [
@@ -158,6 +191,11 @@
   {
     "Name": "Beachfront Villa with Private Pool",
     "Location": "Maui, HI",
+    "Pin": {
+      "lng": -80.1917,
+      "lat": 25.7617,
+      "popupHtml": "<h3>Miami</h3><p>Art Deco Historic District</p>"
+    },
     "Price_per_night": 600,
     "Type": "Villa",
     "Reviews": [
@@ -182,6 +220,11 @@
   {
     "Name": "Downtown Penthouse with Skyline Views",
     "Location": "San Francisco, CA",
+    "Pin": {
+      "lng": -77.0369,
+      "lat": 38.9072,
+      "popupHtml": "<h3>Washington D.C.</h3><p>The White House</p>"
+    },
     "Price_per_night": 400,
     "Type": "Condo",
     "Reviews": [
@@ -206,6 +249,11 @@
   {
     "Name": "Secluded Cottage in the Woods",
     "Location": "Asheville, NC",
+    "Pin": {
+      "lng": -104.9903,
+      "lat": 39.7392,
+      "popupHtml": "<h3>Denver</h3><p>Red Rocks Park and Amphitheatre</p>"
+    },
     "Price_per_night": 250,
     "Type": "Cottage",
     "Reviews": [
@@ -230,6 +278,11 @@
   {
     "Name": "Luxury Apartment in Midtown",
     "Location": "Atlanta, GA",
+    "Pin": {
+      "lng": -122.3321,
+      "lat": 47.6062,
+      "popupHtml": "<h3>Seattle</h3><p>Space Needle</p>"
+    },
     "Price_per_night": 300,
     "Type": "Apartment",
     "Reviews": [
@@ -260,6 +313,11 @@
   {
     "Name": "Mountain Retreat with Spectacular Views",
     "Location": "Aspen, CO",
+    "Pin": {
+      "lng": -111.891,
+      "lat": 40.7608,
+      "popupHtml": "<h3>Salt Lake City</h3><p>Temple Square</p>"
+    },
     "Price_per_night": 350,
     "Type": "Cabin",
     "Reviews": [
@@ -284,6 +342,11 @@
   {
     "Name": "Riverside Cabin with Fishing Access",
     "Location": "Bend, OR",
+    "Pin": {
+      "lng": -81.6557,
+      "lat": 30.3322,
+      "popupHtml": "<h3>Jacksonville</h3><p>St. Johns Riverwalk</p>"
+    },
     "Price_per_night": 200,
     "Type": "Cabin",
     "Reviews": [
@@ -314,6 +377,11 @@
   {
     "Name": "Ski-in/Ski-out Chalet in the Mountains",
     "Location": "Jackson Hole, WY",
+    "Pin": {
+      "lng": -93.265,
+      "lat": 44.9778,
+      "popupHtml": "<h3>Minneapolis</h3><p>Mall of America</p>"
+    },
     "Price_per_night": 450,
     "Type": "Apartment",
     "Reviews": [
@@ -338,6 +406,11 @@
   {
     "Name": "Historic Townhouse in Old Town",
     "Location": "Charleston, SC",
+    "Pin": {
+      "lng": -117.1611,
+      "lat": 32.7157,
+      "popupHtml": "<h3>San Diego</h3><p>San Diego Zoo</p>"
+    },
     "Price_per_night": 280,
     "Type": "Villa",
     "Reviews": [
@@ -369,6 +442,11 @@
   {
     "Name": "Beachfront Villa with Private Pool",
     "Location": "Maui, HI",
+    "Pin": {
+      "lng": -71.0589,
+      "lat": 42.3601,
+      "popupHtml": "<h3>Boston</h3><p>Fenway Park</p>"
+    },
     "Price_per_night": 600,
     "Type": "Villa",
     "Reviews": [
@@ -393,6 +471,11 @@
   {
     "Name": "Downtown Penthouse with Skyline Views",
     "Location": "San Francisco, CA",
+    "Pin": {
+      "lng": -84.388,
+      "lat": 33.749,
+      "popupHtml": "<h3>Atlanta</h3><p>Georgia Aquarium</p>"
+    },
     "Price_per_night": 400,
     "Type": "Loft",
     "Reviews": [
@@ -417,6 +500,11 @@
   {
     "Name": "Secluded Cottage in the Woods",
     "Location": "Asheville, NC",
+    "Pin": {
+      "lng": -80.8431,
+      "lat": 35.2271,
+      "popupHtml": "<h3>Charlotte</h3><p>NASCAR Hall of Fame</p>"
+    },
     "Price_per_night": 250,
     "Type": "Cottage",
     "Reviews": [
@@ -441,6 +529,11 @@
   {
     "Name": "Luxury Apartment in Midtown",
     "Location": "Atlanta, GA",
+    "Pin": {
+      "lng": -96.797,
+      "lat": 32.7767,
+      "popupHtml": "<h3>Dallas</h3><p>Dealey Plaza</p>"
+    },
     "Price_per_night": 300,
     "Type": "Apartment",
     "Reviews": [
@@ -471,6 +564,11 @@
   {
     "Name": "Mountain Retreat with Spectacular Views",
     "Location": "Aspen, CO",
+    "Pin": {
+      "lng": -121.4944,
+      "lat": 38.5816,
+      "popupHtml": "<h3>Sacramento</h3><p>California State Capitol Museum</p>"
+    },
     "Price_per_night": 350,
     "Type": "Cabin",
     "Reviews": [
@@ -495,6 +593,11 @@
   {
     "Name": "Riverside Cabin with Fishing Access",
     "Location": "Bend, OR",
+    "Pin": {
+      "lng": -87.6877,
+      "lat": 41.8334,
+      "popupHtml": "<h3>Chicago</h3><p>Millennium Park</p>"
+    },
     "Price_per_night": 200,
     "Type": "Cabin",
     "Reviews": [
@@ -525,6 +628,11 @@
   {
     "Name": "Wonderful Cottage in the Mountains",
     "Location": "Pennsylvania, PA",
+    "Pin": {
+      "lng": -77.0369,
+      "lat": 38.9072,
+      "popupHtml": "<h3>Washington D.C.</h3><p>National Mall</p>"
+    },
     "Price_per_night": 450,
     "Type": "Cottage",
     "Reviews": [
@@ -549,6 +657,11 @@
   {
     "Name": "Historic Townhouse in Old Town",
     "Location": "Charleston, SC",
+    "Pin": {
+      "lng": -122.3321,
+      "lat": 47.6062,
+      "popupHtml": "<h3>Seattle</h3><p>Pike Place Market</p>"
+    },
     "Price_per_night": 280,
     "Type": "Apartment",
     "Reviews": [

@@ -26,6 +26,7 @@ export default function UserMenu() {
   const { userContext, setUserContext } = useContext(UserContext);
   const navigate = useNavigate();
   function returnState() {
+    //console.log(userContext);
     const chats = [...userContext.chats];
     if (chats.length === 0) {
       return "";
@@ -254,6 +255,7 @@ export default function UserMenu() {
               <Button
                 onClick={() => {
                   setUserContext(null);
+
                   navigate("/");
                 }}
                 style={{ marginTop: "40px" }}

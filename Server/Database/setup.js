@@ -78,6 +78,7 @@ const createListingsTable = async () => {
         id SERIAL PRIMARY KEY,
         Name VARCHAR(255) NOT NULL,
         Location VARCHAR(255) NOT NULL,
+        Pin JSON NOT NULL,
         Price_per_night INT NOT NULL,
         Type VARCHAR(255) NOT NULL,
         Reviews JSON[] NOT NULL,
@@ -98,8 +99,8 @@ const createListingsTable = async () => {
 const insertListings = async () => {
   try {
     const insertQuery = `
-      INSERT INTO listings ( Name, Location, Price_per_night, Type, Reviews, Host, About, Bedrooms, Amenities, Booked_days, Photo_gallery)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+      INSERT INTO listings ( Name, Location, Pin, Price_per_night, Type, Reviews, Host, About, Bedrooms, Amenities, Booked_days, Photo_gallery)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
     `;
 
     const listings = JSON.parse(listingsdata);
@@ -108,6 +109,7 @@ const insertListings = async () => {
       const values = [
         listing.Name,
         listing.Location,
+        listing.Pin,
         listing.Price_per_night,
         listing.Type,
         listing.Reviews,

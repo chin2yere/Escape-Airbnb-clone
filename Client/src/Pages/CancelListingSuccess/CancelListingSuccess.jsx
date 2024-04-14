@@ -8,11 +8,27 @@ export default function CancelListingSuccess() {
   //const { setListingsContext } = useContext(ListingsContext);
 
   const navigate = useNavigate();
+  const sendEmail = async () => {
+    try {
+      const url = `http://localhost:3000/email/cancel`;
+      const response = await fetch(url);
+    } catch (error) {
+      // Handle any network or API request errors
+      alert("email failed: " + error);
+    }
+  };
 
   return (
     <div>
       <h6>You have successfully cancelled</h6>
-      <Button onClick={() => navigate("/")}>Go home</Button>
+      <Button
+        onClick={() => {
+          sendEmail();
+          navigate("/");
+        }}
+      >
+        Go home
+      </Button>
     </div>
   );
 }

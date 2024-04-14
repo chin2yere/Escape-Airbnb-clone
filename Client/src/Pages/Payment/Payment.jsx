@@ -43,7 +43,10 @@ export default function Payment() {
 
     const currentUserBookedDays = { ...listing.booked_days };
     //console.log(currentUserBookedDays);
-    currentUserBookedDays[start] = end;
+    const tempSecond = userContext.id;
+    const tempThird = tempSecond.toString();
+
+    currentUserBookedDays[start] = [end, tempThird];
 
     //console.log(currentUserBookedDays);
 
@@ -59,6 +62,7 @@ export default function Payment() {
           body: JSON.stringify({
             Name: listing.name,
             Location: listing.location,
+            Pin: listing.pin,
             Price_per_night: listing.price_per_night,
             Type: listing.type,
             Reviews: listing.reviews,
@@ -169,6 +173,15 @@ export default function Payment() {
       alert("creation failed: " + error);
     }
   };
+  const sendEmail = async () => {
+    try {
+      const url = `http://localhost:3000/email/book`;
+      const response = await fetch(url);
+    } catch (error) {
+      // Handle any network or API request errors
+      alert("email failed: " + error);
+    }
+  };
   if (!paid) {
     return (
       <div
@@ -257,7 +270,14 @@ export default function Payment() {
       <div>
         <h4>Payment successful</h4>
         <p>You are booked for your trip</p>
-        <Button onClick={() => navigate("/")}>Click here to continue</Button>
+        <Button
+          onClick={() => {
+            sendEmail();
+            navigate("/");
+          }}
+        >
+          Click here to continue
+        </Button>
       </div>
     );
   }

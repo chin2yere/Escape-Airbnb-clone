@@ -113,7 +113,7 @@ export default function LoginModal() {
         }}
         onClick={() => setModalShow(true)}
       >
-        Login/Signup
+        Login
       </Button>
 
       <MyVerticallyCenteredModal

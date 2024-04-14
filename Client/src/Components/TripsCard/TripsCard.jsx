@@ -123,6 +123,7 @@ export default function TripsCard({ id, payment, from, to, type, index }) {
           body: JSON.stringify({
             Name: listing.name,
             Location: listing.location,
+            Pin: listing.pin,
             Price_per_night: listing.price_per_night,
             Type: listing.type,
             Reviews: listing.reviews,
