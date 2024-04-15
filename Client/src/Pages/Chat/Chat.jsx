@@ -78,7 +78,7 @@ export default function ({ activeTab }) {
           maxHeight: "550px",
 
           textAlign: "center",
-          marginLeft: " 460px",
+          marginLeft: "30%",
         }}
       >
         {oldMessages.map((message) => (
@@ -96,7 +96,7 @@ export default function ({ activeTab }) {
           backgroundColor: "#333",
           padding: "10px",
           textAlign: "center",
-          marginLeft: " 460px",
+          marginLeft: "30%",
         }}
       >
         <Stack direction="horizontal" gap={2}>

@@ -122,9 +122,9 @@ export default function ChatHome() {
           if (response.ok) {
             // Navigate to the business page after successful login
             const data = await response.json();
-            console.log(data);
+            //console.log(data);
             //const fine = data[0];
-            console.log(data);
+            //console.log(data);
             setUserContext(data);
             chats = data.chats;
             ownerChat && handleUpdateOwner(ownerChat);
