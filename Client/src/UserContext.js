@@ -8,6 +8,7 @@ const BudgetContext = createContext();
 const StartDateContext = createContext();
 const EndDateContext = createContext();
 const ChatsContext = createContext();
+const ApiUrlContext = createContext();
 export {
   UserContext,
   ListingsContext,
@@ -17,4 +18,5 @@ export {
   StartDateContext,
   EndDateContext,
   ChatsContext,
+  ApiUrlContext,
 };

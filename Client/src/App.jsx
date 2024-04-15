@@ -10,6 +10,7 @@ import {
   StartDateContext,
   EndDateContext,
   ChatsContext,
+  ApiUrlContext,
 } from "./UserContext.js";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
@@ -28,6 +29,10 @@ import Payment from "./Pages/Payment/Payment.jsx";
 import Roomates from "./Pages/Roomates/Roomates.jsx";
 
 function App() {
+  const apiUrlContext =
+    process.env.NODE_ENV === "production"
+      ? "https://-server.up.railway.app"
+      : "http://localhost:3000";
   const [userContext, setUserContext] = useState(() => {
     try {
       const storedUser = localStorage.getItem("userContext");
@@ -195,36 +200,41 @@ function App() {
                     <ChatsContext.Provider
                       value={{ chatsContext, setChatsContext }}
                     >
-                      <BrowserRouter>
-                        <Routes>
-                          <Route
-                            path="/"
-                            element={userContext ? <Home /> : <Login />}
-                          />
-                          <Route path="/login" element={<Login />} />
-                          <Route
-                            path="/listing/:id"
-                            element={<ListingDetails />}
-                          />
-                          <Route path="/chat" element={<ChatHome />} />
-                          <Route path="/usermenu" element={<UserMenu />} />
-                          <Route path="/profile" element={<Profile />} />
-                          <Route path="/past/trips" element={<PastTrips />} />
-                          <Route
-                            path="/future/trips"
-                            element={<FutureTrips />}
-                          />
-                          <Route path="/wishlists" element={<Wishlist />} />
-                          <Route path="/map" element={<Map />} />
-                          <Route path="/wish/list" element={<Wishlisting />} />
-                          <Route
-                            path="/cancel/success"
-                            element={<CancelListingSuccess />}
-                          />
-                          <Route path="/payment" element={<Payment />} />
-                          <Route path="/roomates" element={<Roomates />} />
-                        </Routes>
-                      </BrowserRouter>
+                      <ApiUrlContext.Provider value={{ apiUrlContext }}>
+                        <BrowserRouter>
+                          <Routes>
+                            <Route
+                              path="/"
+                              element={userContext ? <Home /> : <Login />}
+                            />
+                            <Route path="/login" element={<Login />} />
+                            <Route
+                              path="/listing/:id"
+                              element={<ListingDetails />}
+                            />
+                            <Route path="/chat" element={<ChatHome />} />
+                            <Route path="/usermenu" element={<UserMenu />} />
+                            <Route path="/profile" element={<Profile />} />
+                            <Route path="/past/trips" element={<PastTrips />} />
+                            <Route
+                              path="/future/trips"
+                              element={<FutureTrips />}
+                            />
+                            <Route path="/wishlists" element={<Wishlist />} />
+                            <Route path="/map" element={<Map />} />
+                            <Route
+                              path="/wish/list"
+                              element={<Wishlisting />}
+                            />
+                            <Route
+                              path="/cancel/success"
+                              element={<CancelListingSuccess />}
+                            />
+                            <Route path="/payment" element={<Payment />} />
+                            <Route path="/roomates" element={<Roomates />} />
+                          </Routes>
+                        </BrowserRouter>
+                      </ApiUrlContext.Provider>
                     </ChatsContext.Provider>
                   </EndDateContext.Provider>
                 </StartDateContext.Provider>
