@@ -1,14 +1,13 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
-//import { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useState, useContext } from "react";
 import Form from "react-bootstrap/Form";
 import { UserContext, ChatsContext } from "../../UserContext";
 
-//import "./LoginModal.css";
+//this component is the modal for updating the user profile
 
 function MyVerticallyCenteredModal(props) {
   const { userContext, setUserContext } = useContext(UserContext);
@@ -20,13 +19,11 @@ function MyVerticallyCenteredModal(props) {
   const [intro, setIntro] = useState(userContext.intro);
   const [work, setWork] = useState(userContext.work);
   const navigate = useNavigate();
-
+  //this function makes update request to the server
   const handleUpdate = async (e) => {
     //e.preventDefault();
 
     try {
-      // Make the create product API request
-
       const response = await fetch(
         `http://localhost:3000/user/${userContext.id}`,
         {
@@ -51,19 +48,12 @@ function MyVerticallyCenteredModal(props) {
           credentials: "include",
         }
       );
-      //console.log(response)
 
       if (response.ok) {
-        // Navigate to the business page after successful login
         const data = await response.json();
-        //console.log(data);
-        //const fine = data[0];
-        //console.log(data);
         setUserContext(data);
-
-        //chats = data.chats;
       } else {
-        // Handle the create failure case
+        // Handle the update failure case
         alert("creation failed");
       }
     } catch (error) {

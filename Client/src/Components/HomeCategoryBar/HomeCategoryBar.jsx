@@ -13,9 +13,12 @@ import { BsCheckAll } from "react-icons/bs";
 import HomeFilterModal from "../HomeFilterModal/HomeFilterModal";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
+
+//this is the category bar on the home page
 export default function HomeCategoryBar() {
   const { setCategoryContext } = useContext(CategoryContext);
   function setAll() {
+    //this is called when you want to update category context to all
     const temp = {
       Apartment: true,
       Villa: true,
@@ -27,6 +30,7 @@ export default function HomeCategoryBar() {
     setCategoryContext({ ...temp });
   }
   function setApartment() {
+    //this is called when you want to update category context to apartment
     const temp = {
       Apartment: true,
       Villa: false,
@@ -38,6 +42,7 @@ export default function HomeCategoryBar() {
     setCategoryContext({ ...temp });
   }
   function setVilla() {
+    //this is called when you want to update category context to villa
     const temp = {
       Apartment: false,
       Villa: true,
@@ -49,6 +54,7 @@ export default function HomeCategoryBar() {
     setCategoryContext({ ...temp });
   }
   function setLoft() {
+    //this is called when you want to update category context to loft
     const temp = {
       Apartment: false,
       Villa: false,
@@ -60,6 +66,7 @@ export default function HomeCategoryBar() {
     setCategoryContext({ ...temp });
   }
   function setCondo() {
+    //this is called when you want to update category context to condo
     const temp = {
       Apartment: false,
       Villa: false,
@@ -71,6 +78,7 @@ export default function HomeCategoryBar() {
     setCategoryContext({ ...temp });
   }
   function setCottage() {
+    //this is called when you want to update category context to cottage
     const temp = {
       Apartment: false,
       Villa: false,
@@ -82,6 +90,7 @@ export default function HomeCategoryBar() {
     setCategoryContext({ ...temp });
   }
   function setCabin() {
+    //this is called when you want to update category context to cabin
     const temp = {
       Apartment: false,
       Villa: false,
@@ -92,7 +101,7 @@ export default function HomeCategoryBar() {
     };
     setCategoryContext({ ...temp });
   }
-  //console.log(categoryContext);
+
   return (
     <div className="home-category-bar">
       <Row>

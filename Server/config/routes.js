@@ -2,6 +2,7 @@ import express from "express";
 
 import route_functions from "../controllers/route_functions.js";
 
+//this page defines all routes in the application's server
 const router = express.Router();
 router.get("/email/book", route_functions.sendEmailBook);
 router.get("/email/cancel", route_functions.sendEmailCancel);

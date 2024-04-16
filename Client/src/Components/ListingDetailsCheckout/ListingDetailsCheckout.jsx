@@ -11,11 +11,13 @@ import Button from "react-bootstrap/esm/Button";
 import Stack from "react-bootstrap/Stack";
 import Form from "react-bootstrap/Form";
 
+//this component is the reserve card on the listing page
 export default function ListingDetailsCheckout({ price, bookedDays, id }) {
   const { startDateContext, setStartDateContext } =
     useContext(StartDateContext);
   const { endDateContext, setEndDateContext } = useContext(EndDateContext);
-  //const navigate = useNavigate();
+  const [numberOfGuests, setNumberOfGuests] = useState(1);
+  //this function calculates the number of days that you have booked for
   function calculateDays() {
     const start = new Date(startDateContext);
     const end = new Date(endDateContext);
@@ -23,14 +25,16 @@ export default function ListingDetailsCheckout({ price, bookedDays, id }) {
     const days = seconds / (1000 * 60 * 60 * 24);
     return days;
   }
-  //console.log(bookedDays);
-  const subtotal = price * calculateDays();
+
+  //this function calculates the total price
+
+  const subtotal = numberOfGuests * price * calculateDays();
   const isValidDate = (date) => {
     var validity = true;
 
     Object.entries(bookedDays).map(([key, value]) => {
       const start = new Date(key);
-      const end = new Date(value);
+      const end = new Date(value[0]);
       const today = new Date();
       if (date >= start && date <= end) {
         validity = false;
@@ -106,17 +110,20 @@ export default function ListingDetailsCheckout({ price, bookedDays, id }) {
             height: "50px",
           }}
         >
-          <Form.Select>
-            <option> 1 Guest</option>
-            <option>2 Guests</option>
-            <option>3 Guests</option>
-            <option>4 Guests</option>
-            <option>5 Guests</option>
-            <option>6 Guests</option>
-            <option>7 Guests</option>
-            <option>8 Guests</option>
-            <option>9 Guests</option>
-            <option>10 Guests</option>
+          <Form.Select
+            value={numberOfGuests}
+            onChange={(e) => setNumberOfGuests(e.target.value)}
+          >
+            <option value={1}> 1 Guest</option>
+            <option value={2}>2 Guests</option>
+            <option value={3}>3 Guests</option>
+            <option value={4}>4 Guests</option>
+            <option value={5}>5 Guests</option>
+            <option value={6}>6 Guests</option>
+            <option value={7}>7 Guests</option>
+            <option value={8}>8 Guests</option>
+            <option value={9}>9 Guests</option>
+            <option value={10}>10 Guests</option>
           </Form.Select>
         </Row>
       </Container>

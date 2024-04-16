@@ -1,14 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-//import { useEffect, useContext } from "react";
 import Button from "react-bootstrap/esm/Button";
-//import { ListingsContext } from "../../UserContext";
 
+//this function is the success page after you cancel a reservation
 export default function CancelListingSuccess() {
-  //const { setListingsContext } = useContext(ListingsContext);
-
   const navigate = useNavigate();
   const sendEmail = async () => {
+    //send cancellation email
     try {
       const url = `http://localhost:3000/email/cancel`;
       const response = await fetch(url);

@@ -13,6 +13,7 @@ import { BsCalendar2Check } from "react-icons/bs";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/esm/Button";
 
+//this component renders the info on the left side of the listing details page
 export default function ListingDetailsInfo({
   name,
   bedrooms,
@@ -24,7 +25,7 @@ export default function ListingDetailsInfo({
   type,
 }) {
   const [host, setHost] = useState({});
-
+  //the useeffect fetches the host from the database
   useEffect(() => {
     const fetchHost = async () => {
       try {
@@ -40,8 +41,8 @@ export default function ListingDetailsInfo({
     };
     host_id && fetchHost();
   }, [name]);
-  //console.log(host);
 
+  //this function calculates the rating to be displayed
   function getRating() {
     let rating = 0;
     const size = reviews.length;

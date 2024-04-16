@@ -2,9 +2,8 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
+//this function dispays the wishlist card
 export default function WishlistCard({ wishlist, index }) {
-  //const passedvariables = { wishlist: wishlist, index: index };
-
   return (
     <Link to="/wish/list" state={{ wishlist, index }}>
       <Card

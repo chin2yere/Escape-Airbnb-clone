@@ -1,15 +1,13 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
-//import { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useState, useContext } from "react";
 import Form from "react-bootstrap/Form";
 import { UserContext, ChatsContext } from "../../UserContext";
 
-//import "./LoginModal.css";
-
+//this component is the modal button on the signup page that helps create a new user
 function MyVerticallyCenteredModal(props) {
   const { userContext, setUserContext } = useContext(UserContext);
   const { setChatsContext } = useContext(ChatsContext);
@@ -26,7 +24,7 @@ function MyVerticallyCenteredModal(props) {
     //e.preventDefault();
 
     try {
-      // Make the create product API request
+      // Make the create user API request
 
       const response = await fetch(`http://localhost:3000/user`, {
         method: "POST",

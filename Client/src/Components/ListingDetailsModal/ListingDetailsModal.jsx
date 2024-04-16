@@ -5,6 +5,7 @@ import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/esm/Row";
 import Image from "react-bootstrap/esm/Image";
 
+//this component displays the pictures from the view all button
 export default function ListingDetailsModal({ pictures }) {
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);

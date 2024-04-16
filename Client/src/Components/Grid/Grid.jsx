@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect, useContext } from "react";
-//import { useContext } from "react";
 import {
   ListingsContext,
   CategoryContext,
@@ -12,16 +11,17 @@ import {
 import "./Grid.css";
 import ListingCard from "../ListingCard/ListingCard";
 
+//this component is the grid on the home page
 export default function Grid() {
   const { listingsContext, setListingsContext } = useContext(ListingsContext);
   const { startDateContext } = useContext(StartDateContext);
   const { endDateContext } = useContext(EndDateContext);
-  //const [parsedListing, setParsedListing] = useState([]);
   const { categoryContext } = useContext(CategoryContext);
   const { budgetContext } = useContext(BudgetContext);
   const { typeContext } = useContext(TypeContext);
 
   useEffect(() => {
+    //this useeffect fetches all available listings from the database
     const fetchListings = async () => {
       try {
         const url = `http://localhost:3000/listings`;
@@ -36,7 +36,9 @@ export default function Grid() {
     fetchListings();
   }, []);
   function WhatToParse() {
+    //this function filters all the listings based on users input
     function checkType(bedroomsNo) {
+      //this function filters based on property type any, all or entire house
       if (typeContext == "All") {
         return true;
       } else {
@@ -47,12 +49,14 @@ export default function Grid() {
       }
     }
     function checkBudget(price) {
+      //this function filters based on budget
       return price <= budgetContext;
     }
     const searchByCategory = listingsContext.filter((listing) => {
       const category = listing["type"];
 
       if (categoryContext[category] == true) {
+        //check for category first
         return (
           checkType(listing["bedrooms"]) &&
           checkBudget(listing["price_per_night"])
@@ -61,12 +65,12 @@ export default function Grid() {
         return false;
       }
     });
-    //console.log(searchByCategory);
+
     return searchByCategory;
   }
   function isAvailable(listing) {
     const bookedDays = { ...listing.booked_days };
-    //console.log(bookedDays);
+
     function lapLeft(start, end, startDateContext, endDateContext) {
       if (
         startDateContext <= start &&
@@ -112,8 +116,6 @@ export default function Grid() {
         const startContext = new Date(startDateContext);
         const endContext = new Date(endDateContext);
 
-        //console.log(start < startContext);
-
         if (
           lapLeft(start, end, startContext, endContext) ||
           lapRight(start, end, startContext, endContext) ||
@@ -122,11 +124,10 @@ export default function Grid() {
         ) {
           available = false;
         }
-      });
+      }); // search through each of the booked days and see if there's any overlap
     return available;
   }
-  //listingsContext && WhatToParse();
-  //console.log(listingsContext);
+
   return (
     <div className="grid-container">
       {listingsContext &&

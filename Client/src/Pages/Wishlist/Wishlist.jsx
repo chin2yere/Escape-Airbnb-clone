@@ -6,6 +6,7 @@ import WishlistCard from "../../Components/WishlistCard/WishlistCard";
 import Button from "react-bootstrap/Button";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
+//this is the wishlist page
 export default function Wishlist() {
   const { userContext } = useContext(UserContext);
   const wishlist = [...userContext.wishlists];

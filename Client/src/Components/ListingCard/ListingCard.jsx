@@ -9,6 +9,7 @@ import Col from "react-bootstrap/Col";
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
+//this component is the listing card on the home page
 export default function ListingCard({
   id,
   location,
@@ -19,11 +20,11 @@ export default function ListingCard({
   picture,
 }) {
   const [index, setIndex] = useState(0);
-  //console.log(picture);
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
   function calculateReview(array) {
+    //this function calculates the review that is displayed on the card
     let total = 0;
     array.map((object) => (total += object.Rating));
     return total / array.length;
@@ -36,6 +37,7 @@ export default function ListingCard({
         borderColor: "rgba(227, 80, 124)",
       }}
     >
+      {/* This is the carousel */}
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
           <Image src={picture[0]} fluid style={{ maxHeight: "160px" }} />
@@ -54,6 +56,7 @@ export default function ListingCard({
             <Card.Text>{name}</Card.Text>
             <Card.Text>{type}</Card.Text>
             <Card.Text>${price}</Card.Text>
+            {/* this is the button that reroutes the page to the selected listing */}
             <Link to={`/listing/${id}`} state={{ listingId: id }}>
               <Button
                 variant="outline-info"

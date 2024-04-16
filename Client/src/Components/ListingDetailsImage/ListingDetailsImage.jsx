@@ -5,8 +5,8 @@ import Col from "react-bootstrap/esm/Col";
 import Image from "react-bootstrap/esm/Image";
 import ListingDetailsModal from "../ListingDetailsModal/ListingDetailsModal";
 
+//this component renders the pictures on the grid on the listing details page
 export default function ListingDetailsImage({ pictures }) {
-  //console.log(pictures);
   if (pictures) {
     return (
       <Row

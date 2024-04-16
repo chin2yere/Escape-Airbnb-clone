@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 import TripsCard from "../../Components/TripsCard/TripsCard";
 import Button from "react-bootstrap/Button";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+
+//this is the past trips page
 export default function PastTrips() {
   const { userContext } = useContext(UserContext);
-  //const {listingContext} = useContext(ListingsContext)
-  const past = [...userContext.past_trips];
+
+  const past = [...userContext.past_trips]; //create a variable to store the users past trips
 
   if (past) {
     return (

@@ -14,8 +14,7 @@ import HomeCalendar from "../HomeCalendar/HomeCalendar";
 import { UserContext, ChatsContext } from "../../UserContext";
 import { useState, useContext } from "react";
 
-//import "./Home.css";
-
+//this is the top bar on the home page
 export default function HomeTopBar() {
   const navigate = useNavigate();
   const { setUserContext } = useContext(UserContext);

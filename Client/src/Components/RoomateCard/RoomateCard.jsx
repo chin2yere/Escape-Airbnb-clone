@@ -4,10 +4,12 @@ import Button from "react-bootstrap/esm/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
+//this is the card that displays the available roomate
 export default function RoomateCard({ ComeDate, LeaveDate, roomateId }) {
   const [roomate, setRoomate] = useState({});
   useEffect(() => {
     const fetchRoomate = async () => {
+      //this function fetches the roomate
       try {
         const url = `http://localhost:3000/user/${"id"}/${roomateId}`;
         const response = await fetch(url);

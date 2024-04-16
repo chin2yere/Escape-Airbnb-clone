@@ -17,15 +17,17 @@ import {
   orderBy,
 } from "firebase/firestore";
 
+//this component is the chat component
 export default function ({ activeTab }) {
   const messagesRef = collection(db, "messages");
   const [oldMessages, setOldMessages] = useState([]);
   const [message, setMessage] = useState("");
   const { userContext } = useContext(UserContext);
+  //define the chat rooms
   const room = userContext.name + "-" + activeTab;
   const possible_room = activeTab + "-" + userContext.name;
-  console.log(possible_room);
-  //const room = "John Doe-James Anderson";
+
+  //this useeffect displays all messages that meet the following condition
   useEffect(() => {
     const queryMessages = query(
       messagesRef,
@@ -39,13 +41,13 @@ export default function ({ activeTab }) {
       });
 
       setOldMessages(messages);
-      //console.log(messages);
     });
 
     return () => unsuscribe();
   }, [activeTab]);
-  //console.log(oldMessages);
+
   const handleSubmit = async (event) => {
+    //this sensd a post request to firebase api
     //event.preventDefault();
 
     if (message === "") return;
@@ -59,6 +61,7 @@ export default function ({ activeTab }) {
     setMessage("");
   };
   function getCss(user) {
+    //this gets the css for sent and delivered messages
     if (user === userContext.name) {
       return "messageUser";
     } else {

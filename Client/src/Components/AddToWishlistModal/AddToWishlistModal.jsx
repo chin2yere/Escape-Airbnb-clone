@@ -14,39 +14,39 @@ import {
 import Card from "react-bootstrap/Card";
 
 function MyVerticallyCenteredModal({ id, wishlist, ...rest }) {
+  //declare all necessary variables
   const { userContext, setUserContext } = useContext(UserContext);
   const { startDateContext } = useContext(StartDateContext);
   const { endDateContext } = useContext(EndDateContext);
   console.log(startDateContext);
   const [wishlistName, setWishlistName] = useState("");
-  //console.log(startDateContext.slice(0, 10))
+
   //update the server
   const handleUpdate = async (wishlistName, id) => {
-    const temp = [...wishlist];
+    const temp = [...wishlist]; //create a new variable you can tamper with
     //e.preventDefault();
+    //This function checks whether or not the user selects an existing wishlist
+    //or creates a new one
     function calculateNewWishlist(wishlistName, id) {
-      //const startDate = startDateContext.slice(0, 10);
-      //const endDate = endDateContext.slice(0, 10);
-      //console.log(id);
+      //First initialize an appropriate string from the start date
       const startDatePre = new Date(startDateContext);
-
       const year = startDatePre.getFullYear();
       const month = String(startDatePre.getMonth() + 1).padStart(2, "0"); // Extract and format month
       const day = String(startDatePre.getDate()).padStart(2, "0");
-
       const startDate = `${year}-${month}-${day}`;
-      //end date
+      //Then initialize an appripriate string for the end date
       const endDatePre = new Date(endDateContext);
-
       const year1 = endDatePre.getFullYear();
       const month1 = String(endDatePre.getMonth() + 1).padStart(2, "0"); // Extract and format month
       const day1 = String(endDatePre.getDate()).padStart(2, "0");
-
       const endDate = `${year1}-${month1}-${day1}`;
 
+      //then initialize a boolean called found and check to see if it exists as a wishlist in the database
+
       let found = false;
+
       for (let i = 0; i < temp.length; i++) {
-        let wishlist1 = { ...temp[i] };
+        let wishlist1 = { ...temp[i] }; //create a variable you can tamper with
         console.log("wishlist1 ", wishlist1);
         if (wishlist1.Name == wishlistName) {
           found = true;
@@ -54,16 +54,16 @@ function MyVerticallyCenteredModal({ id, wishlist, ...rest }) {
           listings[id] = [startDate, endDate];
           wishlist1["list"] = { ...listings };
           temp[i] = { ...wishlist1 };
-          //console.log(temp);
+
           break;
         }
 
-        //return temp;
+        //if it isn't found, add it as a new entry in the wishlist
       }
       if (found == false) {
         console.log(id);
         let check = {};
-        check[id] = [[startDate, endDate]];
+        check[id] = [startDate, endDate];
         const newEntry = {
           Name: wishlistName,
           list: check,
@@ -74,8 +74,8 @@ function MyVerticallyCenteredModal({ id, wishlist, ...rest }) {
     }
 
     try {
-      // Make the create product API request
-      calculateNewWishlist(wishlistName, id);
+      // Make the update user API request
+      calculateNewWishlist(wishlistName, id); //call the function you just defined
 
       const response = await fetch(
         `http://localhost:3000/user/${userContext.id}`,
@@ -104,10 +104,7 @@ function MyVerticallyCenteredModal({ id, wishlist, ...rest }) {
       //console.log(response)
 
       if (response.ok) {
-        // Navigate to the business page after successful login
         const data = await response.json();
-        //console.log(data);
-        //const fine = data[0];
         console.log(data);
         setUserContext(data);
         rest.onHide();
@@ -121,6 +118,7 @@ function MyVerticallyCenteredModal({ id, wishlist, ...rest }) {
     }
   };
   function wishlistList() {
+    //map through the wishlists to display the buttons
     return wishlist.map((wishlist) => {
       return (
         <div key={wishlist.Name}>
@@ -182,6 +180,7 @@ export default function AddToWishlistModal({ Id }) {
   const { userContext } = useContext(UserContext);
   const wishlist = [...userContext.wishlists];
   function whatHeart() {
+    //this function tells what heart to display depending on whether or not the listing is already on the wishlist
     let isThere = false;
     wishlist.map((wishlist) => {
       const list = { ...wishlist.list };

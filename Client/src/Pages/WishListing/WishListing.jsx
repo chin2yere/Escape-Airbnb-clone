@@ -5,11 +5,13 @@ import TripsCard from "../../Components/TripsCard/TripsCard";
 import Button from "react-bootstrap/Button";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
+//this is the page which displays all wishlists and their names
 export default function Wishlisting() {
   const location = useLocation();
   const wish_data = location.state; // Access the passed props
   const wishlist = { ...wish_data.wishlist };
   const list = { ...wishlist.list };
+
   const index = wish_data.index;
   //console.log(index);
   if (wishlist) {

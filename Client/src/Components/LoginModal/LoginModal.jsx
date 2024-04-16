@@ -9,22 +9,18 @@ import Form from "react-bootstrap/Form";
 import { UserContext, ChatsContext } from "../../UserContext";
 
 import "./LoginModal.css";
-
+//this is the login modal
 function MyVerticallyCenteredModal(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { userContext, setUserContext } = useContext(UserContext);
   const { setChatsContext } = useContext(ChatsContext);
   const navigate = useNavigate();
-
+  //this function checks the database for an existing user
   const handleLogin = async (e) => {
     //e.preventDefault();
-    console.log("here");
 
     try {
-      console.log("inner");
-      // Make the login API request
-      //const url = `${apiUrlContext}/job/${"id"}/${jobId}`;
       const url = `http://localhost:3000/login/${username}/${password}`;
 
       const response = await fetch(url);
@@ -33,8 +29,6 @@ function MyVerticallyCenteredModal(props) {
       if (response.ok) {
         const data = await response.json();
         console.log(data);
-
-        //const loggedInUser = data.user;
 
         // Update the user context
         setUserContext(data);

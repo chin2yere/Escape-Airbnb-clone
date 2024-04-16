@@ -7,12 +7,13 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/esm/Image";
 import Button from "react-bootstrap/esm/Button";
-//import Spinner from "react-bootstrap/Spinner";
 
+//this function is used to display wishlists, upcoming and past trips
 export default function TripsCard({ id, payment, from, to, type, index }) {
   const { userContext, setUserContext } = useContext(UserContext);
   const [listing, setListing] = useState({});
   const navigate = useNavigate();
+  //the useeffect fetches the listing
   useEffect(() => {
     const fetchListing = async () => {
       try {
@@ -29,6 +30,7 @@ export default function TripsCard({ id, payment, from, to, type, index }) {
   }, []);
   //Button to display
   function displayButton() {
+    //the type of button to be displayed is determined by the usecase of the trips card
     if (type == "wishlist") {
       return (
         <Button
@@ -45,10 +47,10 @@ export default function TripsCard({ id, payment, from, to, type, index }) {
       return <div></div>;
     }
   }
-  //remove from wishlists
+  //This function removes from wishlists
   const handleUpdateWishlist = async (e) => {
     //e.preventDefault();
-    //update wishlist
+    //the following set of code created an updated wishlist with the listing removed
     const currentUserWishlist = [...userContext.wishlists];
     const Temp = currentUserWishlist[index];
     const Temp2 = { ...Temp.list };
@@ -57,7 +59,7 @@ export default function TripsCard({ id, payment, from, to, type, index }) {
     currentUserWishlist[index] = Temp;
     //console.log(currentUserWishlist);
     try {
-      // Make the create product API request
+      // Make the update wishlist API request
 
       const response = await fetch(
         `http://localhost:3000/user/${userContext.id}`,
@@ -83,13 +85,11 @@ export default function TripsCard({ id, payment, from, to, type, index }) {
           credentials: "include",
         }
       );
-      //console.log(response)
 
       if (response.ok) {
-        // Navigate to the business page after successful login
         const data = await response.json();
         console.log(data);
-        //const fine = data[0];
+
         console.log(data);
         setUserContext(data);
         navigate("/wishlists");
@@ -102,17 +102,14 @@ export default function TripsCard({ id, payment, from, to, type, index }) {
       alert("creation failed: " + error);
     }
   };
-  //remove from booked days
+  //this function remove from booked days in the listing table
   const handleRemove = async (start, listing) => {
     //e.preventDefault();
+    //create an updated bookedDays
     const currentUserBookedDays = { ...listing.booked_days };
-    //console.log(currentUserBookedDays);
     delete currentUserBookedDays[start];
 
-    //console.log(currentUserBookedDays);
-
     try {
-      // Make the create product API request
       const response = await fetch(
         `http://localhost:3000/listing/${listing.id}`,
         {
@@ -137,16 +134,12 @@ export default function TripsCard({ id, payment, from, to, type, index }) {
           credentials: "include",
         }
       );
-      //console.log(response)
+
       if (response.ok) {
-        // Navigate to the business page after successful login
         const data = await response.json();
 
         console.log(data);
         navigate("/cancel/success");
-        //const fine = data[0];
-        //console.log(data);
-        //setUserContext(data);
       } else {
         // Handle the create failure case
         alert("creation failed");
@@ -156,17 +149,17 @@ export default function TripsCard({ id, payment, from, to, type, index }) {
       alert("creation failed: " + error);
     }
   };
-  //remove from upcoming trips
+  //this function is to remove from upcoming trips
   const handleCancelTrip = async (e) => {
     //e.preventDefault();
     const currentUserUpcomingTrips = [...userContext.upcoming_trips];
     const whatToDelete = { ...currentUserUpcomingTrips[index] };
     currentUserUpcomingTrips[index] = {};
-    //console.log(currentUserUpcomingTrips);
+
     const startDate = whatToDelete.From;
 
     try {
-      // Make the create product API request
+      // Make the update user API request
 
       const response = await fetch(
         `http://localhost:3000/user/${userContext.id}`,
@@ -201,7 +194,7 @@ export default function TripsCard({ id, payment, from, to, type, index }) {
         //const fine = data[0];
         console.log(data);
         setUserContext(data);
-        handleRemove(startDate, listing);
+        handleRemove(startDate, listing); //then remove from listing booked days
       } else {
         // Handle the create failure case
         alert("creation failed");

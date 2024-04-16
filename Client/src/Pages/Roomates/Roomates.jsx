@@ -6,10 +6,9 @@ import RoomateCard from "../../Components/RoomateCard/RoomateCard";
 import Button from "react-bootstrap/esm/Button";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
+//this is the home page for the roomate
 export default function Roomates() {
   const { listingsContext } = useContext(ListingsContext);
-  //console.log(listingsContext);
-  //const [sameHouse, setSameHouse] = useState([]);
   const [listingLocation, setListingLocation] = useState([]);
   const location = useLocation();
   const Id_data = location.state; // Access the passed props
@@ -18,15 +17,13 @@ export default function Roomates() {
   const endDate = Id_data.endDate;
   //console.log(startDate);
   useEffect(() => {
-    //let listingLocation = {};
+    //fetch listing data
     const fetchListing = async () => {
       try {
         const url = `http://localhost:3000/listing/${"id"}/${Id}`;
         const response = await fetch(url);
         const data = await response.json();
-        setListingLocation(data.pin);
-        //listingLocation = { ...data.pin };
-        //console.log(data.pin);
+        setListingLocation(data.pin); //get the location of the house
       } catch (error) {
         // Handle any network or API request errors
         alert("Fetch Listing failed: " + error);
@@ -42,6 +39,7 @@ export default function Roomates() {
     let LeaveDate = "";
     let roomateId = "";
     const sameHouse = listingsContext.filter((listing) => {
+      //run through all listings and find the ones in the same location/house
       const obj1 = { ...listing.pin };
       const keys1 = Object.keys(listing.pin);
       const keys2 = Object.keys(listingLocation);
@@ -58,10 +56,11 @@ export default function Roomates() {
       }
       return true;
     });
-    //available
+
+    //this function checks if there is any overlap between 2 date ranges
     function isLapping(listing) {
       const bookedDays = { ...listing.booked_days };
-      //console.log(bookedDays);
+
       function lapLeft(start, end, startDateContext, endDateContext) {
         if (
           startDateContext <= start &&
@@ -107,7 +106,7 @@ export default function Roomates() {
           const startContext = new Date(startDate);
           const endContext = new Date(endDate);
 
-          //console.log(start < startContext);
+          //check to see if there's any overlap
 
           if (
             lapLeft(start, end, startContext, endContext) ||
@@ -126,17 +125,7 @@ export default function Roomates() {
         });
       return doesItLap;
     }
-    // const test = sameHouse.map((listing) => {
-    //   if (isLapping(listing)) {
-    //     return (
-    //       <div>
-    //         <h1>{ComeDate}</h1>
-    //         <h1>{LeaveDate}</h1>
-    //         <h1>{roomateId}</h1>
-    //       </div>
-    //     );
-    //   }
-    // });
+
     return (
       <div>
         <Link to="/future/trips">

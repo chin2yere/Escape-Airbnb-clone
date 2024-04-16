@@ -5,10 +5,12 @@ import { useEffect, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
+
+//this is the ratings category underneath the listing details page
 export default function ListingDetailsRatings({ reviews }) {
   let totalRating = 0;
   const [users, setUsers] = useState([]);
-  //const [reviewerIntro, setReviewerIntro] = useState("");
+  // this useeffect fetches the people who rated
   useEffect(() => {
     const fetchUsers = async (id) => {
       try {
@@ -26,19 +28,22 @@ export default function ListingDetailsRatings({ reviews }) {
 
   console.log(users);
   function getRating() {
-    let rating = 0;
+    //this function gets the rating that this user gave
+    let rating = 0; //initialize a rating variable
     const size = reviews.length;
 
     const reviewElements = reviews.map((review) => {
       rating += review.Rating;
       let user = {};
       users.map((item) => {
+        //search through the users
         if (item.id == review.User_id) {
+          //check if the user gave the current rating
           user = item;
         }
       });
 
-      //fetchReviewer(review.User_id);
+      //now we have the user and we can display the button
       console.log(user);
       return (
         <Stack

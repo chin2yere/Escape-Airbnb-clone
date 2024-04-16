@@ -9,7 +9,7 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 mapboxgl.accessToken = key; // Mapbox access token
-
+// this is the map page
 function MapboxMap() {
   const mapContainerRef = useRef(null);
   const { listingsContext } = useContext(ListingsContext);
@@ -31,7 +31,7 @@ function MapboxMap() {
       popupHtml: "<h3>Marker 3</h3><p>Marker 3 description</p>",
     },
     // Add more markers as needed
-  ];
+  ]; //these are dummy markers for testing
 
   useEffect(() => {
     // Initialize the map

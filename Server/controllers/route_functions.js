@@ -2,6 +2,7 @@ import users_sequelize from "../models/users_sequelize.js";
 import listings_sequelize from "../models/listings_sequelize.js";
 import nodemailer from "nodemailer";
 
+//this page defines all the functions that are used in the routes page
 const sendEmailBook = async (req, res) => {
   try {
     var transporter = nodemailer.createTransport({

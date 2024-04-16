@@ -10,7 +10,7 @@ const listingsdata = fs.readFileSync(
   path.resolve(__dirname, "listings.json"),
   "utf8"
 );
-
+//this function creates a table
 const createUsersTable = async () => {
   try {
     const createTableQuery = `
@@ -36,7 +36,7 @@ const createUsersTable = async () => {
     console.log(error);
   }
 };
-
+//it inserts values
 const insertUsers = async () => {
   try {
     const insertQuery = `

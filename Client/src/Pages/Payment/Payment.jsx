@@ -11,6 +11,7 @@ import {
 } from "../../UserContext";
 import { useNavigate, useLocation } from "react-router-dom";
 
+//this is the payments page
 export default function Payment() {
   const location = useLocation();
   const payment_data = location.state; // Access the passed props
@@ -37,21 +38,20 @@ export default function Payment() {
     };
     fetchListing();
   }, []);
-  //Add from booked days
+  //this function is to Add to booked days
   const handleAdd = async (start, end, listing) => {
     //e.preventDefault();
+    //create a new variable that you would like to replace booked days with
 
     const currentUserBookedDays = { ...listing.booked_days };
-    //console.log(currentUserBookedDays);
+
     const tempSecond = userContext.id;
     const tempThird = tempSecond.toString();
 
     currentUserBookedDays[start] = [end, tempThird];
 
-    //console.log(currentUserBookedDays);
-
     try {
-      // Make the create product API request
+      // Make the update listing API request
       const response = await fetch(
         `http://localhost:3000/listing/${listing.id}`,
         {
@@ -76,16 +76,12 @@ export default function Payment() {
           credentials: "include",
         }
       );
-      //console.log(response)
+
       if (response.ok) {
-        // Navigate to the business page after successful login
         const data = await response.json();
 
         console.log(data);
         setPaid(true);
-        //const fine = data[0];
-        //console.log(data);
-        //setUserContext(data);
       } else {
         // Handle the create failure case
         alert("creation failed");
@@ -95,19 +91,17 @@ export default function Payment() {
       alert("creation failed: " + error);
     }
   };
-  //add to upcoming trips
+  //this function is to add to upcoming trips
   const handleBookTrip = async (e) => {
     //e.preventDefault();
+    //create a start date variable
     const startDatePre = new Date(startDateContext);
-
     const year = startDatePre.getFullYear();
     const month = String(startDatePre.getMonth() + 1).padStart(2, "0"); // Extract and format month
     const day = String(startDatePre.getDate()).padStart(2, "0");
-
     const tempStart = `${year}-${month}-${day}`;
-    //end date
+    // create an end date variable
     const endDatePre = new Date(endDateContext);
-
     const year1 = endDatePre.getFullYear();
     const month1 = String(endDatePre.getMonth() + 1).padStart(2, "0"); // Extract and format month
     const day1 = String(endDatePre.getDate()).padStart(2, "0");
@@ -125,10 +119,8 @@ export default function Payment() {
     ];
     console.log(currentUserUpcomingTrips);
 
-    //console.log(currentUserUpcomingTrips);
-
     try {
-      // Make the create product API request
+      // Make the update user API request
 
       const response = await fetch(
         `http://localhost:3000/user/${userContext.id}`,
@@ -157,13 +149,11 @@ export default function Payment() {
       //console.log(response)
 
       if (response.ok) {
-        // Navigate to the business page after successful login
         const data = await response.json();
-        //console.log(data);
-        //const fine = data[0];
+
         console.log(data);
         setUserContext(data);
-        handleAdd(tempStart, tempEnd, listing);
+        handleAdd(tempStart, tempEnd, listing); //now add to the listings booked days
       } else {
         // Handle the create failure case
         alert("creation failed");

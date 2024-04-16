@@ -12,13 +12,15 @@ import Container from "react-bootstrap/esm/Container";
 //import { UserContext } from "../../UserContext";
 import AddToWishlistModal from "../../Components/AddToWishlistModal/AddToWishlistModal";
 
+//this is the listing details page
 export default function ListingDetails() {
   const [listing, setListing] = useState({});
   const location = useLocation();
   const Id_data = location.state; // Access the passed props
   const Id = Id_data.listingId;
-  //console.log(Id);
+
   useEffect(() => {
+    //first fetch all listing information
     const fetchListing = async () => {
       try {
         const url = `http://localhost:3000/listing/${"id"}/${Id}`;
@@ -32,7 +34,6 @@ export default function ListingDetails() {
     };
     fetchListing();
   }, []);
-  //console.log(listing);
 
   return (
     <div>

@@ -16,17 +16,16 @@ import { GiWoodCabin } from "react-icons/gi";
 import { MdCabin } from "react-icons/md";
 import { GiFamilyHouse } from "react-icons/gi";
 
+//this is the filter button on the home page
 function MyVerticallyCenteredModal(props) {
-  //const [value, setValue] = useState(50); // Initial value of the range input
-  //const maxValue = 1000;
+  //this is what happens when the button is clicked
   const { categoryContext, setCategoryContext } = useContext(CategoryContext);
   const { budgetContext, setBudgetContext } = useContext(BudgetContext);
   const { typeContext, setTypeContext } = useContext(TypeContext);
-  //console.log(budgetContext);
 
-  //let active = false;
   function handleSelectCategory(key) {
-    const temp = { ...categoryContext };
+    //this to an activation in the selected category button
+    const temp = { ...categoryContext }; //create a new variable to be tampered with
     temp[key] = !temp[key];
     setCategoryContext({ ...temp });
   }
@@ -277,7 +276,7 @@ function MyVerticallyCenteredModal(props) {
           <div style={{ padding: "20px" }}>
             <Button
               variant="outline-secondary"
-              active={categoryContext["Apartment"]}
+              active={categoryContext["Apartment"]} //it will be active if that category is selected
               style={{
                 width: "150px",
                 height: "100px",
@@ -292,7 +291,7 @@ function MyVerticallyCenteredModal(props) {
             </Button>
             <Button
               variant="outline-secondary"
-              active={categoryContext["Villa"]}
+              active={categoryContext["Villa"]} //it will be active if that category is selected
               style={{
                 width: "150px",
                 height: "100px",
@@ -307,7 +306,7 @@ function MyVerticallyCenteredModal(props) {
             </Button>
             <Button
               variant="outline-secondary"
-              active={categoryContext["Loft"]}
+              active={categoryContext["Loft"]} //it will be active if that category is selected
               style={{
                 width: "150px",
                 height: "100px",
@@ -322,7 +321,7 @@ function MyVerticallyCenteredModal(props) {
             </Button>
             <Button
               variant="outline-secondary"
-              active={categoryContext["Cottage"]}
+              active={categoryContext["Cottage"]} //it will be active if that category is selected
               style={{
                 width: "150px",
                 height: "100px",
@@ -337,7 +336,7 @@ function MyVerticallyCenteredModal(props) {
             </Button>
             <Button
               variant="outline-secondary"
-              active={categoryContext["Condo"]}
+              active={categoryContext["Condo"]} //it will be active if that category is selected
               style={{
                 width: "150px",
                 height: "100px",
@@ -352,7 +351,7 @@ function MyVerticallyCenteredModal(props) {
             </Button>
             <Button
               variant="outline-secondary"
-              active={categoryContext["Cabin"]}
+              active={categoryContext["Cabin"]} //it will be active if that category is selected
               style={{
                 width: "150px",
                 height: "100px",

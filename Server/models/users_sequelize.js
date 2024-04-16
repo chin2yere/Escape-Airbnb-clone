@@ -1,5 +1,6 @@
 import pool from "../config/database.js";
 
+//this page contains all the SQL queries for users table
 const findAll = () => {
   const query = "SELECT * FROM users ORDER BY id ASC";
   return pool.query(query);

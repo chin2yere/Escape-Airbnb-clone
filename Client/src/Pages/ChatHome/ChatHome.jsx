@@ -10,6 +10,8 @@ import { UserContext } from "../../UserContext";
 import { BsChatDots } from "react-icons/bs";
 import Chat from "../Chat/Chat";
 import Button from "react-bootstrap/esm/Button";
+
+//this is the chat page
 export default function ChatHome() {
   const location = useLocation();
   const name_data = location.state; // Access the passed props
@@ -21,8 +23,7 @@ export default function ChatHome() {
   //console.log(userContext);
   let chats = [...userContext.chats];
 
-  //console.log(chats);
-
+  //this function checks if there is chat history between the two
   function includes(chats) {
     let isIt = false;
     chats.map((entry) => {
@@ -33,18 +34,20 @@ export default function ChatHome() {
     return isIt;
   }
   useEffect(() => {
+    //if there is no chat history, create one
     if (name != "" && chats && includes(chats) == false) {
       let newChat = chats;
-      newChat.push(name);
+      newChat.push(name); //add the name to the variable
 
       //
       let ownerChat = [...ownerId.chats];
       ownerChat.push(userContext.name);
+      //this function updates the chat history of the person that you're talking to
       const handleUpdateOwner = async (ownerChat) => {
         //e.preventDefault();
 
         try {
-          // Make the create product API request
+          // Make the chat his
 
           const response = await fetch(
             `http://localhost:3000/user/${ownerId.id}`,
@@ -73,11 +76,8 @@ export default function ChatHome() {
           //console.log(response)
 
           if (response.ok) {
-            // Navigate to the business page after successful login
             const data = await response.json();
             console.log(data);
-            //const fine = data[0];
-            //console.log(data);
           } else {
             // Handle the create failure case
             alert("creation failed");
@@ -87,11 +87,12 @@ export default function ChatHome() {
           alert("creation failed: " + error);
         }
       };
+      //this function updates the chat history of the current user
       const handleUpdate = async (e) => {
         //e.preventDefault();
 
         try {
-          // Make the create product API request
+          // Make the update user API request
 
           const response = await fetch(
             `http://localhost:3000/user/${userContext.id}`,
@@ -120,11 +121,8 @@ export default function ChatHome() {
           //console.log(response)
 
           if (response.ok) {
-            // Navigate to the business page after successful login
             const data = await response.json();
-            //console.log(data);
-            //const fine = data[0];
-            //console.log(data);
+
             setUserContext(data);
             chats = data.chats;
             ownerChat && handleUpdateOwner(ownerChat);

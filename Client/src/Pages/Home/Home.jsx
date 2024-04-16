@@ -9,19 +9,8 @@ import Container from "react-bootstrap/Container";
 import HomeCategoryBar from "../../Components/HomeCategoryBar/HomeCategoryBar";
 import "./Home.css";
 
+//this is the home page
 export default function Home() {
-  // const [category, setCategory] = useState(() => {
-  //   const temp = {
-  //     Apartment: true,
-  //     Villa: true,
-  //     Loft: true,
-  //     Condo: true,
-  //     Cottage: true,
-  //     Cabin: true,
-  //   };
-  //   return temp;
-  // });
-  //console.log(category);
   return (
     <div className="home">
       <Container fluid>

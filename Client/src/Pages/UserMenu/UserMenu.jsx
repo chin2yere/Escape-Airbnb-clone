@@ -22,6 +22,7 @@ import { TbJewishStar } from "react-icons/tb";
 import { SiWish } from "react-icons/si";
 import { WiShowers } from "react-icons/wi";
 
+//this is the user menu page
 export default function UserMenu() {
   const { userContext, setUserContext } = useContext(UserContext);
   const navigate = useNavigate();

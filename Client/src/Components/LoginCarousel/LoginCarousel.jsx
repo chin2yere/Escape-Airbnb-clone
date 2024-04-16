@@ -6,6 +6,7 @@ import HomepageImage2 from "../Pictures/homepage3.webp";
 import HomepageImage3 from "../Pictures/homepage4.jpg";
 import Image from "react-bootstrap/Image";
 
+//this is the login carousel
 function LoginCarousel() {
   const [index, setIndex] = useState(0);
 

@@ -4,14 +4,14 @@ import { StartDateContext, EndDateContext } from "../../UserContext";
 import Nav from "react-bootstrap/Nav";
 import DatePicker from "react-datepicker";
 import { Link } from "react-router-dom";
-//import Button from "react-bootstrap/Button";
-
 import "react-datepicker/dist/react-datepicker.css";
+
+//this component is the calendar on the home page
 export default function HomeCalendar() {
   const { startDateContext, setStartDateContext } =
     useContext(StartDateContext);
   const { endDateContext, setEndDateContext } = useContext(EndDateContext);
-
+  //the startdateContext and enddateContext are updated here
   return (
     <div>
       <Nav

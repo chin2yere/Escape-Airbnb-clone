@@ -6,11 +6,13 @@ import TripsCard from "../../Components/TripsCard/TripsCard";
 import Button from "react-bootstrap/esm/Button";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
+//this is the page for upcoming trips
 export default function FutureTrips() {
   const { userContext } = useContext(UserContext);
   //const {listingContext} = useContext(ListingsContext)
   const upcoming = [...userContext.upcoming_trips];
   function getDays(date) {
+    //calculate the days left till trip
     const today = new Date();
 
     const checkIn = new Date(date);

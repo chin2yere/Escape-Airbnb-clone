@@ -1,5 +1,6 @@
 import pool from "../config/database.js";
 
+//this page contains all the SQL queries for listings table
 const findAll = () => {
   const query = "SELECT * FROM listings ORDER BY id ASC";
   return pool.query(query);

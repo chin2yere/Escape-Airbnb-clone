@@ -7,6 +7,7 @@ import ProfileModal from "../../Components/ProfileModal/ProfileModal";
 export default function Profile() {
   const { userContext, setUserContext } = useContext(UserContext);
 
+  //this is the user profile page
   return (
     <div
       style={{
